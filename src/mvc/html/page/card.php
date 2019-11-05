@@ -1,0 +1,1 @@
+<appui-hr-card :source="source"></appui-hr-card>

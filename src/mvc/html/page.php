@@ -1,0 +1,1 @@
+<appui-hr-main :source="source"></appui-hr-main>
