@@ -13,7 +13,8 @@
         selected: '',
         calendarSelected: false,
         events: [],
-        isYearMode: this.yearMode
+        isYearMode: this.yearMode,
+        root: appui.plugins['appui-hr'] + '/'
       }
     },
     computed: {
@@ -54,7 +55,7 @@
           day = this.selected;
         }
         if ( day ){
-          this.post('data/hr/events', {day: day}, (d) => {
+          this.post(this.root + 'data/events', {day: day}, (d) => {
             if ( d.data ){
               this.$set(this, 'events', d.data);
             }

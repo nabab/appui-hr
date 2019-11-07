@@ -26,8 +26,6 @@
     <div v-text="source.contact"></div>
     <label><?=_('Birth')?></label>
     <div v-text="fdate(source.naissance)"></div>
-    <label><?=_('Secu ID')?></label>
-    <div v-text="source.secu_id"></div>
   </div>
   <div class="bbn-w-100 bbn-top-space">
     <div class="bbn-header bbn-c"><?=_("Today")?></div>

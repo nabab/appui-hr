@@ -1,5 +1,17 @@
 <?php
 if ( !empty($model->data['id']) ){
+
+  if ( $dashboard = new \bbn\appui\dashboard('hrcard') ){
+    $widgets = $dashboard->get_widgets_code();
+  }
+
+  $tabs = [];
+  if ( $tabs_perm = $model->inc->perm->get_all('hr/page/card/tabs') ){
+    foreach ( $tabs_perm as $tab ){
+      $tabs[$tab['code']] = $model->inc->perm->has($tab['id']) ? true : false;
+    }
+  }
+
   $tiers = new \amiral\tiers($model->db);
   $week_start = strtotime("Last Monday");
   if ( strtolower(date('l')) === 'monday' ){
@@ -25,6 +37,9 @@ if ( !empty($model->data['id']) ){
   }
 
   return array_merge($tiers->get_info($model->data['id']), [
+    'tabs' => $tabs,
+    'widgets' => !empty($widgets) ? $widgets : [],
+    'widgets_order' => !empty($dashboard) ? $dashboard->get_order($widgets) : [],
     'week' => ($week = $model->get_model(APPUI_HR_ROOT . 'data/events', [
       'employe' => $model->data['id'],
       'start' => date('Y-m-d 00:00:00', $week_start),

@@ -1,6 +1,6 @@
 <bbn-form :source="source.row"
           ref="form"
-          :action="root + 'actions/employes/' + (source.row.id ? 'update' : 'create')"
+          :action="root + 'actions/staff/' + (source.row.id ? 'update' : 'create')"
           @success="afterSubmit"
 
 >

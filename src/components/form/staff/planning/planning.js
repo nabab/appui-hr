@@ -12,7 +12,7 @@
         events: [],
         isLoading: true,
         daysRange: [],
-        employes: appui.app.employees,
+        employes: appui.app.staff,
         originalHours: 0,
         currentIdPlanning: ''
       }
@@ -66,7 +66,7 @@
               if ( idx === -1 ){
                 tmp.push({
                   id: e.id_employe,
-                  nom: bbn.fn.get_field(appui.app.employees, 'value', e.id_employe, 'text'),
+                  nom: bbn.fn.get_field(appui.app.staff, 'value', e.id_employe, 'text'),
                   hour: moment(e.end).diff(moment(e.start), 'minutes')
                 });
               }
@@ -142,7 +142,7 @@
               }
               d.data = d.data.map((e, i) => {
                 e.hour = moment(e.end).diff(moment(e.start), 'minutes') / 60;
-                e.nom = bbn.fn.get_field(appui.app.employees, 'value', e.id_employe, 'text');
+                e.nom = bbn.fn.get_field(appui.app.staff, 'value', e.id_employe, 'text');
                 return e;
               });
             }
@@ -183,8 +183,8 @@
         props: ['source'],
         data(){
           return {
-            employes: appui.app.employees,
-            planning: this.closest('bbn-container').find('ami-hr-form-employee-planning')
+            employes: appui.app.staff,
+            planning: this.closest('bbn-container').find('ami-hr-form-staff-planning')
           }
         },
         methods: {

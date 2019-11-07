@@ -3,7 +3,7 @@
     data(){
       return {
         absences: bbn.fn.order(appui.options.hr.absences, 'text', 'ASC'),
-        employees: appui.app.employees,
+        employees: appui.app.staff,
         planning: false
       }
     },

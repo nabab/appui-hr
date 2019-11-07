@@ -9,7 +9,7 @@
             num: g.num
           }
         }), 'text', 'ASC'),
-        employes: appui.app.employees,
+        employes: appui.app.staff,
         root: appui.plugins['appui-hr'] + '/'
       }
     },
@@ -34,9 +34,9 @@
           this.confirm(bbn._('Are you sure you want to delete this employe?'), () => {
             this.post(this.root + 'actions/employees/delete', {id: row.id }, d => {
               if ( d.success ){
-                let idx = bbn.fn.search(appui.app.employees, 'value', row.id);
+                let idx = bbn.fn.search(appui.app.staff, 'value', row.id);
                 if ( idx > -1 ){
-                  appui.app.employees.splice(idx, 1);
+                  appui.app.staff.splice(idx, 1);
                 }
                 appui.success(bbn._('Deleted'));
                 this.getRef('table').updateData();

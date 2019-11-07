@@ -28,9 +28,9 @@
       },
       editInfo(){
         this.getPopup().open({
-          title: bbn._("Edit employe"),          
+          title: bbn._("Edit"),          
           width: 600,
-          component: 'appui-hr-form-employee',
+          component: 'ami-hr-form-staff',
           source: {
             row: this.source
           }

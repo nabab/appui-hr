@@ -1,33 +1,33 @@
-<div class="ami-hr-tab-holidays-planning bbn-100">
+<div class="appui-hr-tab-holidays-planning bbn-100">
   <bbn-splitter ref="splitter">
     <bbn-pane :scrollable="isYearMode"
               ref="calendarContainer"
     >
       <div v-if="isYearMode"
-           class="planning-year-mode bbn-w-100"
+           class="appui-hr-tab-holidays-planning-year-mode bbn-w-100"
       >
-        <div class="bbn-flex-width planning-year-mode-header bbn-header bbn-xspadded">
+        <div class="bbn-flex-width appui-hr-tab-holidays-planning-year-mode-header bbn-header bbn-xspadded">
           <bbn-button icon="nf nf-fa-angle_left"
                       @click="prevYear"
-                      title="<?=_('Année précédente')?>"
+                      title="<?=_('Previous year')?>"
                       :notext="true"
           ></bbn-button>
           <div class="bbn-flex-fill bbn-middle">
             <i class="nf nf-fa-calendar_o bbn-hsmargin bbn-large"></i>
-            <strong v-text="'<?=_('Année')?> ' + currentYear"></strong>
+            <strong v-text="'<?=_('Year')?> ' + currentYear"></strong>
           </div>
           <bbn-button icon="nf nf-fa-angle_right"
                       @click="nextYear"
-                      title="<?=_('Année prochaine')?>"
+                      title="<?=_('Next year')?>"
                       :notext="true"
           ></bbn-button>
         </div>
-        <div class="planning-year-mode-calendars">
+        <div class="appui-hr-tab-holidays-planning-year-mode-calendars">
           <bbn-calendar v-for="idx in 12"
                         :date="currentYear + '-' + (idx.toString().length === 1 ? '0' + idx : idx) + '-01'"
                         :arrows="false"
                         :key="'hr-calendar-' + idx"
-                        :source="'data/hr/events/' + idx"
+                        :source="root + 'data/events/' + idx"
                         :item-title="getTitle"
                         :day-padding="true"
                         event-icon="nf nf-fa-user"
@@ -38,10 +38,10 @@
         </div>
       </div>
       <bbn-calendar v-else
-                    source="data/hr/events"
+                    :source="root + 'data/events'"
                     ref="calendar"
                     :item-details="true"
-                    item-component="ami-hr-tab-holidays-planning-day"
+                    item-component="appui-hr-tab-holidays-planning-day"
                     :extra-items="true"
                     @mounted="calendarSelected = $refs.calendar"
                     :item-title="getTitle"
@@ -56,8 +56,9 @@
         <div class="bbn-header bbn-flex-width bbn-spadded">
           <bbn-button icon="nf nf-fa-calendar_plus_o"
                       @click="addEvent"
-                      title="<?=_('Ajouter')?>"
+                      title="<?=_('Add')?>"
                       :notext="true"
+                      :disabled="true"
           ></bbn-button>
           <div class="bbn-flex-fill bbn-middle">
             <i class="nf nf-mdi-calendar_today bbn-hsmargin"></i>
@@ -65,7 +66,7 @@
           </div>
           <bbn-button icon="nf nf-fa-window_close"
                       @click="changeSelected('', false)"
-                      title="<?=_('Retour au calendrier')?>"
+                      title="<?=_('Back to calendar')?>"
                       :notext="true"
           ></bbn-button>
         </div>
@@ -89,7 +90,7 @@
             </div>
           </div>
           <bbn-list :source="events"
-                    component="ami-hr-tab-holidays-planning-event"
+                    component="appui-hr-tab-holidays-planning-event"
           ></bbn-list>
         </div>
       </div>

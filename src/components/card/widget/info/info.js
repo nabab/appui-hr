@@ -19,7 +19,7 @@
             <div>${start} <i class="nf nf-fa-long_arrow_right"></i> ${end}</div>
           `;
         }
-        return '<span class="bbn-large">' + bbn._('PRÉSENT') + '</span>';
+        return '<span class="bbn-large">' + bbn._('PRESENT') + '</span>';
       },
       absenceColor(){
         if (this.source.today.length){

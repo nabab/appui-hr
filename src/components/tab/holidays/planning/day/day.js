@@ -10,7 +10,7 @@
     },
     methods: {
       getEmploye(id){
-        return bbn.fn.get_field(appui.app.employees, {value: id}, 'text')
+        return bbn.fn.get_field(appui.app.staff, {value: id}, 'text')
       }
     },
     components: {
@@ -39,7 +39,7 @@
             return bbn.fn.get_field(appui.options.hr.absences, 'value', this.source.id_type, 'text');
           },
           employe(){
-            return bbn.fn.get_field(appui.app.employees, {value: this.source.employe}, 'text')
+            return bbn.fn.get_field(appui.app.staff, {value: this.source.employe}, 'text')
           }
         }
       }

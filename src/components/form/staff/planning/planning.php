@@ -1,4 +1,4 @@
-<div class="ami-hr-form-employee-planning bbn-overlay">
+<div class="ami-hr-form-staff-planning bbn-overlay">
   <div v-if="isLoading" class="bbn-overlay bbn-middle">
     <bbn-loader loading-text="<?=_('Chargement')?>"></bbn-loader>
   </div>
@@ -18,9 +18,9 @@
                       @selected="changeSelected"
                       ref="calendar"
                       :day-details="true"
-                      details-component="ami-hr-form-employee-planning-day"
+                      details-component="ami-hr-form-staff-planning-day"
                       :title-details="getTitle"
-                      header-component="ami-hr-form-employee-planning-header"
+                      header-component="ami-hr-form-staff-planning-header"
                       :days-range="daysRange"
                       
         ></bbn-calendar>

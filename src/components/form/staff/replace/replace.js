@@ -2,7 +2,7 @@
   return {
     data(){
       return {
-        employes: appui.app.employees.filter( e => e.value !== this.source.id_old_employe)
+        employes: appui.app.staff.filter( e => e.value !== this.source.id_old_employe)
       }
     },
     methods: {

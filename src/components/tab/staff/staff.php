@@ -1,15 +1,15 @@
-<div class="appui-hr-tab-employes">
+<div class="appui-hr-tab-staff">
   <bbn-table ref="table"
-             :source="root + '/data/employees'"
+             :source="root + '/data/staff'"
              class="bbn-100"
              :sortable="true"
              :pageable="true"
              :toolbar="[{
-               text: '<?=_('Add employe')?>',
+               text: '<?=_('Add')?>',
                action: insert,
                icon: 'nf nf-fa-plus'
              }]"
-             editor="appui-hr-form-employes"
+             editor="appui-hr-form-staff"
              :editable="true"
              :filterable="true"
              :limit="50"

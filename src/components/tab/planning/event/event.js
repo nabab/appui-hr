@@ -3,7 +3,7 @@
     props: ['source'],
     data(){
       return {
-        employes: appui.app.employees
+        employes: appui.app.staff
       }
     },
     computed: {
@@ -117,7 +117,7 @@
         props: ['source'],
         data(){
           return {
-            employes: appui.app.employees,
+            employes: appui.app.staff,
             root: appui.plugins['appui-hr'] + '/',
             dataSource: [{
               text: this.source.row.id_entity ? `${this.source.row.entity_nom && this.source.row.entity_nom.length ? this.source.row.entity_nom + ' - ' : ''}${this.source.row.entity_adresse}` : '',

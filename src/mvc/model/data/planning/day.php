@@ -104,7 +104,7 @@ if ( !empty($model->data['day']) ){
   else {
     $year = date('Y', strtotime($model->data['day']));
     $filename = date('Y-m', strtotime($model->data['day'])).'.json';
-    $path = $model->content_path()."/hr/planning/$year/";
+    $path = $model->data_path('appui-hr')."planning/$year/";
     if ( 
       is_file($path.$filename) && 
       ($d = file_get_contents($path.$filename)) &&

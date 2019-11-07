@@ -21,7 +21,7 @@
     },
     methods: {
       getEmploye(id){
-        return bbn.fn.get_field(appui.app.employees, {value: id}, 'text')
+        return bbn.fn.get_field(appui.app.staff, {value: id}, 'text')
       }
     }
   }

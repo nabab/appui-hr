@@ -18,11 +18,11 @@ $ret = [
         'widgets_order' => !empty($dashboard) ? $dashboard->get_order($widgets) : []
       ]
     ],
-    'employes' => [
-      'url' => 'employees',
-      'component' => 'appui-hr-tab-employees',
+    'staff' => [
+      'url' => 'staff',
+      'component' => 'appui-hr-tab-staff',
       'icon' => 'nf nf-oct-organization',
-      'title' => _('Employees list'),
+      'title' => _('Staff list'),
       'bcolor' => 'sandybrown',
       'fcolor' => 'white',
     ],

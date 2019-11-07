@@ -49,7 +49,7 @@ if ( !empty($model->data['data']['start']) && !empty($model->data['data']['end']
   else {
     $year = date('Y', strtotime($model->data['data']['start']));
     $filename = date('Y-m', strtotime($model->data['data']['start'])).'.json';
-    $path = $model->content_path()."/hr/planning/$year/";
+    $path = $model->data_path('appui-hr')."planning/$year/";
     if ( \bbn\file\dir::create_path($path) ){
       if ( !is_file($path.$filename) || !empty($model->data['data']['force']) ){
         if ( $liens = $model->db->rselect_all([

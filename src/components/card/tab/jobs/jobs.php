@@ -1,4 +1,4 @@
-<bbn-table source="data/hr/card/jobs"
+<bbn-table :source="card.root + 'data/card/jobs'"
            :filterable="true"
            :pageable="true"
            :sortable="true"

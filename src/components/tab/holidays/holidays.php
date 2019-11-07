@@ -1,22 +1,22 @@
-<div class="ami-hr-tab-holidays">
+<div class="appui-hr-tab-holidays">
   <bbn-tabnav class="bbn-overlay">
     <bbns-container url="planning"
               :static="true"
               :load="false"
               icon="nf nf-oct-calendar"
-              title="<?=_('Planning des vacances')?>"
+              title="<?=_('Holidays Planning')?>"
               :notext="true"
-              component="ami-hr-tab-holidays-planning"
+              component="appui-hr-tab-holidays-planning"
     ></bbns-container>
     <bbn-container url="list"
               :static="true"
               :load="false"
               icon="nf nf-fa-list"
-              title="<?=_('Liste des vacances')?>"
+              title="<?=_('Holidays List')?>"
               :notext="true"
     >
       <bbn-table ref="table"
-                source="data/hr/holidays"
+                :source="root + 'data/holidays'"
                 class="bbn-100"
                 :sortable="true"
                 :pageable="true"
@@ -31,17 +31,17 @@
                   dir: 'ASC'
                   }]"
       >
-        <bbns-column title="<?=_('Nom')?>"
+        <bbns-column title="<?=_('Name')?>"
                       field="id_employe"
-                      :render="renderEmploye"
+                      :render="renderName"
         ></bbns-column>
-        <bbns-column title="<?=_('Du')?>"
+        <bbns-column title="<?=_('From')?>"
                       field="start"
                       type="date"
                       cls="bbn-c"
                       width="100"
         ></bbns-column>
-        <bbns-column title="<?=_('Au')?>"
+        <bbns-column title="<?=_('To')?>"
                       field="end"
                       type="date"
                       cls="bbn-c"
@@ -53,9 +53,9 @@
                       cls="bbn-c"
                       width="200"
         ></bbns-column>
-        <bbns-column title="<?=_('Remplaçant(s)')?>"
+        <bbns-column title="<?=_('Substitute(s)')?>"
                      field="employes"
-										 :render="renderEmployes"
+										 :render="renderSub"
         ></bbns-column>
         <bbns-column title="<?=_('Note')?>"
                       field="note"
@@ -64,12 +64,7 @@
                       :render="renderNote"
                       :width="50"
         ></bbns-column>
-        <bbns-column :buttons="[{
-                        text: '<?=_("Regarde la carte d\'employé")?>',
-                        icon: 'nf nf-fa-address_card',
-                        notext: true,
-                        action: openCard
-                      }]"
+        <bbns-column :buttons="buttons"
                       :width="60"
                       cls="bbn-c"
         ></bbns-column>
