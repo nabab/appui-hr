@@ -6,9 +6,9 @@ if ( !empty($model->data['id']) ){
   }
 
   $tabs = [];
-  if ( $tabs_perm = $model->inc->perm->get_all('hr/page/card/tabs') ){
+  if ( $tabs_perm = $model->inc->perm->get_all(APPUI_HR_ROOT . '/page/card/tabs') ){
     foreach ( $tabs_perm as $tab ){
-      $tabs[$tab['code']] = $model->inc->perm->has($tab['id']) ? true : false;
+      $tabs[$tab['code']] = !!$model->inc->perm->has($tab['id']);
     }
   }
 
