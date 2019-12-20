@@ -7,10 +7,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-11-12 12:33+0100\n"
-"POT-Revision-Date: 2019-11-12 12:33+0100\n"
+"POT-Creation-Date: 2019-11-12 15:49+0100\n"
+"POT-Revision-Date: 2019-11-12 15:49+0100\n"
 "Language: en\n"
-"X-Domain: appui-hr1\n"
+"X-Domain: appui-hr2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: /home/mirko/_lib/vendor/bbn/appui-hr/src/components/card/card.php

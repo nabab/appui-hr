@@ -13,7 +13,6 @@
         calendarSelected: false,
         events: [],
         isYearMode: this.yearMode,
-        fromJSON: false,
         lastEdit: '',
         isBefore: false,
         root: appui.plugins['appui-hr'] + '/'
@@ -111,13 +110,13 @@
       },
       nextYear(){
         if ( this.isYearMode ){
-          this.currentYear = moment(this.currentYear).add(1, 'Y').format('YYYY');
+          this.currentYear = moment(this.currentYear, 'YYYY').add(1, 'Y').format('YYYY');
           bbn.fn.each(this.calendars, c => c.next(true));
         }
       },
       prevYear(){
         if ( this.isYearMode ){
-          this.currentYear = moment(this.currentYear).subtract(1, 'Y').format('YYYY');
+          this.currentYear = moment(this.currentYear, 'YYYY').subtract(1, 'Y').format('YYYY');
           bbn.fn.each(this.calendars, c => c.prev(true));
         }
       },
@@ -125,37 +124,8 @@
         if ( d.success ){
           let cal = this.getRef('calendar')
           cal.$set(cal.data, 'force', false);
-          this.fromJSON = !!d.json;
-          if ( this.fromJSON ){
-            this.$set(this, 'selected', '');
-            this.$set(this, 'events', []);
-            this.$set(this, 'lastEdit', moment.unix(d.json).format('DD/MM/YYYY HH:mm:ss'));
-          }
-          else {
-            this.$set(this, 'lastEdit', '');
-          }
+          this.$set(this, 'lastEdit', '');
         }
-      },
-      refreshJSON(){
-        this.confirm(bbn._('Are you sure you want to regenerate the schema?'), () => {
-          let cal = this.getRef('calendar')
-          cal.$set(cal.data, 'force', true);
-          cal.loadDays();
-        });
-      },
-      approveJSON(){
-        this.confirm(bbn._('Are you sure you want to approve this schema for this month?'), () => {
-          let cal = this.getRef('calendar')
-          this.post(this.root + 'actions/planning/approve', {
-            year: cal.currentDate.format('YYYY'),
-            month: cal.currentDate.format('MM')
-          }, d => {
-            if ( d.success ){
-              this.$set(this, 'events', []);
-              cal.loadDays();
-            }
-          })
-        });
       },
       setIsBefore(ev, cal){
         this.$set(this, 'isBefore', !!moment(cal.currentDate.format('YYYY-MM-01')).isBefore(moment().format('YYYY-MM-01')));
