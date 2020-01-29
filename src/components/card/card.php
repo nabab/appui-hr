@@ -7,7 +7,7 @@
                   :notext="true"
                   :load="false"
                   :source="source"
-                  component="appui-hr-card-tab-home"
+                  :component="isObject(source.tabs.home) && source.tabs.home.component ? source.tabs.home.component : 'appui-hr-card-tab-home'"
                   :static="true"
                   title="<?=_('Home')?>"
   ></bbns-container>
@@ -17,7 +17,7 @@
                   :notext="true"
                   :load="false"
                   :source="source"
-                  component="appui-hr-card-tab-jobs"
+                  :component="isObject(source.tabs.jobs) && source.tabs.jobs.component ? source.tabs.jobs.component : 'appui-hr-card-tab-jobs'"
                   :static="true"
                   title="<?=_('List of working days')?>"
   ></bbns-container>

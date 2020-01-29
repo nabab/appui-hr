@@ -32,7 +32,7 @@
           width: 600,
           component: 'ami-hr-form-staff',
           source: {
-            row: this.source
+            row: this.source.info
           }
         });
       }

@@ -1,6 +1,6 @@
 <div class="appui-hr-card-widget-upcoming">
   <bbn-table :source="source.upcoming"
-             :pageable="true"
+             :pageable="false"
 						 :scrollable="false"
              :show-limit="false"
              :show-total-items="false"

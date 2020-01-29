@@ -4,10 +4,12 @@ if ( !empty($model->data['data']) ){
   $model->data = $model->data['data'];
 }
 $where = [];
-$employe_filter = [
-  'field' => 'bbn_hr_staff_events.id_employe',
-  'value' => $model->data['employe']
-];
+if ( !empty($model->data['staff']) ){
+  $employe_filter = [
+    'field' => 'bbn_hr_staff_events.id_staff',
+    'value' => $model->data['staff']
+  ];
+}
 
 if ( !empty($model->data['day']) ){
   $where = [
@@ -21,7 +23,7 @@ if ( !empty($model->data['day']) ){
       'value' => $model->data['day']
     ]]
   ];
-  if ( !empty($model->data['employe']) ){
+  if ( !empty($model->data['staff']) ){
     $where['conditions'][] = $employe_filter;
   }
 }
@@ -78,7 +80,7 @@ else if ( !empty($model->data['week']) && !empty($model->data['start']) && !empt
       ]]
     ]]
   ]; 
-  if ( !empty($model->data['employe']) ){
+  if ( !empty($model->data['staff']) ){
     $where['conditions'][0]['conditions'][] = $employe_filter;
     $where['conditions'][1]['conditions'][] = $employe_filter;
     $where['conditions'][2]['conditions'][] = $employe_filter;
@@ -91,18 +93,18 @@ else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty
     $model->data['start'],
     $model->data['end'],  
   ];
-  if ( !empty($model->data['employe']) ){
-    $args[] = hex2bin($model->data['employe']);
+  if ( !empty($model->data['staff']) ){
+    $args[] = hex2bin($model->data['staff']);
   }
   return [
     'data' => $model->db->get_rows("
       SELECT bbn_events.id, bbn_events.id_type, bbn_events.`start`, bbn_events.`end`,
-        bbn_hr_staff_events.id_employe, bbn_hr_staff_events.note, bbn_people.fullname AS employe
+        bbn_hr_staff_events.id_staff, bbn_hr_staff_events.note, bbn_people.fullname AS staff
       FROM bbn_events
         JOIN bbn_hr_staff_events
           ON bbn_hr_staff_events.id_event = bbn_events.id
         JOIN bbn_hr_staff
-          ON bbn_hr_staff.id = bbn_hr_staff_events.id_employe
+          ON bbn_hr_staff.id = bbn_hr_staff_events.id_staff
         JOIN bbn_people
           ON bbn_people.id = bbn_hr_staff.id
         JOIN bbn_history_uids AS h1
@@ -113,7 +115,7 @@ else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty
           AND h2.bbn_active = 1
       WHERE ((bbn_events.`start` BETWEEN ? AND ?) 
         OR (bbn_events.`end` BETWEEN ? AND ?))".
-        (!empty($model->data['employe']) ? " AND bbn_hr_staff.id = ?" : ''),
+        (!empty($model->data['staff']) ? " AND bbn_hr_staff.id = ?" : ''),
       ...$args
     )
   ];
@@ -128,9 +130,9 @@ if ( !empty($where) ){
         'bbn_events.id_type',
         'bbn_events.start',
         'bbn_events.end',
-        'bbn_hr_staff_events.id_employe',
+        'bbn_hr_staff_events.id_staff',
         'bbn_hr_staff_events.note',
-        'employe' => 'bbn_people.fullname'
+        'staff' => 'bbn_people.fullname'
       ],
       'join' => [[
         'table' => 'bbn_hr_staff_events',
@@ -144,7 +146,7 @@ if ( !empty($where) ){
         'table' => 'bbn_hr_staff',
         'on' => [
           'conditions' => [[
-            'field' => 'bbn_hr_staff_events.id_employe',
+            'field' => 'bbn_hr_staff_events.id_staff',
             'exp' => 'bbn_hr_staff.id'
           ]]
         ]

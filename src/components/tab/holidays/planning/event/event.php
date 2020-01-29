@@ -1,6 +1,6 @@
 <div class="bbn-spadded bbn-widget">
   <div class="bbn-flex-width">
-    <bbn-initial :user-name="source.employe"
+    <bbn-initial :user-name="getStaff(source.id_staff)"
                  :width="50"
                  font-size="1.5em"
     ></bbn-initial>
@@ -16,7 +16,7 @@
       </div>
       <div>
         <i class="nf nf-fa-user_o"></i>
-        <strong><span class="bbn-hsmargin" v-text="source.employe"></span></strong>
+        <strong><span class="bbn-hsmargin" v-text="getStaff(source.id_staff)"></span></strong>
       </div>
       <div v-if="source.note">
         <i class="nf nf-fa-comment_o"></i>
@@ -26,15 +26,15 @@
     <div class="bbn-xl bbn-vmiddle">
       <i class="nf nf-fa-address_card_o bbn-p"
          @click="openCard"
-         title="<?=_("Regarde la carte d'employé")?>"
+         title="<?=_("Look at the staff card")?>"
       ></i>
       <i class="nf nf-fa-edit bbn-p bbn-hsmargin"
          @click="edit"
-         title="<?=_('Modifier')?>"
+         title="<?=_('Edit')?>"
       ></i>
       <i class="nf nf-fa-trash_o bbn-p"
          @click="remove"
-         title="<?=_('Supprimer')?>"
+         title="<?=_('Delete')?>"
       ></i>
     </div>
   </div>

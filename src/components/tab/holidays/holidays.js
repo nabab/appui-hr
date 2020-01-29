@@ -16,10 +16,10 @@
     methods: {
 			renderSub(row){
 				let ret = '';
-				if ( row.employes && row.employes.length ){
-					let employes = row.employes.split(',');
+				if ( row.substitutes && row.substitutes.length ){
+					let substitutes = row.substitutes.split(',');
 					ret = [];
-					bbn.fn.each(employes, (e, i) => {
+					bbn.fn.each(substitutes, (e, i) => {
 						ret.push(bbn.fn.get_field(appui.app.staff, {value: e}, 'text'));
 					});
 					ret.sort();
@@ -28,20 +28,20 @@
 				return ret;
 			},
       renderName(row){
-        return `<a href="${this.root}page/card/${row.id_employe}">${bbn.fn.get_field(appui.app.staff, 'value', row.id_employe, 'text')}</a>`;
+        return `<a href="${this.root}page/card/${row.id_staff}">${bbn.fn.get_field(appui.app.staff, 'value', row.id_staff, 'text')}</a>`;
       },
       renderNote(row){
         return row.note ? `<i class="nf nf-mdi-comment_outline bbn-large" title="${row.note}"></i>` : '';
       },
       openCard(row){
-        bbn.fn.link(this.root + 'page/card/' + row.id_employe);
+        bbn.fn.link(this.root + 'page/card/' + row.id_staff);
       },
       buttons(row){
         return [[{
-          text: bbn._("Regarde la carte d'employé"),
-          icon: 'fas fa-address-card',
+          text: bbn._("Look at the staff card"),
+          icon: 'nf nf-fa-address_card_o',
           notext: true,
-          command: this.openCard
+          action: this.openCard
         }]]
       }
     }

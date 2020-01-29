@@ -30,24 +30,27 @@
     },
     methods: {
       changeSelected(val, cal){
-        this.$set(this, 'selected', val);
+        if  (val !== this.selected ){
+          this.$set(this, 'selected', val);
+        }
         if ( this.isYearMode ){
           this.calendarSelected = cal;
         }
       },
       addEvent(){
         this.getPopup().open({
-          title: bbn._('Ajouter'),
+          title: bbn._('Add'),
           height: 400,
           width: 600,
-          component: 'ami-hr-form-event',
+          component: 'appui-hr-form-event',
           source: {
             start: moment(this.selected).format('YYYY-MM-DD HH:mm:ss'),
             end: moment(this.selected).format('YYYY-MM-DD 23:59:59'),
-            id_employe: '',
+            id_staff: '',
             id_type: '',
             note: ''
-          }
+          },
+          scrollable: false
         });
       },
       loadEvents(day){
@@ -70,7 +73,7 @@
         let ret = '';
         if ( d.events && d.events.length ){
           bbn.fn.each(d.events, (e, i) => {
-            ret += e.employe + ': ' + bbn.fn.get_field(appui.options.hr.absences, 'value', e.id_type, 'text');
+            ret += e.staff + ': ' + bbn.fn.get_field(appui.options.hr.absences, 'value', e.id_type, 'text');
             if ( d.events[i + 1] ){
               ret += "\n";
             }

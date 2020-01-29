@@ -3,7 +3,7 @@
 >
   <bbn-scroll>
     <bbn-initial v-for="(ev, i) in source.events" 
-                 :user-name="getEmploye(ev.employe)"
+                 :user-name="getStaff(ev.id_staff)"
                  :key="i"
                  class="bbn-xsmargin"
                  :width="20"
@@ -13,7 +13,9 @@
 <div v-else>
   <bbn-scroll>
     <ul class="bbn-ul">
-      <li v-for="ev in source.events">
+      <li v-for="(ev, i) in source.events"
+          :key="i"
+      >
         <component :is="$options.components.item" :source="ev"></component>
       </li>
     </ul>

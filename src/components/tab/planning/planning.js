@@ -13,12 +13,15 @@
         calendarSelected: false,
         events: [],
         isYearMode: this.yearMode,
-        lastEdit: '',
-        isBefore: false,
-        root: appui.plugins['appui-hr'] + '/'
+        root: appui.plugins['appui-hr'] + '/',
+        staff: appui.app.staff,
+        currentStaff: null
       }
     },
     computed: {
+      hr(){
+        return this.closest('appui-hr-main');
+      },
       dayText(){
         return this.selected ? moment(this.selected).format('dddd	DD MMMM YYYY') : '';
       },
@@ -27,9 +30,32 @@
           return this.findAll('bbn-calendar');
         }
         return [this.calendarSelected];
+      },
+      currentFilters(){
+        return {
+          logic: 'AND',
+          conditions: this.currentStaff ? [{
+            field: 'id_staff',
+            operator: '=',
+            value: this.currentStaff
+          }] : []
+        }
       }
     },
     methods: {
+      exportExcel(){
+        this.post_out(this.root + 'actions/planning/excel', {
+          start: this.calendarSelected.currentDate.format(bbn.fn.isFunction(this.calendarSelected.currentCfg.startFormat) ?
+            this.calendarSelected.currentCfg.startFormat() :
+            this.calendarSelected.currentCfg.startFormat
+          ),
+          end: this.calendarSelected.currentDate.format(bbn.fn.isFunction(this.calendarSelected.currentCfg.endFormat) ?
+            this.calendarSelected.currentCfg.endFormat() :
+            this.calendarSelected.currentCfg.endFormat
+          ),
+          filters: this.currentFilters
+        })
+      },
       changeSelected(val, cal){
         this.$set(this, 'selected', val);
         if ( this.isYearMode ){
@@ -45,26 +71,23 @@
         }
         if ( day ){
           this.isLoading = true;
-          this.post(this.root + 'data/planning/day', {day: day}, (d) => {
+          this.post(this.root + 'data/planning/day', {day: day, filters: this.currentFilters}, (d) => {
             if ( d.data ){
               d.data = d.data.map((e, i) => {
                 e.hour = moment(e.end).diff(moment(e.start), 'minutes') / 60;
-                e.nom = bbn.fn.get_field(appui.app.staff, 'value', e.id_employe, 'text');
+                e.nom = bbn.fn.get_field(appui.app.staff, 'value', e.id_staff, 'text');
                 return e;
               });
               this.$set(this, 'events', d.data);
-              this.$nextTick(() => {
-                this.getRef('events').getRef('table').updateData();
-              });
             }
             else {
               this.$set(this, 'events', []);
-              this.$nextTick(() => {
-                if ( this.getRef('events') ){
-                  this.getRef('events').getRef('table').updateData();
-                }
-              });
             }
+            this.$nextTick(() => {
+              if ( this.getRef('events') ){
+                this.getRef('events').getRef('table').updateData();
+              }
+            });
           });
         }
       },
@@ -77,11 +100,11 @@
             tmp = [];
         if ( d.events && d.events.length ){
           bbn.fn.each(d.events, (e, i) => {
-            let idx = bbn.fn.search(tmp, 'id', e.id_employe);
+            let idx = bbn.fn.search(tmp, 'id', e.id_staff);
             if ( idx === -1 ){
               tmp.push({
-                id: e.id_employe,
-                nom: bbn.fn.get_field(appui.app.staff, 'value', e.id_employe, 'text'),
+                id: e.id_staff,
+                name: bbn.fn.get_field(appui.app.staff, 'value', e.id_staff, 'text'),
                 hour: moment(e.end).diff(moment(e.start), 'minutes')
               });
             }
@@ -89,9 +112,9 @@
               tmp[idx].hour += moment(e.end).diff(moment(e.start), 'minutes');
             }
           });
-          tmp = bbn.fn.order(tmp, 'nom', 'ASC');
+          tmp = bbn.fn.order(tmp, 'name', 'ASC');
           bbn.fn.each(tmp, (t, i) => {
-            ret += t.nom + ': ' + t.hour/60;
+            ret += t.name + ': ' + t.hour/60;
             if ( tmp[i + 1] ){
               ret += "\n";
             }
@@ -119,16 +142,6 @@
           this.currentYear = moment(this.currentYear, 'YYYY').subtract(1, 'Y').format('YYYY');
           bbn.fn.each(this.calendars, c => c.prev(true));
         }
-      },
-      afterLoadDays(d){
-        if ( d.success ){
-          let cal = this.getRef('calendar')
-          cal.$set(cal.data, 'force', false);
-          this.$set(this, 'lastEdit', '');
-        }
-      },
-      setIsBefore(ev, cal){
-        this.$set(this, 'isBefore', !!moment(cal.currentDate.format('YYYY-MM-01')).isBefore(moment().format('YYYY-MM-01')));
       }
     },
     watch: {
@@ -169,6 +182,15 @@
       },
       yearMode(newVal){
         this.$set(this, 'isYearMode', newVal);
+      },
+      currentFilters(newVal){
+        let table = this.getRef('events').getRef('table');
+        bbn.fn.each(this.calendars, (c) => {
+          c.$set(c, 'currentFilters', newVal);
+        });
+        if ( table ){
+          table.$set(table, 'currentFilters', newVal);
+        }
       }
     }
   }

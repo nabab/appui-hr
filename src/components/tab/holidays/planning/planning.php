@@ -34,6 +34,7 @@
                         :selection="true"
                         v-model="selected"
                         :title-action="changeMode"
+                        @selected="changeSelected"
           ></bbn-calendar>
         </div>
       </div>
@@ -43,7 +44,7 @@
                     :item-details="true"
                     item-component="appui-hr-tab-holidays-planning-day"
                     :extra-items="true"
-                    @mounted="calendarSelected = $refs.calendar"
+                    @hook:mounted="calendarSelected = $refs.calendar"
                     :item-title="getTitle"
                     :date="calendarSelected ? calendarSelected.date : ''"
                     :selection="true"
@@ -53,12 +54,11 @@
     </bbn-pane>
     <bbn-pane :collapsed="!selected">
       <div class="bbn-100 bbn-block bbn-widget bbn-flex-height">
-        <div class="bbn-header bbn-flex-width bbn-spadded">
+        <div class="bbn-header bbn-flex-width bbn-xspadded">
           <bbn-button icon="nf nf-fa-calendar_plus_o"
                       @click="addEvent"
                       title="<?=_('Add')?>"
                       :notext="true"
-                      :disabled="true"
           ></bbn-button>
           <div class="bbn-flex-fill bbn-middle">
             <i class="nf nf-mdi-calendar_today bbn-hsmargin"></i>
@@ -84,7 +84,8 @@
                        height: '1em',
                        width: '2em',
                        border: '1px solid'
-                     }"></div>
+                     }"
+                ></div>
                 <span v-text="absence.text"></span>
               </div>
             </div>

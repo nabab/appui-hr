@@ -2,7 +2,9 @@
   return {
     props: ['source'],
     data(){
-      return {}
+      return {
+        root: appui.plugins['appui-hr'] + '/'
+      }
     },
     computed: {
       sameDay(){
@@ -19,27 +21,31 @@
       }
     },
     methods: {
+      getStaff(id){
+        return bbn.fn.get_field(appui.app.staff, {value: id}, 'text')
+      },
       edit(){
         this.getPopup().open({
-          title: bbn._('Modifier'),
+          title: bbn._('Edit'),
           height: 400,
           width: 600,
-          component: 'ami-hr-form-event',
-          source: this.source
+          component: 'appui-hr-form-event',
+          source: this.source,
+          scrollable: false
         });
       },
       remove(){
-        this.confirm(bbn._('Êtes-vous sûr de bien vouloir supprimer cet élément?'), () => {
-          this.post('actions/hr/holidays/delete', {id: this.source.id}, d => {
+        this.confirm(bbn._('Are you sure you want to delete this item?'), () => {
+          this.post(this.root + 'actions/holidays/delete', {id: this.source.id}, d => {
             if ( d.success ){
-              appui.success(bbn._('Supprimé'));
-              this.closest('ami-hr-tab-holidays-planning').fullRefresh();
+              appui.success(bbn._('Deleted'));
+              this.closest('appui-hr-tab-holidays-planning').fullRefresh();
             }
           })
         });
       },
       openCard(){
-        bbn.fn.link('hr/card/' + this.source.id_employe);
+        bbn.fn.link(this.root + 'page/card/' + this.source.id_staff);
       }
     }
   };

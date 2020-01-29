@@ -3,23 +3,25 @@
     data(){
       return {
         absences: bbn.fn.order(appui.options.hr.absences, 'text', 'ASC'),
-        employees: appui.app.staff,
-        planning: false
+        staff: appui.app.staff,
+        root: appui.plugins['appui-hr'] + '/'
+      }
+    },
+    computed: {
+      planning(){
+        return this.closest('bbn-container').find('appui-hr-tab-holidays-planning');
       }
     },
     methods: {
       afterSubmit(d){
         if ( d.success ){
-          appui.success(bbn._('Enregistré'));
+          appui.success(bbn._('Saved'));
           this.planning.fullRefresh();          
         }
         else {
           appui.error();
         }
       }
-    },
-    mounted(){
-      this.planning = this.closest('bbn-container').find('ami-hr-tab-holidays-planning');
     }
   }
 })();

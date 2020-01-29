@@ -8,6 +8,9 @@
         absences: appui.options.hr.absences,
         root: appui.plugins['appui-hr'] + '/'
       }
+    },
+    methods: {
+      isObject: bbn.fn.isObject
     }
   };
 })();

@@ -6,7 +6,7 @@ if (
   $ok1 = $events->edit($model->data['id'], $model->data);
   $ok2 = $model->db->update('bbn_hr_staff_events', [
     'note' => $model->data['note'],
-    'id_employe' => $model->data['id_employe']
+    'id_staff' => $model->data['id_staff']
   ], [
     'id_event' => $model->data['id']
   ]);

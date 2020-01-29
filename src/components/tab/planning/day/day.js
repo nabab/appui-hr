@@ -6,22 +6,29 @@
       }
     },
     computed: {
-      employes(){
-        let res = [];
+      staff(){
+        let ret = [],
+            tmp = [];
         if ( this.source.events && this.source.events.length ){
-          bbn.fn.each(this.source.events, e => {
-            let n = this.getEmploye(e.id_employe)
-            if ( !res.includes(n) ){
-              res.push(n)
+          bbn.fn.each(this.source.events, (e, i) => {
+            let idx = bbn.fn.search(tmp, 'id', e.id_staff);
+            if ( idx === -1 ){
+              tmp.push({
+                id: e.id_staff,
+                name: bbn.fn.get_field(appui.app.staff, 'value', e.id_staff, 'text'),
+                hour: moment(e.end).diff(moment(e.start), 'minutes')
+              });
+            }
+            else {
+              tmp[idx].hour += moment(e.end).diff(moment(e.start), 'minutes');
             }
           });
+          tmp = bbn.fn.order(tmp, 'name', 'ASC');
+          bbn.fn.each(tmp, (t, i) => {
+            ret.push(t.name + ': ' + t.hour/60);
+          });
         }
-        return res.sort()
-      }
-    },
-    methods: {
-      getEmploye(id){
-        return bbn.fn.get_field(appui.app.staff, {value: id}, 'text')
+        return ret;
       }
     }
   }

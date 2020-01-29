@@ -32,7 +32,11 @@ $ret = [
       'icon' => 'nf nf-mdi-calendar_clock',
       'title' => _('Planning'),
       'bcolor' => 'yellowgreen',
-      'fcolor' => 'white'
+      'fcolor' => 'white',
+      'components' => [
+        'day' => 'appui-hr-tab-planning-day',
+        'events' => 'appui-hr-tab-planning-events'
+      ]
     ],
     'holidays' => [
       'url' => 'holidays',

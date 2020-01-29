@@ -3,9 +3,9 @@
     <span class="label-icon">
       <i class="nf nf-fa-user label-icon"></i>
     </span>
-    <?=_('Employé')?>
+    <?=_('Staff')?>
   </div>
-  <a :href="'hr/card/' + source.id" v-text="employee"></a>
+  <a :href="linkCard" v-text="staff"></a>
  
   <div>
     <span class="label-icon">

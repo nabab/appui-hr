@@ -9,7 +9,7 @@
       }
     },
     methods: {
-      getEmploye(id){
+      getStaff(id){
         return bbn.fn.get_field(appui.app.staff, {value: id}, 'text')
       }
     },
@@ -23,7 +23,7 @@
         template: `
 <div class="bbn-hspadded bbn-vmiddle">
   <div class="bbn-flex-width" style="margin-bottom: .1rem">
-    <bbn-initial :user-name="getEmploye(source.employe)"
+    <bbn-initial :user-name="getStaff(source.id_staff)"
                  :width="20"
     ></bbn-initial>
     <div class="bbn-flex-fill bbn-hsmargin"
@@ -38,8 +38,13 @@
           absence(){
             return bbn.fn.get_field(appui.options.hr.absences, 'value', this.source.id_type, 'text');
           },
-          employe(){
-            return bbn.fn.get_field(appui.app.staff, {value: this.source.employe}, 'text')
+          staff(){
+            return bbn.fn.get_field(appui.app.staff, {value: this.source.staff}, 'text')
+          }
+        },
+        methods: {
+          getStaff(id){
+            return bbn.fn.get_field(appui.app.staff, {value: id}, 'text')
           }
         }
       }

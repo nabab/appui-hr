@@ -9,23 +9,23 @@
   </div>
   <div class="bbn-grid-fields bbn-top-space">
     <label><?=_('Surname')?></label>
-    <div v-text="source.surname"></div>
+    <div v-text="source.info.surname"></div>
     <label><?=_('Name')?></label>
-    <div v-text="source.name"></div>
+    <div v-text="source.info.name"></div>
     <label><?=_('eMail')?></label>
-    <div v-text="source.email"></div>
+    <div v-text="source.info.email"></div>
     <label><?=_('Phone')?></label>
-    <div v-text="source.tel"></div>
+    <div v-text="source.info.tel"></div>
     <label><?=_('Address')?></label>
-    <div v-text="source.adresse"></div>
+    <div v-text="source.info.address"></div>
     <label><?=_('Postal Code')?></label>
-    <div v-text="source.cp"></div>
+    <div v-text="source.info.cp"></div>
     <label><?=_('City')?></label>
-    <div v-text="source.ville"></div>
+    <div v-text="source.info.city"></div>
     <label><?=_('Contact')?></label>
-    <div v-text="source.contact"></div>
+    <div v-text="source.info.contact"></div>
     <label><?=_('Birth')?></label>
-    <div v-text="fdate(source.naissance)"></div>
+    <div v-text="fdate(source.info.dof)"></div>
   </div>
   <div class="bbn-w-100 bbn-top-space">
     <div class="bbn-header bbn-c"><?=_("Today")?></div>
