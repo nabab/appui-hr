@@ -23,7 +23,7 @@
           }
           else if ( this.source.row.id && d.data ){
             let idx = bbn.fn.search(appui.app.staff, 'value', this.source.row.id),
-                idxActive = bbn.fn.search(appui.app.staffActive, 'value', this.source.row.id),
+                idxActive = bbn.fn.search(appui.app.staffActive, 'value', this.source.row.id);
             if ( idx > -1 ){
               appui.$set(appui.app.staff[idx], 'text', this.source.row.surname + ' ' + this.source.row.name);
               appui.$set(appui.app.staff[idx], 'id_user', d.data.id_user);
