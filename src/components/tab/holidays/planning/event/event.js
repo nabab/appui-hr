@@ -22,7 +22,7 @@
     },
     methods: {
       getStaff(id){
-        return bbn.fn.get_field(appui.app.staff, {value: id}, 'text')
+        return bbn.fn.get_field(appui.app.staffActive, {value: id}, 'text')
       },
       edit(){
         this.getPopup().open({

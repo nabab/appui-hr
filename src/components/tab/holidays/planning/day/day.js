@@ -10,7 +10,7 @@
     },
     methods: {
       getStaff(id){
-        return bbn.fn.get_field(appui.app.staff, {value: id}, 'text')
+        return bbn.fn.get_field(appui.app.staffActive, {value: id}, 'text')
       }
     },
     components: {
@@ -39,12 +39,12 @@
             return bbn.fn.get_field(appui.options.hr.absences, 'value', this.source.id_type, 'text');
           },
           staff(){
-            return bbn.fn.get_field(appui.app.staff, {value: this.source.staff}, 'text')
+            return bbn.fn.get_field(appui.app.staffActive, {value: this.source.staff}, 'text')
           }
         },
         methods: {
           getStaff(id){
-            return bbn.fn.get_field(appui.app.staff, {value: id}, 'text')
+            return bbn.fn.get_field(appui.app.staffActive, {value: id}, 'text')
           }
         }
       }

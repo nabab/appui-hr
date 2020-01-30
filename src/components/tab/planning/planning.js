@@ -14,7 +14,7 @@
         events: [],
         isYearMode: this.yearMode,
         root: appui.plugins['appui-hr'] + '/',
-        staff: appui.app.staff,
+        staff: appui.app.staffActive,
         currentStaff: null
       }
     },
@@ -75,7 +75,7 @@
             if ( d.data ){
               d.data = d.data.map((e, i) => {
                 e.hour = moment(e.end).diff(moment(e.start), 'minutes') / 60;
-                e.nom = bbn.fn.get_field(appui.app.staff, 'value', e.id_staff, 'text');
+                e.nom = bbn.fn.get_field(appui.app.staffActive, 'value', e.id_staff, 'text');
                 return e;
               });
               this.$set(this, 'events', d.data);
@@ -104,7 +104,7 @@
             if ( idx === -1 ){
               tmp.push({
                 id: e.id_staff,
-                name: bbn.fn.get_field(appui.app.staff, 'value', e.id_staff, 'text'),
+                name: bbn.fn.get_field(appui.app.staffActive, 'value', e.id_staff, 'text'),
                 hour: moment(e.end).diff(moment(e.start), 'minutes')
               });
             }
@@ -155,7 +155,7 @@
           if ( !oldVal && this.isYearMode ){
             this.$nextTick(() => {
               this.getRef('calendarContainer').find('bbn-scroll').onResize();
-              this.getRef('calendarContainer').find('bbn-scroll').scrollTo(0, this.calendarSelected);              
+              this.getRef('calendarContainer').find('bbn-scroll').scrollTo(0, this.calendarSelected);
             });
           }
         }

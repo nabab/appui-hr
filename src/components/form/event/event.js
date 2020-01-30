@@ -3,7 +3,7 @@
     data(){
       return {
         absences: bbn.fn.order(appui.options.hr.absences, 'text', 'ASC'),
-        staff: appui.app.staff,
+        staff: appui.app.staffActive,
         root: appui.plugins['appui-hr'] + '/'
       }
     },
@@ -16,7 +16,7 @@
       afterSubmit(d){
         if ( d.success ){
           appui.success(bbn._('Saved'));
-          this.planning.fullRefresh();          
+          this.planning.fullRefresh();
         }
         else {
           appui.error();

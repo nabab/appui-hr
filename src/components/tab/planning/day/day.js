@@ -15,7 +15,7 @@
             if ( idx === -1 ){
               tmp.push({
                 id: e.id_staff,
-                name: bbn.fn.get_field(appui.app.staff, 'value', e.id_staff, 'text'),
+                name: bbn.fn.get_field(appui.app.staffActive, 'value', e.id_staff, 'text'),
                 hour: moment(e.end).diff(moment(e.start), 'minutes')
               });
             }

@@ -3,7 +3,7 @@
     props: ['source'],
     data(){
       return {
-        staff: appui.app.staff
+        staff: appui.app.staffActive
       }
     },
     computed: {
@@ -245,7 +245,7 @@
         props: ['source'],
         data(){
           return {
-            staff: appui.app.staff,
+            staff: appui.app.staffActive,
             root: appui.plugins['appui-hr'] + '/',
             frequencies: [{
               text: bbn._('Quotidienne'),

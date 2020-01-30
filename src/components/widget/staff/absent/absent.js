@@ -4,7 +4,7 @@
     data(){
       let type = bbn.fn.get_row(appui.options.hr.absences, 'value', this.source.id_type);
       return {
-        staff: bbn.fn.get_field(appui.app.staff, 'value', this.source.id, 'text'),
+        staff: bbn.fn.get_field(appui.app.staffActive, 'value', this.source.id, 'text'),
         linkCard: appui.plugins['appui-hr'] + '/page/card/' + this.source.id,
         type: type.text,
         color: type.color,
