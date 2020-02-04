@@ -12,7 +12,7 @@ if ( !empty($model->data[$cfg['arch']['users']['id_group']]) ){
     $username .= $model->data['surname'];
   }
 
-  if ( 
+  if (
     isset($model->data[$cfg['arch']['users']['id_group']], $model->data[$cfg['arch']['users']['email']]) &&
     \bbn\str::is_email($model->data[$cfg['arch']['users']['email']])
    ){
@@ -30,7 +30,7 @@ if ( !empty($model->data[$cfg['arch']['users']['id_group']]) ){
       $cfg['arch']['users']['theme'] => 'default'
     ];
 
-    if ( 
+    if (
       !empty($model->data['id_user']) ||
       ($model->data['id_user'] = $model->db->select_one(
         $cfg['table'],
@@ -52,8 +52,8 @@ if ( !empty($model->data[$cfg['arch']['users']['id_group']]) ){
     }
   }
 }
-else if ( 
-  !empty($model->data['id_user']) || 
+else if (
+  !empty($model->data['id_user']) ||
   (
     !empty($model->data[$cfg['arch']['users']['email']]) &&
     ($model->data['id_user'] = $model->db->select_one(
@@ -81,8 +81,8 @@ $ok2 = $tiers->update($model->data['id'], [
 ]);
 
 $ok3 = $model->db->update('bbn_hr_staff', [
-  'id_user' => empty($model->data[$cfg['arch']['users']['id_group']]) ? 
-    NULL : 
+  'id_user' => empty($model->data[$cfg['arch']['users']['id_group']]) ?
+    NULL :
     $model->data['id_user']
 ], [
   'id' => $model->data['id']
@@ -92,8 +92,8 @@ if ( $ok || $ok2 || $ok3 ){
   return [
     'success' => true,
     'data' => [
-      'id_user' => empty($model->data[$cfg['arch']['users']['id_group']]) ? 
-        null : 
+      'id_user' => empty($model->data[$cfg['arch']['users']['id_group']]) ?
+        null :
         $model->data['id_user']
     ]
   ];

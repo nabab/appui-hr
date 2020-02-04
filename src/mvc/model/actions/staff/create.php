@@ -1,7 +1,7 @@
 <?php
 $cfg = $model->inc->user->get_class_cfg();
 
-if ( 
+if (
   empty($model->data[$cfg['arch']['users']['id']]) &&
  !empty($model->data['surname']) &&
  ($tiers = new \amiral\tiers($model->db))
@@ -14,7 +14,7 @@ if (
     $username .= $model->data['surname'];
   }
 
-  if ( 
+  if (
     isset($model->data[$cfg['arch']['users']['id_group']], $model->data[$cfg['arch']['users']['email']]) &&
     \bbn\str::is_email($model->data[$cfg['arch']['users']['email']])
   ){
@@ -31,8 +31,8 @@ if (
       $cfg['arch']['users']['fonction'] => '',
       $cfg['arch']['users']['theme'] => 'default'
     ];
-    if ( 
-      ($manager = $model->inc->user->get_manager()) && 
+    if (
+      ($manager = $model->inc->user->get_manager()) &&
       ($user = $manager->add($data_user)) &&
       !empty($user[$cfg['arch']['users']['id']])
     ){
@@ -40,8 +40,8 @@ if (
     }
   }
 
-  if ( 
-    ($id_employe = $tiers->add([
+  if (
+    ($id_staff = $tiers->add([
       'surname' => $model->data['surname'],
       'name' => $model->data['name'],
       'tel' => $model->data['tel'],
@@ -54,16 +54,16 @@ if (
       'contact' => $model->data['contact']
     ], true)) &&
     $model->db->insert('bbn_hr_staff', [
-      'id' => $id_employe,
+      'id' => $id_staff,
       'id_user' => !empty($model->data['id_group']) && !empty($user[$cfg['arch']['users']['id']]) ?
         $user[$cfg['arch']['users']['id']] :
         NULL
-    ]) 
+    ])
   ){
     return [
       'success' => true,
       'data' => [
-        'id_employe' => $id_employe,
+        'id_staff' => $id_staff,
         'id_user' => !empty($model->data['id_group']) && !empty($user[$cfg['arch']['users']['id']]) ?
           $user[$cfg['arch']['users']['id']] :
           null

@@ -1,5 +1,5 @@
 <?php
-if ( 
+if (
   !empty($model->data['id']) &&
   ($manager = $model->inc->user->get_manager()) &&
   ($cfg = $model->inc->user->get_class_cfg())
