@@ -1,7 +1,7 @@
 <div class="appui-hr-tab-planning bbn-overlay">
   <div class="bbn-flex-height">
     <div>
-      <div class="bbn-header bbn-spadded bbn-flex-width">
+      <div class="bbn-header bbn-spadded bbn-flex-width bbn-no-border-bottom">
         <div class="bbn-flex-fill">
           <bbn-button icon="nf nf-fa-file_excel_o"
                       @click="exportExcel"

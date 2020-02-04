@@ -14,7 +14,9 @@
         calendarSelected: false,
         events: [],
         isYearMode: this.yearMode,
-        root: appui.plugins['appui-hr'] + '/'
+        root: appui.plugins['appui-hr'] + '/',
+        staff: appui.app.staffActive,
+        currentStaff: null
       }
     },
     computed: {
@@ -26,9 +28,32 @@
           return this.findAll('bbn-calendar');
         }
         return [this.calendarSelected];
+      },
+      currentFilters(){
+        return {
+          logic: 'AND',
+          conditions: this.currentStaff ? [{
+            field: 'id_staff',
+            operator: '=',
+            value: this.currentStaff
+          }] : []
+        }
       }
     },
     methods: {
+      exportExcel(){
+        this.post_out(this.root + 'actions/planning/excel', {
+          start: this.calendarSelected.currentDate.format(bbn.fn.isFunction(this.calendarSelected.currentCfg.startFormat) ?
+            this.calendarSelected.currentCfg.startFormat() :
+            this.calendarSelected.currentCfg.startFormat
+          ),
+          end: this.calendarSelected.currentDate.format(bbn.fn.isFunction(this.calendarSelected.currentCfg.endFormat) ?
+            this.calendarSelected.currentCfg.endFormat() :
+            this.calendarSelected.currentCfg.endFormat
+          ),
+          filters: this.currentFilters
+        })
+      },
       changeSelected(val, cal){
         if  (val !== this.selected ){
           this.$set(this, 'selected', val);
@@ -60,7 +85,11 @@
         if ( day ){
           this.post(this.root + 'data/events', {day: day}, (d) => {
             if ( d.data ){
+              let list = this.getRef('events');
               this.$set(this, 'events', d.data);
+              if ( list ){
+                list.updateData();
+              }
             }
           });
         }
@@ -111,7 +140,7 @@
           if ( !oldVal && this.isYearMode ){
             this.$nextTick(() => {
               this.getRef('calendarContainer').find('bbn-scroll').onResize();
-              this.getRef('calendarContainer').find('bbn-scroll').scrollTo(0, this.calendarSelected);              
+              this.getRef('calendarContainer').find('bbn-scroll').scrollTo(0, this.calendarSelected);
             });
           }
         }
@@ -133,6 +162,15 @@
       }, */
       yearMode(newVal){
         this.$set(this, 'isYearMode', newVal);
+      },
+      currentFilters(newVal){
+        let list = this.getRef('events');
+        bbn.fn.each(this.calendars, (c) => {
+          c.$set(c, 'currentFilters', newVal);
+        });
+        if ( list ){
+          list.$set(list, 'currentFilters', newVal);
+        }
       }
     }
   }

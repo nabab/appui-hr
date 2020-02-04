@@ -37,9 +37,17 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
         'value' => 1
       ]]
     ]
-  ]]
+  ]],
+  'map' => [
+    'callable' => function(&$row, $idx, $par){
+      $row['id_group'] = $par['groups'][$row['id_group']];
+    },
+    'params' => [
+      'groups' => $model->db->select_all_by_keys('bbn_users_groups', ['id', 'group'])
+    ]
+  ]
 ]);
 
 if ( $grid->check() ){
-  return $grid->get_datatable(true);
+  return $grid->get_excel() ? $grid->to_excel() : $grid->get_datatable(true);
 }

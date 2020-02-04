@@ -9,11 +9,11 @@
                     component="appui-hr-tab-holidays-planning"
     ></bbns-container>
     <bbn-container url="list"
-                  :static="true"
-                  :load="false"
-                  icon="nf nf-fa-list"
-                  title="<?=_('Holidays List')?>"
-                  :notext="true"
+                   :static="true"
+                   :load="false"
+                   icon="nf nf-fa-list"
+                   title="<?=_('Holidays List')?>"
+                   :notext="true"
     >
       <bbn-table ref="table"
                 :source="root + 'data/holidays'"
@@ -30,6 +30,11 @@
                   field: 'end',
                   dir: 'ASC'
                 }]"
+                :toolbar="[{
+                  text: '<?=_('Excel')?>',
+                  icon: 'nf nf-fa-file_excel_o',
+                  action: 'excel'
+                }]"
       >
         <bbns-column title="<?=_('Name')?>"
                      field="id_staff"
@@ -40,12 +45,18 @@
                      type="date"
                      cls="bbn-c"
                      width="100"
+                     :export="{
+                       format: 'Y-m-d'
+                     }"
         ></bbns-column>
         <bbns-column title="<?=_('To')?>"
                      field="end"
                      type="date"
                      cls="bbn-c"
                      width="100"
+                     :export="{
+                       format: 'Y-m-d'
+                     }"
         ></bbns-column>
         <bbns-column title="<?=_('Type')?>"
                      field="id_type"
@@ -54,8 +65,8 @@
                      width="200"
         ></bbns-column>
         <bbns-column title="<?=_('Substitute(s)')?>"
-                    field="substitutes"
-									 :render="renderSub"
+                     field="substitutes"
+									   :render="renderSub"
         ></bbns-column>
         <bbns-column title="<?=_('Note')?>"
                      field="note"

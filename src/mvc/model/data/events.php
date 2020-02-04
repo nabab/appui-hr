@@ -1,11 +1,18 @@
 <?php
 /* @var \bbn\mvc\model $model */
+if (
+  !empty($model->data['filters']) &&
+  !empty($model->data['filters']['conditions']) &&
+  (($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== false)
+){
+  $model->data['data']['staff'] = $model->data['filters']['conditions'][$idx]['value'];
+}
 if ( !empty($model->data['data']) ){
   $model->data = $model->data['data'];
 }
 $where = [];
 if ( !empty($model->data['staff']) ){
-  $employe_filter = [
+  $staff_filter = [
     'field' => 'bbn_hr_staff_events.id_staff',
     'value' => $model->data['staff']
   ];
@@ -24,7 +31,7 @@ if ( !empty($model->data['day']) ){
     ]]
   ];
   if ( !empty($model->data['staff']) ){
-    $where['conditions'][] = $employe_filter;
+    $where['conditions'][] = $staff_filter;
   }
 }
 else if ( !empty($model->data['week']) && !empty($model->data['start']) && !empty($model->data['end']) ){
@@ -81,9 +88,9 @@ else if ( !empty($model->data['week']) && !empty($model->data['start']) && !empt
     ]]
   ]; 
   if ( !empty($model->data['staff']) ){
-    $where['conditions'][0]['conditions'][] = $employe_filter;
-    $where['conditions'][1]['conditions'][] = $employe_filter;
-    $where['conditions'][2]['conditions'][] = $employe_filter;
+    $where['conditions'][0]['conditions'][] = $staff_filter;
+    $where['conditions'][1]['conditions'][] = $staff_filter;
+    $where['conditions'][2]['conditions'][] = $staff_filter;
   }
 }
 else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty($model->data['end']) ){
@@ -91,7 +98,7 @@ else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty
     $model->data['start'],
     $model->data['end'],
     $model->data['start'],
-    $model->data['end'],  
+    $model->data['end']
   ];
   if ( !empty($model->data['staff']) ){
     $args[] = hex2bin($model->data['staff']);
@@ -113,7 +120,7 @@ else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty
         JOIN bbn_history_uids AS h2
           ON h2.bbn_uid = bbn_people.id
           AND h2.bbn_active = 1
-      WHERE ((bbn_events.`start` BETWEEN ? AND ?) 
+      WHERE ((bbn_events.`start` BETWEEN ? AND ?)
         OR (bbn_events.`end` BETWEEN ? AND ?))".
         (!empty($model->data['staff']) ? " AND bbn_hr_staff.id = ?" : ''),
       ...$args

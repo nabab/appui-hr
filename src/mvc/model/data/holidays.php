@@ -2,12 +2,12 @@
 $grid = new \bbn\appui\grid($model->db, $model->data, [
   'table' => 'bbn_people',
   'fields' => [
-    'id_employe' => 'bbn_people.id',
+    'id_staff' => 'bbn_people.id',
     'bbn_events.start',
     'bbn_events.end',
     'bbn_events.id_type',
     'bbn_hr_staff_events.note',
-		'employes' => "GROUP_CONCAT(DISTINCT LOWER(HEX(plan.id_employe)) SEPARATOR ',')"
+		'substitutes' => "GROUP_CONCAT(DISTINCT LOWER(HEX(plan.id_staff)) SEPARATOR ',')"
   ],
   'join' => [[
     'table' => 'bbn_hr_staff',
@@ -22,7 +22,7 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
     'on' => [
       'conditions' => [[
         'field' => 'bbn_hr_staff.id',
-        'exp' => 'bbn_hr_staff_events.id_employe'
+        'exp' => 'bbn_hr_staff_events.id_staff'
       ]]
     ]
   ], [
@@ -34,48 +34,35 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
       ], [
         'field' => 'bbn_events.end',
         'operator' => '>=',
-        'value' => date('Y-m-d H:i:s')
+        'value' => date('Y-01-01 00:00:00')
       ]]
     ]
   ], [
-		'table' => 'bbn_events',
-		'type' => 'left',
-		'alias' => 'events',
-		'on' => [
-			'conditions' => [[
-				'field' => 'events.start',
-				'operator' => '>=',
-				'exp' => 'bbn_events.start'
-			], [
-				'field' => 'events.start',
-				'operator' => '<=',
-				'exp' => 'bbn_events.end'
-			], [
-				'field' => 'events.id_type',
-				'value' => $model->inc->options->from_code('wp', 'events', 'appui')
-			]]
-		]
-	], [
-		'table' => 'amiral_planning',
+		'table' => 'bbn_hr_planning',
 		'type' => 'left',
 		'on' => [
 			'conditions' => [[
-				'field' => 'amiral_planning.id_event',
-				'exp' => 'events.id'
-			], [
-				'field' => 'amiral_planning.id_employe',
+				'field' => 'bbn_hr_planning.id_staff',
 				'exp' => 'bbn_people.id'
 			]]
 		]
 	], [
-		'table' => 'amiral_planning',
+		'table' => 'bbn_hr_planning',
 		'type' => 'left',
 		'alias' => 'plan',
 		'on' => [
 			'conditions' => [[
-				'field' => 'amiral_planning.id',
+				'field' => 'bbn_hr_planning.id',
 				'exp' => 'plan.id_alias'
-			]]
+      ], [
+        'field' => 'plan.alias',
+        'operator' => '>=',
+        'exp' => 'bbn_events.start'
+      ], [
+        'field' => 'plan.alias',
+        'operator' => '<=',
+        'exp' => 'bbn_events.end'
+      ]]
 		]
 	]],
   'filters' => [
@@ -84,21 +71,54 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
       'conditions' => [[
         'field' => 'bbn_events.start',
         'operator' => '<=',
-        'value' => date('Y-m-d 00:00:00')
+        'value' => date('Y-01-01 00:00:00')
       ], [
         'field' => 'bbn_events.end',
         'operator' => '>=',
-        'value' => date('Y-m-d 23:59:59')
+        'value' => date('Y-12-31 23:59:59')
       ]]
     ], [
 			'field' => 'bbn_events.start',
 			'operator' => '>',
-			'value' => date('Y-m-d 00:00:00')
+			'value' => date('Y-01-01 00:00:00')
 		]]
   ],
-	'group_by' => ['bbn_events.id']
+  'group_by' => ['bbn_events.id'],
+  'map' => [
+    'callable' => function(&$row, $idx, $par){
+      $row['id_staff'] = $par['staff'][$row['id_staff']];
+      $row['id_type'] = $par['types'][$row['id_type']];
+      $sub = '';
+      if ( !empty($row['substitutes']) ){
+        $ar = explode(',', $row['substitutes']);
+        foreach ( $ar as $i => $s ){
+          $sub .= $par['staff'][$s];
+          if ( !empty($ar[$i+1]) ){
+            $sub .= PHP_EOL;
+          }
+        }
+      }
+      $row['substitutes'] = $sub;
+    },
+    'params' => [
+      'staff' => $model->db->select_all_by_keys([
+        'table' => 'bbn_people',
+        'fields' => ['id', 'fullname'],
+        'join' => [[
+          'table' => 'bbn_history_uids',
+          'on' => [
+            'conditions' => [[
+              'field' => 'bbn_people.id',
+              'exp' => 'bbn_history_uids.bbn_uid'
+            ]]
+          ]
+        ]]
+      ]),
+      'types' => $model->inc->options->options('absences', 'hr', 'appui')
+    ]
+  ]
 ]);
 
 if ( $grid->check() ){
-  return $grid->get_datatable(true);
+  return $grid->get_excel() ? $grid->to_excel() : $grid->get_datatable(true);
 }

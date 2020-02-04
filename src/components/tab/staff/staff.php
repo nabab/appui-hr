@@ -1,14 +1,17 @@
 <div class="appui-hr-tab-staff">
   <bbn-table ref="table"
              :source="root + '/data/staff'"
-             class="bbn-100"
              :sortable="true"
              :pageable="true"
              :toolbar="[{
                text: '<?=_('Add')?>',
                action: insert,
                icon: 'nf nf-fa-plus'
-             }]"
+             }, {
+              text: '<?=_('Excel')?>',
+              icon: 'nf nf-fa-file_excel_o',
+              action: 'excel'
+            }]"
              editor="appui-hr-form-staff"
              :editable="true"
              :filterable="true"
@@ -19,6 +22,9 @@
     <bbns-column field="id"
                   :hidden="true"
                   title="ID"
+                  :export="{
+                    excluded: false
+                  }"
      ></bbns-column>
      <bbns-column field="id_user"
                   :hidden="true"
@@ -38,26 +44,53 @@
      <bbns-column title="<?=_('Address')?>"
                   field="adresse"
                   :hidden="true"
+                  :export="{
+                    excluded: false,
+                    hidden: false
+                  }"
      ></bbns-column>
      <bbns-column title="<?=_('Postal Code')?>"
                   field="cp"
                   :hidden="true"
                   width="100"
+                  :export="{
+                    excluded: false,
+                    hidden: false
+                  }"
      ></bbns-column>
      <bbns-column title="<?=_('City')?>"
                   field="ville"
                   :hidden="true"
+                  :export="{
+                    excluded: false,
+                    hidden: false
+                  }"
      ></bbns-column>
      <bbns-column title="<?=_('Portable')?>"
                   field="tel"
                   :width="200"
                   :hidden="true"
+                  :export="{
+                    excluded: false,
+                    hidden: false,
+                   type: 'string'
+                  }"
      ></bbns-column>
      <bbns-column field="naissance"
                   :hidden="true"
+                  :export="{
+                    excluded: false,
+                    hidden: false,
+                    title: '<?=_('Naissance')?>'
+                  }"
      ></bbns-column>
      <bbns-column field="contact"
                   :hidden="true"
+                  :export="{
+                   excluded: false,
+                    hidden: false,
+                    title: '<?=_('Contact')?>'
+                  }"
      ></bbns-column>
      <bbns-column :buttons="buttons"
                   :width="170"
