@@ -152,7 +152,7 @@
                         v-model="source.row.type"
                         @change="resetRepeat()"
           ></bbn-dropdown>
-          <label v-if="ifVisible('interval')">` + bbn._('Intervalle') + `</label>
+          <label v-if="ifVisible('interval')">` + bbn._('Intervale') + `</label>
           <div v-if="ifVisible('interval')">
             <bbn-numeric v-model="source.row.interval"
                         :min="0"

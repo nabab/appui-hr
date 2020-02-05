@@ -42,7 +42,7 @@ $ret = [
       'url' => 'holidays',
       'component' => 'appui-hr-tab-holidays',
       'icon' => 'nf nf-mdi-beach',
-      'title' => _('Holydas'),
+      'title' => _('Holidays'),
       'bcolor' => 'skyblue',
       'fcolor' => 'white'
     ]
