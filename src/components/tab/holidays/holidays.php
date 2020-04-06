@@ -1,5 +1,8 @@
 <div class="appui-hr-tab-holidays">
-  <bbn-tabnav class="bbn-overlay">
+  <bbn-router class="bbn-overlay"
+              :nav="true"
+              :autoload="false"
+  >
     <bbns-container url="planning"
                     :static="true"
                     :load="false"
@@ -7,6 +10,7 @@
                     title="<?=_('Holidays Planning')?>"
                     :notext="true"
                     component="appui-hr-tab-holidays-planning"
+                    v-if="hr.source.tabs.holidays.tabs.planning"
     ></bbns-container>
     <bbn-container url="list"
                    :static="true"
@@ -14,6 +18,7 @@
                    icon="nf nf-fa-list"
                    title="<?=_('Holidays List')?>"
                    :notext="true"
+                   v-if="hr.source.tabs.holidays.tabs.list"
     >
       <bbn-table ref="table"
                 :source="root + 'data/holidays'"
@@ -81,5 +86,5 @@
         ></bbns-column>
       </bbn-table>
     </bbn-container>
-  </bbn-tabnav>
+  </bbn-router>
 </div>

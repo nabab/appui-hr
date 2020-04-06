@@ -53,18 +53,31 @@ if ( $cfg = $model->get_plugin_model('page') ){
   $ret['tabs'] = empty($cfg['tabs']) ? $ret['tabs'] : \bbn\x::merge_arrays($ret['tabs'], $cfg['tabs']);
 }
 
-if ( 
+if (
   ($tabs_perm = $model->inc->perm->get_all(APPUI_HR_ROOT . '/page')) &&
   (($t = \bbn\x::find($tabs_perm, ['code' => 'tabs'])) !== false) &&
   ($tabs_perm = $model->inc->perm->get_all($tabs_perm[$t]['id']))
 ){
   foreach ( $ret['tabs'] as $code => $tab ){
     $idx = \bbn\x::find($tabs_perm, ['code' => $code]);
-    if ( 
-      (($idx = \bbn\x::find($tabs_perm, ['code' => $code])) === false) ||
+    if (
+      ($idx === false) ||
       !$model->inc->perm->has($tabs_perm[$idx]['id'])
     ){
       unset($ret['tabs'][$code]);
+    }
+    else {
+      if ( !empty($tabs_perm[$idx]['num_children']) ){
+        $subtabs = $model->inc->perm->get_all($tabs_perm[$idx]['id']);
+        foreach ( $subtabs as $subtab ){
+          if ( $model->inc->perm->has($subtab['id']) ){
+            if ( !array_key_exists('tabs', $ret['tabs'][$code]) ){
+              $ret['tabs'][$code]['tabs'] = [];
+            }
+            $ret['tabs'][$code]['tabs'][$subtab['code']] = true;
+          }
+        }
+      }
     }
   }
 }

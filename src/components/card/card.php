@@ -1,5 +1,6 @@
-<bbn-tabnav :scrollable="false"
+<bbn-router :scrollable="false"
             :autoload="false"
+            :nav="true"
 >
   <bbns-container v-if="source.tabs.home"
                   url="home"
@@ -21,4 +22,4 @@
                   :static="true"
                   title="<?=_('List of working days')?>"
   ></bbns-container>
-</bbn-tabnav>
+</bbn-router>

@@ -1,4 +1,5 @@
-<bbn-tabnav :scrollable="true"
+<bbn-router :scrollable="true"
             :autoload="true"
             :source="tabs"
-></bbn-tabnav>
+            :nav="true"
+></bbn-router>

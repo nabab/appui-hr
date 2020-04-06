@@ -50,7 +50,7 @@
                             :item-title="getTitle"
                             :title-action="changeMode"
                             :day-padding="true"
-                            event-icon="nf nf-fa-user"
+                            event-icon="nf nf-mdi-worker"
                             :selection="true"
                             @selected="changeSelected"
                             :filters="currentFilters"

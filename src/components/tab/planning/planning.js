@@ -98,7 +98,7 @@
       getTitle(d) {
         let ret = '',
             tmp = [];
-        if ( d.events && d.events.length ){
+        /* if ( d.events && d.events.length ){
           bbn.fn.each(d.events, (e, i) => {
             let idx = bbn.fn.search(tmp, 'id', e.id_staff);
             if ( idx === -1 ){
@@ -119,7 +119,7 @@
               ret += "\n";
             }
           });
-        }
+        } */
         return ret;
       },
       changeMode(cal){

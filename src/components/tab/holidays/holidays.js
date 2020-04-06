@@ -10,7 +10,8 @@
           }
         }), 'text', 'ASC'),
         absences: appui.options.hr.absences,
-        root: appui.plugins['appui-hr'] + '/'
+        root: appui.plugins['appui-hr'] + '/',
+        hr: this.closest('appui-hr-main')
       }
     },
     methods: {
