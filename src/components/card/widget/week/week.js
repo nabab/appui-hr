@@ -23,7 +23,7 @@
               return (start <= fullDay) && (end >= fullDay);
             });
             if ( tmp.length ){
-              color = bbn.fn.get_field(this.card.absences, 'value', tmp[0].id_type, 'color')
+              color = bbn.fn.getField(this.card.absences, 'color', 'value', tmp[0].id_type)
             }
           }
           return {

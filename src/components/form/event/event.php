@@ -18,6 +18,7 @@
     <div>
       <bbn-datepicker v-model="source.end"
                       value-format="YYYY-MM-DD 23:59:59"
+                      :min="source.start"
       ></bbn-datepicker>
     </div>
     <label><?=_("Type of absence")?></label>

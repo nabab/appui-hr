@@ -102,7 +102,7 @@
         let ret = '';
         if ( d.events && d.events.length ){
           bbn.fn.each(d.events, (e, i) => {
-            ret += e.staff + ': ' + bbn.fn.get_field(appui.options.hr.absences, 'value', e.id_type, 'text');
+            ret += e.staff + ': ' + bbn.fn.getField(appui.options.hr.absences, 'text', 'value', e.id_type);
             if ( d.events[i + 1] ){
               ret += "\n";
             }

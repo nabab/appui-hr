@@ -2,9 +2,9 @@
   return {
     props: ['source'],
     data(){
-      let type = bbn.fn.get_row(appui.options.hr.absences, 'value', this.source.id_type);
+      let type = bbn.fn.getRow(appui.options.hr.absences, 'value', this.source.id_type);
       return {
-        staff: bbn.fn.get_field(appui.app.staffActive, 'value', this.source.id, 'text'),
+        staff: bbn.fn.getField(appui.app.staffActive, 'text', 'value', this.source.id),
         linkCard: appui.plugins['appui-hr'] + '/page/card/' + this.source.id,
         type: type.text,
         color: type.color,

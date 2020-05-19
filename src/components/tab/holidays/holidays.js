@@ -21,7 +21,7 @@
 					let substitutes = row.substitutes.split(',');
 					ret = [];
 					bbn.fn.each(substitutes, (e, i) => {
-						ret.push(bbn.fn.get_field(appui.app.staffActive, {value: e}, 'text'));
+						ret.push(bbn.fn.getField(appui.app.staffActive, 'text', {value: e}));
 					});
 					ret.sort();
 					ret = ret.join('<br>');
@@ -29,7 +29,7 @@
 				return ret;
 			},
       renderName(row){
-        return `<a href="${this.root}page/card/${row.id_staff}">${bbn.fn.get_field(appui.app.staffActive, 'value', row.id_staff, 'text')}</a>`;
+        return `<a href="${this.root}page/card/${row.id_staff}">${bbn.fn.getField(appui.app.staffActive, 'text', 'value', row.id_staff)}</a>`;
       },
       renderNote(row){
         return row.note ? `<i class="nf nf-mdi-comment_outline bbn-large" title="${row.note}"></i>` : '';

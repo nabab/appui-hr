@@ -35,10 +35,10 @@
     },
     methods: {
       getText(id){
-        return bbn.fn.get_field(appui.options.hr.absences, 'value', id, 'text');
+        return bbn.fn.getField(appui.options.hr.absences, 'text', 'value', id);
       },
       getColor(id){
-        return bbn.fn.get_field(appui.options.hr.absences, 'value', id, 'color');
+        return bbn.fn.getField(appui.options.hr.absences, 'color', 'value', id);
       }
     }
   };

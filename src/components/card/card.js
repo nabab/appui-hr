@@ -1,10 +1,10 @@
 (() => {
   return {
     data(){
-      let idUser = bbn.fn.get_field(appui.app.staff, 'value', this.source.id, 'id_user');
+      let idUser = bbn.fn.getField(appui.app.staff, 'id_user', 'value', this.source.id);
       return {
         idUser: idUser,
-        idGroup: idUser ? bbn.fn.get_field(appui.app.users, 'value', idUser, 'id_group') : false,
+        idGroup: idUser ? bbn.fn.getField(appui.app.users, 'id_group', 'value', idUser) : false,
         absences: appui.options.hr.absences,
         root: appui.plugins['appui-hr'] + '/'
       }

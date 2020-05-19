@@ -17,12 +17,12 @@
         return moment(this.source.end).format('DD/MM/YYYY');
       },
       color(){
-        return bbn.fn.get_field(appui.options.hr.absences, 'value', this.source.id_type, 'color');
+        return bbn.fn.getField(appui.options.hr.absences, 'color', 'value', this.source.id_type);
       }
     },
     methods: {
       getStaff(id){
-        return bbn.fn.get_field(appui.app.staffActive, {value: id}, 'text')
+        return bbn.fn.getField(appui.app.staffActive, 'text', {value: id})
       },
       edit(){
         this.getPopup().open({

@@ -10,7 +10,7 @@
     },
     methods: {
       getStaff(id){
-        return bbn.fn.get_field(appui.app.staffActive, {value: id}, 'text')
+        return bbn.fn.getField(appui.app.staffActive, 'text', {value: id})
       }
     },
     components: {
@@ -33,18 +33,18 @@
 </div>`,
         computed: {
           color(){
-            return bbn.fn.get_field(appui.options.hr.absences, 'value', this.source.id_type, 'color');
+            return bbn.fn.getField(appui.options.hr.absences, 'color', 'value', this.source.id_type);
           },
           absence(){
-            return bbn.fn.get_field(appui.options.hr.absences, 'value', this.source.id_type, 'text');
+            return bbn.fn.getField(appui.options.hr.absences, 'text', 'value', this.source.id_type);
           },
           staff(){
-            return bbn.fn.get_field(appui.app.staffActive, {value: this.source.staff}, 'text')
+            return bbn.fn.getField(appui.app.staffActive, 'text', {value: this.source.staff})
           }
         },
         methods: {
           getStaff(id){
-            return bbn.fn.get_field(appui.app.staffActive, {value: id}, 'text')
+            return bbn.fn.getField(appui.app.staffActive, 'text', {value: id})
           }
         }
       }
