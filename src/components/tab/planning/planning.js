@@ -44,7 +44,7 @@
     },
     methods: {
       exportExcel(){
-        this.post_out(this.root + 'actions/planning/excel', {
+        this.postOut(this.root + 'actions/planning/excel', {
           start: this.calendarSelected.currentDate.format(bbn.fn.isFunction(this.calendarSelected.currentCfg.startFormat) ?
             this.calendarSelected.currentCfg.startFormat() :
             this.calendarSelected.currentCfg.startFormat
