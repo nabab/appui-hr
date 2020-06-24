@@ -48,16 +48,19 @@ if ( !empty($model->data['id']) ){
       'staff' => $model->data['id'],
       'start' => date('Y-m-d 00:00:00', $week_start),
       'end' => date('Y-m-d 23:59:59', $week_end),
-      'week' => true
+      'week' => true,
+      'status' => 'accepted'
     ])) ? $week['data'] : [],
     'upcoming' => ($upcoming = $model->get_model(APPUI_HR_ROOT . 'data/events', [
       'staff' => $model->data['id'],
       'start' => date('Y-m-d H:i:s'),
-      'end' => date('Y-12-31 23:59:59')
+      'end' => date('Y-12-31 23:59:59'),
+      'status' => 'accepted'
     ])) ? $upcoming['data'] : [],
     'today' => ($today = $model->get_model(APPUI_HR_ROOT . 'data/events', [
       'staff' => $model->data['id'],
-      'day' => date('Y-m-d')
+      'day' => date('Y-m-d'),
+      'status' => 'accepted'
     ])) ? $today['data'] : [],
     'summary' => $absences
   ];

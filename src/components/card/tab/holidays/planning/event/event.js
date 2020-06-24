@@ -14,6 +14,9 @@
       startDay(){
         return moment(this.source.start).format('DD/MM/YYYY');
       },
+      dayBlock(){
+        return '<div>' + moment(this.source.start).format('DD') + '</div>' + '<div>' + moment(this.source.start).format('MMM') + '</div>'
+      },
       endDay(){
         return moment(this.source.end).format('DD/MM/YYYY');
       },
@@ -31,12 +34,15 @@
       },
       showRefuse(){
         return (this.source.status === 'accepted') || bbn.fn.isNull(this.source.status)
+      },
+      typeText(){
+        return bbn.fn.getField(appui.options.hr.absences, 'text', 'value', this.source.id_type);
       }
     },
     methods: {
       getField: bbn.fn.getField,
       getStaff(id){
-        return bbn.fn.getField(appui.app.staffActive, 'text', {value: id})
+        return bbn.fn.getField(appui.app.staff, 'text', {value: id})
       },
       edit(){
         this.getPopup().open({
@@ -53,7 +59,7 @@
           this.post(this.root + 'actions/holidays/delete', {id: this.source.id}, d => {
             if ( d.success ){
               appui.success(bbn._('Deleted'));
-              this.closest('appui-hr-tab-holidays-planning').fullRefresh();
+              this.closest('appui-hr-card-tab-holidays-planning').fullRefresh();
             }
           })
         });
@@ -67,7 +73,7 @@
             }, d => {
               if ( d.success ){
                 appui.success(bbn._('Accepted'));
-                this.closest('appui-hr-tab-holidays-planning').fullRefresh();
+                this.closest('appui-hr-card-tab-holidays-planning').fullRefresh();
               }
               else {
                 appui.error();
@@ -85,7 +91,7 @@
             }, d => {
               if ( d.success ){
                 appui.success(bbn._('Cancelled'));
-                this.closest('appui-hr-tab-holidays-planning').fullRefresh();
+                this.closest('appui-hr-card-tab-holidays-planning').fullRefresh();
               }
               else {
                 appui.error();
@@ -103,7 +109,7 @@
             }, d => {
               if ( d.success ){
                 appui.success(bbn._('Refused'));
-                this.closest('appui-hr-tab-holidays-planning').fullRefresh();
+                this.closest('appui-hr-card-tab-holidays-planning').fullRefresh();
               }
               else {
                 appui.error();
@@ -111,9 +117,6 @@
             })
           })
         }
-      },
-      openCard(){
-        bbn.fn.link(this.root + 'page/card/' + this.source.id_staff);
       }
     }
   };

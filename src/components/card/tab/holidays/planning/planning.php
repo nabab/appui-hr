@@ -1,21 +1,9 @@
-<div class="appui-hr-tab-holidays-planning bbn-overlay">
+<div class="appui-hr-card-tab-holidays-planning bbn-overlay">
   <div class="bbn-flex-height">
     <div>
       <div class="bbn-header bbn-spadded bbn-flex-width bbn-no-border-bottom">
-        <div class="bbn-flex-fill">
-          <!-- <bbn-button icon="nf nf-fa-file_excel_o"
-                      @click="exportExcel"
-                      v-if="!isYearMode"
-          ><?=_('Excel')?></bbn-button> -->
-        </div>
+        <div class="bbn-flex-fill"></div>
         <div>
-          <span><?=_('Staff')?>: </span>
-          <bbn-dropdown :source="staff"
-                        v-model="currentStaff"
-                        :nullable="true"
-          ></bbn-dropdown>
-        </div>
-        <div class="bbn-left-space">
           <span><?=_('Status')?>: </span>
           <bbn-dropdown :source="hr.holidaysStatus"
                         v-model="currentStatus"
@@ -30,9 +18,9 @@
                   ref="calendarContainer"
         >
           <div v-if="isYearMode"
-              class="appui-hr-tab-holidays-planning-year-mode bbn-w-100"
+              class="appui-hr-card-tab-holidays-planning-year-mode bbn-w-100"
           >
-            <div class="bbn-flex-width appui-hr-tab-holidays-planning-year-mode-header bbn-header bbn-xspadded">
+            <div class="bbn-flex-width appui-hr-card-tab-holidays-planning-year-mode-header bbn-header bbn-xspadded">
               <bbn-button icon="nf nf-fa-angle_left"
                           @click="prevYear"
                           title="<?=_('Previous year')?>"
@@ -48,7 +36,7 @@
                           :notext="true"
               ></bbn-button>
             </div>
-            <div class="appui-hr-tab-holidays-planning-year-mode-calendars">
+            <div class="appui-hr-card-tab-holidays-planning-year-mode-calendars">
               <bbn-calendar v-for="idx in 12"
                             :date="currentYear + '-' + (idx.toString().length === 1 ? '0' + idx : idx) + '-01'"
                             :arrows="false"
@@ -56,7 +44,7 @@
                             :source="root + 'data/events/' + idx"
                             :item-title="getTitle"
                             :day-padding="true"
-                            event-icon="nf nf-fa-user"
+                            event-icon="nf nf-mdi-beach"
                             :selection="true"
                             v-model="selected"
                             :title-action="changeMode"
@@ -73,7 +61,7 @@
               <bbn-calendar :source="root + 'data/events'"
                             ref="calendar"
                             :item-details="true"
-                            item-component="appui-hr-tab-holidays-planning-day"
+                            item-component="appui-hr-card-tab-holidays-planning-day"
                             :extra-items="true"
                             @hook:mounted="calendarSelected = $refs.calendar"
                             :item-title="getTitle"
@@ -133,7 +121,7 @@
                 </div>
               </div>
               <bbn-list :source="events"
-                        component="appui-hr-tab-holidays-planning-event"
+                        component="appui-hr-card-tab-holidays-planning-event"
                         ref="events"
                         :filterable="true"
                         :filters="currentFilters"

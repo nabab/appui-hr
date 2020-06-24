@@ -22,4 +22,16 @@
                   :static="true"
                   title="<?=_('List of working days')?>"
   ></bbns-container>
+  <bbns-container v-if="source.tabs.holidays"
+                  url="holidays"
+                  icon="nf nf-mdi-beach"
+                  :notext="true"
+                  :load="false"
+                  :source="source"
+                  :component="isObject(source.tabs.holidays) && source.tabs.holidays.component ? source.tabs.holidays.component : 'appui-hr-card-tab-holidays'"
+                  :static="true"
+                  title="<?=_('Holidays')?>"
+                  bcolor="skyblue"
+                  fcolor="white"
+  ></bbns-container>
 </bbn-router>

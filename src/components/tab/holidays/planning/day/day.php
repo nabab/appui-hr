@@ -1,8 +1,8 @@
-<div v-if="selected" 
+<div v-if="selected"
      class="bbn-right-xsspace bbn-bottom-xsspace bbn-left-xsspace"
 >
   <bbn-scroll>
-    <bbn-initial v-for="(ev, i) in source.events" 
+    <bbn-initial v-for="(ev, i) in source.events"
                  :user-name="getStaff(ev.id_staff)"
                  :key="i"
                  class="bbn-xsmargin"

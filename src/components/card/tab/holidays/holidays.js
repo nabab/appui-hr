@@ -11,12 +11,11 @@
         }), 'text', 'ASC'),
         absences: appui.options.hr.absences,
         root: appui.plugins['appui-hr'] + '/',
-        hr: this.closest('appui-hr-main'),
-        staff: appui.app.staffActive
+        hr: this.closest('appui-hr-main')
       }
     },
     methods: {
-      renderStatus(row){
+			renderStatus(row){
         let s = bbn.fn.getRow(this.hr.holidaysStatus, {value: row.status});
         return s ? `<span class="bbn-${s.color}">${s.text}</span>` : '-';
       },
@@ -33,9 +32,6 @@
 				}
 				return ret;
 			},
-      renderName(row){
-        return `<a href="${this.root}page/card/${row.id_staff}">${bbn.fn.getField(appui.app.staffActive, 'text', 'value', row.id_staff)}</a>`;
-      },
       renderNote(row){
         return row.note ? `<i class="nf nf-mdi-comment_outline bbn-large" title="${row.note}"></i>` : '';
       },
@@ -152,11 +148,6 @@
             break;
         }
         bts.push({
-          text: bbn._("Look at the staff card"),
-          icon: 'nf nf-fa-address_card_o',
-          notext: true,
-          action: this.openCard
-        }, {
           text: bbn._("Delete"),
           icon: 'nf nf-fa-trash',
           notext: true,

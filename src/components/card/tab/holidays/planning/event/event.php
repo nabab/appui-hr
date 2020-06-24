@@ -1,12 +1,12 @@
 <div class="bbn-spadded bbn-widget">
   <div class="bbn-flex-width">
     <div class="bbn-vmiddle">
-      <bbn-initial :user-name="getStaff(source.id_staff)"
-                   :width="50"
-                   font-size="1.5em"
-      ></bbn-initial>
+      <div class="bbn-box bbn-middle"
+          style="width: 50px; height: 50px; flex-direction: column"
+          v-html="dayBlock"
+      ></div>
       <div class="bbn-hsmargin"
-           :style="{width: '1em', height: '100%', backgroundColor: color}"
+          :style="{width: '1em', height: '100%', backgroundColor: color}"
       ></div>
     </div>
     <div class="bbn-flex-fill bbn-hsmargin">
@@ -18,8 +18,8 @@
         <span v-if="!sameDay" v-text="endDay"></span>
       </div>
       <div>
-        <i class="nf nf-fa-user_o"></i>
-        <strong><span class="bbn-hsmargin" v-text="getStaff(source.id_staff)"></span></strong>
+        <i class="nf nf-mdi-beach"></i>
+        <span class="bbn-hsmargin" v-text="typeText"></span>
       </div>
       <div v-if="status" :class="'bbn-' + status.color">
         <i :class="status.icon"></i>
@@ -31,6 +31,7 @@
       </div>
     </div>
     <div class="bbn-xl bbn-vmiddle">
+      
       <i v-if="showAccept"
          :class="['bbn-p', getField(hr.holidaysStatus, 'icon', {value: 'accepted'})]"
          @click="accept"
@@ -45,10 +46,6 @@
          :class="['bbn-p', 'bbn-left-sspace', getField(hr.holidaysStatus, 'icon', {value: 'refused'})]"
          @click="refuse"
          title="<?=_('Refuse')?>"
-      ></i>
-      <i class="nf nf-fa-address_card_o bbn-p bbn-left-sspace"
-         @click="openCard"
-         title="<?=_("Look at the staff card")?>"
       ></i>
       <i class="nf nf-fa-edit bbn-p bbn-left-sspace"
          @click="edit"

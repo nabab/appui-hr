@@ -2,10 +2,14 @@
 /* @var \bbn\mvc\model $model */
 if (
   !empty($model->data['filters']) &&
-  !empty($model->data['filters']['conditions']) &&
-  (($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== false)
+  !empty($model->data['filters']['conditions'])
 ){
-  $model->data['data']['staff'] = $model->data['filters']['conditions'][$idx]['value'];
+  if ( ($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== false ){
+    $model->data['data']['staff'] = $model->data['filters']['conditions'][$idx]['value'];
+  }
+  if ( ($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'status'])) !== false ){
+    $model->data['data']['status'] = $model->data['filters']['conditions'][$idx]['value'];
+  }
 }
 if ( !empty($model->data['data']) ){
   $model->data = $model->data['data'];
@@ -15,6 +19,12 @@ if ( !empty($model->data['staff']) ){
   $staff_filter = [
     'field' => 'bbn_hr_staff_events.id_staff',
     'value' => $model->data['staff']
+  ];
+}
+if ( !empty($model->data['status']) ){
+  $status_filter = [
+    'field' => 'bbn_hr_staff_events.status',
+    'value' => $model->data['status']
   ];
 }
 
@@ -32,6 +42,9 @@ if ( !empty($model->data['day']) ){
   ];
   if ( !empty($model->data['staff']) ){
     $where['conditions'][] = $staff_filter;
+  }
+  if ( !empty($model->data['status']) ){
+    $where['conditions'][] = $status_filter;
   }
 }
 else if ( !empty($model->data['week']) && !empty($model->data['start']) && !empty($model->data['end']) ){
@@ -86,11 +99,16 @@ else if ( !empty($model->data['week']) && !empty($model->data['start']) && !empt
         ]]
       ]]
     ]]
-  ]; 
+  ];
   if ( !empty($model->data['staff']) ){
     $where['conditions'][0]['conditions'][] = $staff_filter;
     $where['conditions'][1]['conditions'][] = $staff_filter;
     $where['conditions'][2]['conditions'][] = $staff_filter;
+  }
+  if ( !empty($model->data['status']) ){
+    $where['conditions'][0]['conditions'][] = $status_filter;
+    $where['conditions'][1]['conditions'][] = $status_filter;
+    $where['conditions'][2]['conditions'][] = $status_filter;
   }
 }
 else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty($model->data['end']) ){
@@ -103,10 +121,13 @@ else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty
   if ( !empty($model->data['staff']) ){
     $args[] = hex2bin($model->data['staff']);
   }
+  if ( !empty($model->data['status']) ){
+    $args[] = $model->data['status'];
+  }
   return [
     'data' => $model->db->get_rows("
       SELECT bbn_events.id, bbn_events.id_type, bbn_events.`start`, bbn_events.`end`,
-        bbn_hr_staff_events.id_staff, bbn_hr_staff_events.note, bbn_people.fullname AS staff
+        bbn_hr_staff_events.id_staff, bbn_hr_staff_events.note, bbn_hr_staff_events.status, bbn_people.fullname AS staff
       FROM bbn_events
         JOIN bbn_hr_staff_events
           ON bbn_hr_staff_events.id_event = bbn_events.id
@@ -122,7 +143,8 @@ else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty
           AND h2.bbn_active = 1
       WHERE ((bbn_events.`start` BETWEEN ? AND ?)
         OR (bbn_events.`end` BETWEEN ? AND ?))".
-        (!empty($model->data['staff']) ? " AND bbn_hr_staff.id = ?" : ''),
+        (!empty($model->data['staff']) ? " AND bbn_hr_staff.id = ?" : '').
+        (!empty($model->data['status']) ? " AND bbn_hr_staff_events.status = ?" : ''),
       ...$args
     )
   ];
@@ -138,6 +160,7 @@ if ( !empty($where) ){
         'bbn_events.start',
         'bbn_events.end',
         'bbn_hr_staff_events.id_staff',
+        'bbn_hr_staff_events.status',
         'bbn_hr_staff_events.note',
         'staff' => 'bbn_people.fullname'
       ],

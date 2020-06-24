@@ -1,4 +1,4 @@
-<div class="appui-hr-tab-holidays">
+<div class="appui-hr-card-tab-holidays">
   <bbn-router class="bbn-overlay"
               :nav="true"
               :autoload="false"
@@ -9,8 +9,8 @@
                     icon="nf nf-oct-calendar"
                     title="<?=_('Holidays Planning')?>"
                     :notext="true"
-                    component="appui-hr-tab-holidays-planning"
-                    v-if="hr.source.tabs.holidays.tabs.planning"
+                    component="appui-hr-card-tab-holidays-planning"
+                    v-if="source.tabs.holidays.tabs.planning"
     ></bbns-container>
     <bbn-container url="list"
                    :static="true"
@@ -18,7 +18,7 @@
                    icon="nf nf-fa-list"
                    title="<?=_('Holidays List')?>"
                    :notext="true"
-                   v-if="hr.source.tabs.holidays.tabs.list"
+                   v-if="source.tabs.holidays.tabs.list"
     >
       <bbn-table ref="table"
                 :source="root + 'data/holidays'"
@@ -36,11 +36,11 @@
                   dir: 'ASC'
                 }]"
                 :toolbar="$options.component.toolbar"
+                :filters="{conditions:[{field: 'id_staff', value: source.id}]}"
       >
         <bbns-column title="<?=_('Name')?>"
                      field="id_staff"
-                     :render="renderName"
-                     :source="staff"
+                     :hidden="true"
         ></bbns-column>
         <bbns-column title="<?=_('From')?>"
                      field="start"
@@ -85,7 +85,7 @@
                      :width="50"
         ></bbns-column>
         <bbns-column :buttons="buttons"
-                     :width="180"
+                     :width="150"
                      cls="bbn-c"
         ></bbns-column>
       </bbn-table>

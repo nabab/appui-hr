@@ -13,7 +13,8 @@ if (
   $model->db->insert('bbn_hr_staff_events', [
     'id_staff' => $model->data['id_staff'],
     'id_event' => $id_event,
-    'note' => $model->data['note'] ?? NULL
+    'note' => $model->data['note'] ?? NULL,
+    'status' => $model->data['status'] ?: NULL
   ])
 ){
   return ['success' => true];

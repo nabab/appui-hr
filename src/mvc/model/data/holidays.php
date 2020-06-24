@@ -1,12 +1,21 @@
 <?php
+if ( 
+  !empty($model->data['filters']) &&
+  !empty($model->data['filters']['conditions']) &&
+  (($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== false)
+){
+  $model->data['filters']['conditions'][$idx]['field'] = 'bbn_people.id';
+}
 $grid = new \bbn\appui\grid($model->db, $model->data, [
   'table' => 'bbn_people',
   'fields' => [
     'id_staff' => 'bbn_people.id',
+    'bbn_hr_staff_events.id_event',
     'bbn_events.start',
     'bbn_events.end',
     'bbn_events.id_type',
     'bbn_hr_staff_events.note',
+    'bbn_hr_staff_events.status',
 		'substitutes' => "GROUP_CONCAT(DISTINCT LOWER(HEX(plan.id_staff)) SEPARATOR ',')"
   ],
   'join' => [[

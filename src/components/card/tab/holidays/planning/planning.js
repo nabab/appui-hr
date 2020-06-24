@@ -16,12 +16,14 @@
         isYearMode: this.yearMode,
         root: appui.plugins['appui-hr'] + '/',
         staff: appui.app.staffActive,
-        currentStaff: null,
         currentStatus: null,
         hr: this.closest('appui-hr-main')
       }
     },
     computed: {
+      card(){
+        return this.closest(`appui-hr-card`)
+      },
       dayText(){
         return this.selected ? moment(this.selected).format('dddd	DD MMMM YYYY') : '';
       },
@@ -32,14 +34,11 @@
         return [this.calendarSelected];
       },
       currentFilters(){
-        let cond = [];
-        if ( this.currentStaff ){
-          cond.push({
-            field: 'id_staff',
-            operator: '=',
-            value: this.currentStaff
-          });
-        }
+        let cond = [{
+          field: 'id_staff',
+          operator: '=',
+          value: this.card.source.id
+        }];
         if ( this.currentStatus ){
           cond.push({
             field: 'status',
@@ -84,7 +83,7 @@
           source: {
             start: moment(this.selected).format('YYYY-MM-DD HH:mm:ss'),
             end: moment(this.selected).format('YYYY-MM-DD 23:59:59'),
-            id_staff: '',
+            id_staff: this.card.source.id,
             id_type: '',
             note: '',
             status: 'accepted'
