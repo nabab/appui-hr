@@ -14,6 +14,7 @@
                  :uid="source.widgets.info.key"
                  :hidden="source.widgets.info.hidden"
                  :index="source.widgets.info.num"
+                 :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.week"
                  :title="source.widgets.week.text"
@@ -24,6 +25,7 @@
                  :uid="source.widgets.week.key"
                  :hidden="source.widgets.week.hidden"
                  :index="source.widgets.week.num"
+                 :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.summary"
                  :title="source.widgets.summary.text + ' ' + currentYear"
@@ -34,6 +36,7 @@
                  :uid="source.widgets.summary.key"
                  :hidden="source.widgets.summary.hidden"
                  :index="source.widgets.summary.num"
+                 :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.summary_chart"
                  :title="source.widgets.summary_chart.text + ' ' + currentYear"
@@ -44,6 +47,7 @@
                  uid="source.widgets.summary_chart.key"
                  :hidden="source.widgets.summary.hidden"
                  :index="source.widgets.summary_chart.num"
+                 :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.upcoming"
                  :title="source.widgets.upcoming.text"
@@ -54,6 +58,7 @@
                  :uid="source.widgets.upcoming.key"
                  :hidden="source.widgets.upcoming.hidden"
                  :index="source.widgets.upcoming.num"
+                 :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.entities && source.entities && source.entities.length"
                  :title="source.widgets.entities.text"
@@ -64,6 +69,7 @@
                  :uid="source.widgets.entities.key"
                  :hidden="source.widgets.entities.hidden"
                  :index="source.widgets.entities.num"
+                 :padding="true"
     ></bbns-widget>
   </bbn-dashboard>
 </div>

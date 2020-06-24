@@ -41,7 +41,7 @@
       edit(){
         this.getPopup().open({
           title: bbn._('Edit'),
-          height: 400,
+          height: 420,
           width: 600,
           component: 'appui-hr-form-event',
           source: this.source,
