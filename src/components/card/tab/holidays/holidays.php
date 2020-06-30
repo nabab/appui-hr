@@ -87,6 +87,7 @@
         <bbns-column :buttons="buttons"
                      :width="150"
                      cls="bbn-c"
+                     v-if="hr.source.perms.write"
         ></bbns-column>
       </bbn-table>
     </bbn-container>

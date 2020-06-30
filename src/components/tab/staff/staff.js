@@ -10,7 +10,26 @@
           }
         }), 'text', 'ASC'),
         employes: appui.app.staffActive,
-        root: appui.plugins['appui-hr'] + '/'
+        root: appui.plugins['appui-hr'] + '/',
+        hr: this.closest('appui-hr-main')
+      }
+    },
+    computed: {
+      toolbar(){
+        let btns = [];
+        if ( !!this.hr.source.perms.write ){
+          btns.push({
+            text: bbn._('Add'),
+            action: this.insert,
+            icon: 'nf nf-fa-plus'
+          });
+        }
+        btns.push({
+          text: bbn._('Excel'),
+          icon: 'nf nf-fa-file_excel_o',
+          action: 'excel'
+        });
+        return btns;
       }
     },
     methods:{
@@ -68,25 +87,27 @@
           action: this.open,
           icon: 'nf nf-fa-address_card',
           notext: true
-        }, {
-          text: bbn._('Edit'),
-          action: this.edit,
-          icon: 'nf nf-fa-edit',
-          notext: true
-        }, {
-          text: bbn._('Deactivate'),
-          action: this.remove,
-          icon: 'nf nf-fa-times',
-          notext: true
         }];
-
-        if ( row.id_user ){
+        if ( !!this.hr.main.perms.write ){
           btns.push({
-            text: bbn._('Initialize password'),
-            action: this.initilaze,
-            icon: 'nf nf-fa-envelope',
+            text: bbn._('Edit'),
+            action: this.edit,
+            icon: 'nf nf-fa-edit',
+            notext: true
+          }, {
+            text: bbn._('Deactivate'),
+            action: this.remove,
+            icon: 'nf nf-fa-times',
             notext: true
           });
+          if ( row.id_user ){
+            btns.push({
+              text: bbn._('Initialize password'),
+              action: this.initilaze,
+              icon: 'nf nf-fa-envelope',
+              notext: true
+            });
+          }
         }
         return btns;
       },

@@ -101,6 +101,7 @@
                           @click="addEvent"
                           title="<?=_('Add')?>"
                           :notext="true"
+                          v-if="hr.source.perms.write"
               ></bbn-button>
               <div class="bbn-flex-fill bbn-middle">
                 <i class="nf nf-mdi-calendar_today bbn-hsmargin"></i>

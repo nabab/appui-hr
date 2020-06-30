@@ -14,6 +14,9 @@
         return this.planning && this.planning.selected ? this.planning.selected : ''
       },
       isEditDisabled(){
+        if ( !this.planning.hr.source.perms.write ){
+          return true;
+        }
         return this.planning ? !!this.planning.isBefore : false
       }
     },

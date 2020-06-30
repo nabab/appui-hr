@@ -53,10 +53,12 @@
       <i class="nf nf-fa-edit bbn-p bbn-left-sspace"
          @click="edit"
          title="<?=_('Edit')?>"
+         v-if="hr.source.perms.write"
       ></i>
       <i class="nf nf-fa-trash_o bbn-p bbn-left-sspace"
          @click="remove"
          title="<?=_('Delete')?>"
+         v-if="hr.source.perms.write"
       ></i>
     </div>
   </div>

@@ -3,15 +3,7 @@
              :source="root + '/data/staff'"
              :sortable="true"
              :pageable="true"
-             :toolbar="[{
-               text: '<?=_('Add')?>',
-               action: insert,
-               icon: 'nf nf-fa-plus'
-             }, {
-              text: '<?=_('Excel')?>',
-              icon: 'nf nf-fa-file_excel_o',
-              action: 'excel'
-            }]"
+             :toolbar="toolbar"
              editor="appui-hr-form-staff"
              :editable="true"
              :filterable="true"
@@ -93,7 +85,7 @@
                   }"
      ></bbns-column>
      <bbns-column :buttons="buttons"
-                  :width="170"
+                  :width="hr.source.perms.write ? 150 : 60"
                   cls="bbn-c"
      ></bbns-column>
   </bbn-table>

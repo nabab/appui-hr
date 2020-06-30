@@ -85,4 +85,12 @@ else {
   $ret['tabs'] = [];
 }
 
+$ret['perms'] = [
+  'write' => $model->inc->perm->has('hr/perms/write'),
+  'cards' => $model->inc->perm->has('hr/perms/cards')
+];
+if ( !empty($cfg) && !empty($cfg['perms']) ){
+  $ret['perms'] = \bbn\x::merge_arrays($ret['perms'], $cfg['perms']);
+}
+
 return $ret;

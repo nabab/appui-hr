@@ -24,13 +24,26 @@
         return this.source.status ? bbn.fn.getRow(this.hr.holidaysStatus, {value: this.source.status}) : false
       },
       showAccept(){
-        return (this.source.status === 'cancelled') || (this.source.status === 'refused') || bbn.fn.isNull(this.source.status)
+        return this.hr.source.perms.write &&
+          (
+            (this.source.status === 'cancelled') ||
+            (this.source.status === 'refused') ||
+            bbn.fn.isNull(this.source.status)
+          )
       },
       showCancel(){
-        return (this.source.status === 'accepted') || bbn.fn.isNull(this.source.status)
+        return this.hr.source.perms.write &&
+          (
+            (this.source.status === 'accepted') ||
+            bbn.fn.isNull(this.source.status)
+          )
       },
       showRefuse(){
-        return (this.source.status === 'accepted') || bbn.fn.isNull(this.source.status)
+        return this.hr.source.perms.write &&
+          (
+            (this.source.status === 'accepted') ||
+            bbn.fn.isNull(this.source.status)
+          )
       }
     },
     methods: {

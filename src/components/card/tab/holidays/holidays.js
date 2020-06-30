@@ -133,26 +133,28 @@
               action: this.refuse,
               class: 'bbn-bg-' + objR.color
             };
-        switch ( row.status ){
-          case 'accepted':
-            bts.push(cancel, refuse);
-            break;
-          case 'refused':
-            bts.push(accept)
-            break;
-          case 'cancelled':
-            bts.push(accept, refuse);
-            break;
-          default:
-            bts.push(accept, cancel, refuse);
-            break;
+        if ( this.hr.source.perms.write ){
+          switch ( row.status ){
+            case 'accepted':
+              bts.push(cancel, refuse);
+              break;
+            case 'refused':
+              bts.push(accept)
+              break;
+            case 'cancelled':
+              bts.push(accept, refuse);
+              break;
+            default:
+              bts.push(accept, cancel, refuse);
+              break;
+          }
+          bts.push({
+            text: bbn._("Delete"),
+            icon: 'nf nf-fa-trash',
+            notext: true,
+            action: this.remove
+          });
         }
-        bts.push({
-          text: bbn._("Delete"),
-          icon: 'nf nf-fa-trash',
-          notext: true,
-          action: this.remove
-        })
         return bts
       }
     },

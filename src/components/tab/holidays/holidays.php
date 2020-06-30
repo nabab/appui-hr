@@ -85,7 +85,7 @@
                      :width="50"
         ></bbns-column>
         <bbns-column :buttons="buttons"
-                     :width="180"
+                     :width="hr.source.perms.write ? 180 : 60"
                      cls="bbn-c"
         ></bbns-column>
       </bbn-table>
