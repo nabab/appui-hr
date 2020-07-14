@@ -284,5 +284,442 @@
                 "default": "NULL"
             }
         }
+    },
+    "bbn_events": {
+        "keys": {
+            "PRIMARY": {
+                "columns": [
+                    "id"
+                ],
+                "ref_db": "apst_app",
+                "ref_table": "bbn_history_uids",
+                "ref_column": "bbn_uid",
+                "constraint": "bbn_events_ibfk_1",
+                "update": "CASCADE",
+                "delete": "CASCADE",
+                "unique": 1
+            },
+            "id_type": {
+                "columns": [
+                    "id_type"
+                ],
+                "ref_db": "apst_app",
+                "ref_table": "bbn_options",
+                "ref_column": "id",
+                "constraint": "bbn_events_ibfk_2",
+                "update": "CASCADE",
+                "delete": "RESTRICT",
+                "unique": 0
+            },
+            "id_parent": {
+                "columns": [
+                    "id_parent"
+                ],
+                "ref_db": "apst_app",
+                "ref_table": "bbn_events",
+                "ref_column": "id",
+                "constraint": "bbn_events_ibfk_3",
+                "update": "CASCADE",
+                "delete": "CASCADE",
+                "unique": 0
+            }
+        },
+        "cols": {
+            "id": [
+                "PRIMARY"
+            ],
+            "id_type": [
+                "id_type"
+            ],
+            "id_parent": [
+                "id_parent"
+            ]
+        },
+        "fields": {
+            "id": {
+                "position": 1,
+                "type": "binary",
+                "null": 0,
+                "key": "PRI",
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "maxlength": 16
+            },
+            "id_parent": {
+                "position": 2,
+                "type": "binary",
+                "null": 1,
+                "key": "MUL",
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL",
+                "maxlength": 16
+            },
+            "id_type": {
+                "position": 3,
+                "type": "binary",
+                "null": 0,
+                "key": "MUL",
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "maxlength": 16
+            },
+            "start": {
+                "position": 4,
+                "type": "datetime",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL"
+            },
+            "end": {
+                "position": 5,
+                "type": "datetime",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL"
+            },
+            "name": {
+                "position": 6,
+                "type": "varchar",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL",
+                "maxlength": 255
+            },
+            "recurring": {
+                "position": 7,
+                "type": "tinyint",
+                "null": 0,
+                "key": null,
+                "extra": "",
+                "signed": false,
+                "virtual": false,
+                "generation": "",
+                "default": 0,
+                "maxlength": 1
+            },
+            "cfg": {
+                "position": 8,
+                "type": "mediumtext",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL"
+            }
+        }
+    },
+    "bbn_events_exceptions": {
+        "keys": {
+            "PRIMARY": {
+                "columns": [
+                    "id"
+                ],
+                "ref_db": null,
+                "ref_table": null,
+                "ref_column": null,
+                "constraint": null,
+                "update": null,
+                "delete": null,
+                "unique": 1
+            },
+            "id_event": {
+                "columns": [
+                    "id_event"
+                ],
+                "ref_db": "apst_app",
+                "ref_table": "bbn_events",
+                "ref_column": "id",
+                "constraint": "bbn_events_exceptions_ibfk_2",
+                "update": "CASCADE",
+                "delete": "CASCADE",
+                "unique": 0
+            },
+            "id_user": {
+                "columns": [
+                    "id_user"
+                ],
+                "ref_db": "apst_app",
+                "ref_table": "bbn_users",
+                "ref_column": "id",
+                "constraint": "bbn_events_exceptions_ibfk_3",
+                "update": "CASCADE",
+                "delete": "CASCADE",
+                "unique": 0
+            }
+        },
+        "cols": {
+            "id": [
+                "PRIMARY"
+            ],
+            "id_event": [
+                "id_event"
+            ],
+            "id_user": [
+                "id_user"
+            ]
+        },
+        "fields": {
+            "id": {
+                "position": 1,
+                "type": "binary",
+                "null": 0,
+                "key": "PRI",
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "maxlength": 16
+            },
+            "id_event": {
+                "position": 2,
+                "type": "binary",
+                "null": 0,
+                "key": "MUL",
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "maxlength": 16
+            },
+            "id_user": {
+                "position": 3,
+                "type": "binary",
+                "null": 0,
+                "key": "MUL",
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "maxlength": 16
+            },
+            "creation": {
+                "position": 4,
+                "type": "datetime",
+                "null": 0,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": ""
+            },
+            "day": {
+                "position": 5,
+                "type": "date",
+                "null": 0,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": ""
+            },
+            "start": {
+                "position": 6,
+                "type": "time",
+                "null": 0,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": ""
+            },
+            "end": {
+                "position": 7,
+                "type": "time",
+                "null": 0,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": ""
+            },
+            "rescheduled": {
+                "position": 8,
+                "type": "tinyint",
+                "null": 0,
+                "key": null,
+                "extra": "",
+                "signed": false,
+                "virtual": false,
+                "generation": "",
+                "default": 0,
+                "maxlength": 1
+            },
+            "deleted": {
+                "position": 9,
+                "type": "tinyint",
+                "null": 0,
+                "key": null,
+                "extra": "",
+                "signed": false,
+                "virtual": false,
+                "generation": "",
+                "default": 0,
+                "maxlength": 1
+            }
+        }
+    },
+    "bbn_events_recurring": {
+        "keys": {
+            "PRIMARY": {
+                "columns": [
+                    "id_event"
+                ],
+                "ref_db": "apst_app",
+                "ref_table": "bbn_events",
+                "ref_column": "id",
+                "constraint": "bbn_events_recurring_ibfk_1",
+                "update": "CASCADE",
+                "delete": "CASCADE",
+                "unique": 1
+            },
+            "id_event": {
+                "columns": [
+                    "id_event"
+                ],
+                "ref_db": "apst_app",
+                "ref_table": "bbn_events",
+                "ref_column": "id",
+                "constraint": "bbn_events_recurring_ibfk_1",
+                "update": "CASCADE",
+                "delete": "CASCADE",
+                "unique": 0
+            }
+        },
+        "cols": {
+            "id_event": [
+                "PRIMARY",
+                "id_event"
+            ]
+        },
+        "fields": {
+            "id_event": {
+                "position": 1,
+                "type": "binary",
+                "null": 0,
+                "key": "PRI",
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "maxlength": 16
+            },
+            "type": {
+                "position": 2,
+                "type": "enum",
+                "null": 0,
+                "key": null,
+                "extra": "'daily','weekly','monthly','yearly'",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "daily",
+                "values": [
+                    "daily",
+                    "weekly",
+                    "monthly",
+                    "yearly"
+                ]
+            },
+            "interval": {
+                "position": 3,
+                "type": "int",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": false,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL",
+                "maxlength": 5
+            },
+            "occurrences": {
+                "position": 4,
+                "type": "int",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": false,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL",
+                "maxlength": 5
+            },
+            "until": {
+                "position": 5,
+                "type": "date",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL"
+            },
+            "wd": {
+                "position": 6,
+                "type": "json",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL"
+            },
+            "mw": {
+                "position": 7,
+                "type": "json",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL"
+            },
+            "md": {
+                "position": 8,
+                "type": "json",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL"
+            },
+            "ym": {
+                "position": 9,
+                "type": "json",
+                "null": 1,
+                "key": null,
+                "extra": "",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL"
+            }
+        }
     }
 }
