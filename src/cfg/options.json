@@ -1,0 +1,28 @@
+{
+  "text": "HR",
+  "code": "hr",
+  "icon": "nf nf-fa-users",
+  "cfg": {
+    "allow_children": 1,
+    "show_code": 1
+  },
+  "items": [{
+    "text": "Types of absences",
+    "code": "absences",
+    "value": null,
+    "num_children": 3,
+    "items": [{
+      "text": "Holidays",
+      "code": "holidays",
+      "color": "skyblue"
+    }, {
+      "text": "Permission",
+      "code": "permission",
+      "color": "sandybrown"
+    }, {
+      "text": "Sick holidays",
+      "code": "sick",
+      "color": "tomato"
+    }]
+  }]
+}
