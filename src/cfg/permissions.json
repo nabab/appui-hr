@@ -1,0 +1,118 @@
+[{
+  "text": "Permissions",
+  "code": "perms",
+  "items": [{
+    "text": "Possibility to see others cards",
+    "code": "cards"
+  }, {
+    "text": "Possibility to write on db",
+    "code": "write"
+  }]
+}, {
+  "text": "Home",
+  "code": "home",
+  "id_parent": "page/"
+}, {
+  "text": "Planning",
+  "code": "planning",
+  "id_parent": "page/"
+}, {
+  "text": "Staff",
+  "code": "staff",
+  "id_parent": "page/"
+}, {
+  "text": "Holidays",
+  "code": "holidays/",
+  "id_parent": "page/",
+  "items": [{
+    "text": "List",
+    "code": "list"
+  }, {
+    "text": "Planning",
+    "code": "planning"
+  }]
+}, {
+  "text": "Card",
+  "code": "card",
+  "id_parent": "page/",
+  "items": [{
+    "text": "Tabs",
+    "code": "tabs",
+    "items": [{
+      "text": "Home",
+      "code": "home"
+    }, {
+      "text": "List of working days",
+      "code": "jobs"
+    }, {
+      "text": "Holidays",
+      "code": "holidays",
+      "items": [{
+        "text": "List",
+        "code": "list"
+      }, {
+        "text": "Planning",
+        "code": "planning"
+      }]
+    }]
+  }, {
+    "text": "Widgets",
+    "code": "widgets",
+    "items": [{
+      "text": "Information",
+      "code": "info"
+    }, {
+      "text": "Summary",
+      "code": "summary"
+    }, {
+      "text": "Summary chart",
+      "code": "summary_chart"
+    }, {
+      "text": "Imminent absences",
+      "code": "upcoming"
+    }, {
+      "text": "Week",
+      "code": "week"
+    }]
+  }]
+}, {
+  "text": "Page",
+  "code": "page",
+  "items": [{
+    "text": "Tabs",
+    "code": "tabs",
+    "items": [{
+      "text": "Home",
+      "code": "home"
+    }, {
+      "text": "Staff",
+      "code": "staff"
+    }, {
+      "text": "Planning",
+      "code": "planning"
+    }, {
+      "text": "Holidays",
+      "code": "holidays",
+      "items": [{
+        "text": "List",
+        "code": "list"
+      }, {
+        "text": "Planning",
+        "code": "planning"
+      }]
+    }]
+  }, {
+    "text": "Widgets",
+    "code": "widgets",
+    "items": [{
+      "text": "Staff absent",
+      "code": "absent"
+    }, {
+      "text": "Staff absent (upcoming)",
+      "code": "absent_soon"
+    }, {
+      "text": "Staff with access",
+      "code": "users"
+    }]
+  }]
+}]
