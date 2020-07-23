@@ -1,6 +1,7 @@
 [{
   "text": "Permissions",
   "code": "perms",
+  "id_parent": ["___appui-plugin-url___/","page","permissions","appui"],
   "items": [{
     "text": "Possibility to see others cards",
     "code": "cards"
@@ -11,19 +12,19 @@
 }, {
   "text": "Home",
   "code": "home",
-  "id_parent": "page/"
+  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"]
 }, {
   "text": "Planning",
   "code": "planning",
-  "id_parent": "page/"
+  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"]
 }, {
   "text": "Staff",
   "code": "staff",
-  "id_parent": "page/"
+  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"]
 }, {
   "text": "Holidays",
   "code": "holidays/",
-  "id_parent": "page/",
+  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"],
   "items": [{
     "text": "List",
     "code": "list"
@@ -32,87 +33,82 @@
     "code": "planning"
   }]
 }, {
-  "text": "Card",
-  "code": "card",
-  "id_parent": "page/",
+  "text": "Tabs",
+  "code": "tabs",
+  "id_parent": ["card", "page/","___appui-plugin-url___/","page","permissions","appui"],
   "items": [{
-    "text": "Tabs",
-    "code": "tabs",
-    "items": [{
-      "text": "Home",
-      "code": "home"
-    }, {
-      "text": "List of working days",
-      "code": "jobs"
-    }, {
-      "text": "Holidays",
-      "code": "holidays",
-      "items": [{
-        "text": "List",
-        "code": "list"
-      }, {
-        "text": "Planning",
-        "code": "planning"
-      }]
-    }]
+    "text": "Home",
+    "code": "home"
   }, {
-    "text": "Widgets",
-    "code": "widgets",
+    "text": "List of working days",
+    "code": "jobs"
+  }, {
+    "text": "Holidays",
+    "code": "holidays",
     "items": [{
-      "text": "Information",
-      "code": "info"
-    }, {
-      "text": "Summary",
-      "code": "summary"
-    }, {
-      "text": "Summary chart",
-      "code": "summary_chart"
-    }, {
-      "text": "Imminent absences",
-      "code": "upcoming"
-    }, {
-      "text": "Week",
-      "code": "week"
-    }]
-  }]
-}, {
-  "text": "Page",
-  "code": "page",
-  "items": [{
-    "text": "Tabs",
-    "code": "tabs",
-    "items": [{
-      "text": "Home",
-      "code": "home"
-    }, {
-      "text": "Staff",
-      "code": "staff"
+      "text": "List",
+      "code": "list"
     }, {
       "text": "Planning",
       "code": "planning"
-    }, {
-      "text": "Holidays",
-      "code": "holidays",
-      "items": [{
-        "text": "List",
-        "code": "list"
-      }, {
-        "text": "Planning",
-        "code": "planning"
-      }]
     }]
+  }]
+}, {
+  "text": "Widgets",
+  "code": "widgets",
+  "id_parent": ["card", "page/","___appui-plugin-url___/","page","permissions","appui"],
+  "items": [{
+    "text": "Information",
+    "code": "info"
   }, {
-    "text": "Widgets",
-    "code": "widgets",
+    "text": "Summary",
+    "code": "summary"
+  }, {
+    "text": "Summary chart",
+    "code": "summary_chart"
+  }, {
+    "text": "Imminent absences",
+    "code": "upcoming"
+  }, {
+    "text": "Week",
+    "code": "week"
+  }]
+}, {
+  "text": "Tabs",
+  "code": "tabs",
+  "id_parent": ["page","___appui-plugin-url___/","page","permissions","appui"],
+  "items": [{
+    "text": "Home",
+    "code": "home"
+  }, {
+    "text": "Staff",
+    "code": "staff"
+  }, {
+    "text": "Planning",
+    "code": "planning"
+  }, {
+    "text": "Holidays",
+    "code": "holidays",
     "items": [{
-      "text": "Staff absent",
-      "code": "absent"
+      "text": "List",
+      "code": "list"
     }, {
-      "text": "Staff absent (upcoming)",
-      "code": "absent_soon"
-    }, {
-      "text": "Staff with access",
-      "code": "users"
+      "text": "Planning",
+      "code": "planning"
     }]
+  }]
+}, {
+  "text": "Widgets",
+  "code": "widgets",
+  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"],
+  "items": [{
+    "text": "Staff absent",
+    "code": "absent"
+  }, {
+    "text": "Staff absent (upcoming)",
+    "code": "absent_soon"
+  }, {
+    "text": "Staff with access",
+    "code": "users"
   }]
 }]
