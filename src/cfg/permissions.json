@@ -111,4 +111,19 @@
     "text": "Staff with access",
     "code": "users"
   }]
+}, {
+  "text": "Plugins",
+  "code": "plugins",
+  "id_parent": ["|*appui-hr*|/","page","permissions","appui"],
+  "items": [{
+    "text": "appui-dashboard",
+    "code": "appui-dashboard",
+    "items": [{
+      "text": "Staff absent",
+      "code": "staff_absent"
+    }, {
+      "text": "Staff absent (soon)",
+      "code": "staff_absent_soon"
+    }]
+  }]
 }]

@@ -31,4 +31,18 @@
   "code": "wp",
   "id_parent": ["events","appui"],
   "after": 1
+}, {
+  "text": "Staff absents",
+  "code": "staff_absent",
+  "id_parent": ["default","dashboard","appui"],
+  "id_alias": ["staff_absent","appui-dashboard","plugins","|*appui-hr*|/","page","permissions","appui"],
+  "value": "{\"limit\":5,\"observe\":false,\"options\":{},\"closable\":true,\"buttonsLeft\":[],\"buttonsRight\":[],\"itemComponent\":\"appui-hr-widget-staff-absent\"}",
+  "after": 1
+}, {
+  "text": "Staff absents (\u00e0 venir)",
+  "code": "staff_absent_soon",
+  "id_parent": ["default","dashboard","appui"],
+  "id_alias": ["staff_absent_soon","appui-dashboard","plugins","|*appui-hr*|/","page","permissions","appui"],
+  "value": "{\"limit\":5,\"observe\":false,\"options\":{},\"closable\":true,\"buttonsLeft\":[],\"buttonsRight\":[],\"itemComponent\":\"appui-hr-widget-staff-absent\"}",
+  "after": 1
 }]
