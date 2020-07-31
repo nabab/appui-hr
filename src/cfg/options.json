@@ -1,6 +1,7 @@
-{
+[{
   "text": "HR",
   "code": "hr",
+  "id_parent": "appui",
   "icon": "nf nf-fa-users",
   "cfg": {
     "allow_children": 1,
@@ -25,4 +26,9 @@
       "color": "tomato"
     }]
   }]
-}
+}, {
+  "text": "Working plane",
+  "code": "wp",
+  "id_parent": ["events","appui"],
+  "after": 1
+}]

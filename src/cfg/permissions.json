@@ -1,7 +1,7 @@
 [{
   "text": "Permissions",
   "code": "perms",
-  "id_parent": ["___appui-plugin-url___/","page","permissions","appui"],
+  "id_parent": ["|*appui-hr*|/","page","permissions","appui"],
   "items": [{
     "text": "Possibility to see others cards",
     "code": "cards"
@@ -12,19 +12,19 @@
 }, {
   "text": "Home",
   "code": "home",
-  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"]
+  "id_parent": ["page/","|*appui-hr*|/","page","permissions","appui"]
 }, {
   "text": "Planning",
   "code": "planning",
-  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"]
+  "id_parent": ["page/","|*appui-hr*|/","page","permissions","appui"]
 }, {
   "text": "Staff",
   "code": "staff",
-  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"]
+  "id_parent": ["page/","|*appui-hr*|/","page","permissions","appui"]
 }, {
   "text": "Holidays",
   "code": "holidays/",
-  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"],
+  "id_parent": ["page/","|*appui-hr*|/","page","permissions","appui"],
   "items": [{
     "text": "List",
     "code": "list"
@@ -35,7 +35,7 @@
 }, {
   "text": "Tabs",
   "code": "tabs",
-  "id_parent": ["card", "page/","___appui-plugin-url___/","page","permissions","appui"],
+  "id_parent": ["card", "page/","|*appui-hr*|/","page","permissions","appui"],
   "items": [{
     "text": "Home",
     "code": "home"
@@ -56,7 +56,7 @@
 }, {
   "text": "Widgets",
   "code": "widgets",
-  "id_parent": ["card", "page/","___appui-plugin-url___/","page","permissions","appui"],
+  "id_parent": ["card", "page/","|*appui-hr*|/","page","permissions","appui"],
   "items": [{
     "text": "Information",
     "code": "info"
@@ -76,7 +76,7 @@
 }, {
   "text": "Tabs",
   "code": "tabs",
-  "id_parent": ["page","___appui-plugin-url___/","page","permissions","appui"],
+  "id_parent": ["page","|*appui-hr*|/","page","permissions","appui"],
   "items": [{
     "text": "Home",
     "code": "home"
@@ -100,7 +100,7 @@
 }, {
   "text": "Widgets",
   "code": "widgets",
-  "id_parent": ["page/","___appui-plugin-url___/","page","permissions","appui"],
+  "id_parent": ["page/","|*appui-hr*|/","page","permissions","appui"],
   "items": [{
     "text": "Staff absent",
     "code": "absent"

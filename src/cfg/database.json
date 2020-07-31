@@ -282,6 +282,22 @@
                 "virtual": false,
                 "generation": "",
                 "default": "NULL"
+            },
+            "status": {
+                "position": 4,
+                "type": "enum",
+                "null": 1,
+                "key": null,
+                "extra": "'accepted','cancelled','refused'",
+                "signed": true,
+                "virtual": false,
+                "generation": "",
+                "default": "NULL",
+                "values": [
+                    "accepted",
+                    "cancelled",
+                    "refused"
+                ]
             }
         }
     },

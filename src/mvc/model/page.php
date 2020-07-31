@@ -1,7 +1,12 @@
 <?php
 
-if ( $dashboard = new \bbn\appui\dashboard('hr') ){
+try {
+  $dashboard = new \bbn\appui\dashboard('hr');
   $widgets = $dashboard->get_widgets_code(APPUI_HR_ROOT . 'data/home/widget/');
+}
+catch ( Exception $e ){
+  $dashboard = false;
+  $widgets = [];
 }
 
 $ret = [
