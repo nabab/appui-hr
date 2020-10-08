@@ -44,7 +44,7 @@
     <div>
       <bbn-input v-model="source.row.tel"
                  max-length="13"
-                 pattern="[0-9]{13}"
+                 pattern="[0-9]{10,13}"
       ></bbn-input>
     </div>
     <label><?=_("Birth")?></label>
