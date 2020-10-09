@@ -5,7 +5,7 @@ if ( !empty($model->data['data']['start']) && !empty($model->data['data']['end']
   if ( 
     !empty($model->data['filters']) &&
     !empty($model->data['filters']['conditions']) &&
-    (($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== false)
+    (($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null)
   ){
     $id_staff = $model->data['filters']['conditions'][$idx]['value'];
   }

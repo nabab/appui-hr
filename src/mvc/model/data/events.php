@@ -4,10 +4,10 @@ if (
   !empty($model->data['filters']) &&
   !empty($model->data['filters']['conditions'])
 ){
-  if ( ($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== false ){
+  if ( ($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null ){
     $model->data['data']['staff'] = $model->data['filters']['conditions'][$idx]['value'];
   }
-  if ( ($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'status'])) !== false ){
+  if ( ($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'status'])) !== null ){
     $model->data['data']['status'] = $model->data['filters']['conditions'][$idx]['value'];
   }
 }

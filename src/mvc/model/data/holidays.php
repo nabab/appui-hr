@@ -2,7 +2,7 @@
 if ( 
   !empty($model->data['filters']) &&
   !empty($model->data['filters']['conditions']) &&
-  (($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== false)
+  (($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null)
 ){
   $model->data['filters']['conditions'][$idx]['field'] = 'bbn_people.id';
 }

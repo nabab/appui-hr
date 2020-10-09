@@ -21,7 +21,7 @@ if ( !empty($model->data['day']) && !empty($model->data['id']) ){
       is_file($path.$filename) && 
       ($d = file_get_contents($path.$filename)) &&
       ($d = json_decode($d, true)) &&
-      (($idx = \bbn\x::find($d, ['id' => $model->data['id']])) !== false)
+      (($idx = \bbn\x::find($d, ['id' => $model->data['id']])) !== null)
     ){
       unset($d[$idx]);
       if ( file_put_contents($path.$filename, json_encode(array_values($d))) && is_file($path.$filename) ){
