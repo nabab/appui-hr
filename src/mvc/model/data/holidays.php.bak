@@ -74,7 +74,7 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
       ]]
 		]
 	]],
-  /* 'filters' => [
+  'filters' => [
     'logic' => 'OR',
     'conditions'=> [[
       'conditions' => [[
@@ -91,7 +91,7 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
 			'operator' => '>',
 			'value' => date('Y-01-01 00:00:00')
 		]]
-  ], */
+  ],
   'group_by' => ['bbn_events.id'],
   'map' => [
     'callable' => function(&$row, $idx, $par){

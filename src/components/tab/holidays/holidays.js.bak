@@ -1,5 +1,4 @@
 (() => {
-  let count = 0;
   return {
     data(){
       return {
@@ -12,11 +11,12 @@
         }), 'text', 'ASC'),
         absences: appui.options.hr.absences,
         root: appui.plugins['appui-hr'] + '/',
-        hr: this.closest('appui-hr-main')
+        hr: this.closest('appui-hr-main'),
+        staff: appui.app.staffActive
       }
     },
     methods: {
-			renderStatus(row){
+      renderStatus(row){
         let s = bbn.fn.getRow(this.hr.holidaysStatus, {value: row.status});
         return s ? `<span class="bbn-${s.color}">${s.text}</span>` : '-';
       },
@@ -33,6 +33,9 @@
 				}
 				return ret;
 			},
+      renderName(row){
+        return `<a href="${this.root}page/card/${row.id_staff}">${bbn.fn.getField(appui.app.staffActive, 'text', 'value', row.id_staff)}</a>`;
+      },
       renderNote(row){
         return row.note ? `<i class="nf nf-mdi-comment_outline bbn-large" title="${row.note}"></i>` : '';
       },
@@ -149,6 +152,14 @@
               bts.push(accept, cancel, refuse);
               break;
           }
+        }
+        bts.push({
+          text: bbn._("Look at the staff card"),
+          icon: 'nf nf-fa-address_card_o',
+          notext: true,
+          action: this.openCard
+        });
+        if ( this.hr.source.perms.write ){
           bts.push({
             text: bbn._("Delete"),
             icon: 'nf nf-fa-trash',
@@ -157,19 +168,6 @@
           });
         }
         return bts
-      },
-      colorRow(row,){
-        let currentDate = moment(),
-            past = moment(row.end).isBefore(currentDate),
-            ongoing = moment(row.start).isBefore(currentDate) && moment(row.end).isAfter(currentDate),
-            future = moment(row.start).isAfter(currentDate);
-        count++;
-        if ( future ){
-          return 'appui-hr-card-tab-holidays-future' + (count % 2 === 0 ? ' bbn-alt-light' : '');
-        }
-        else if ( past ){
-          return 'appui-hr-card-tab-holidays-past' + (count % 2 === 0 ? ' bbn-alt-light' : '');
-        }
       }
     },
     component: {
@@ -177,44 +175,16 @@
         template: `
 <div class="bbn-header bbn-spadded">
   <div class="bbn-flex-width">
-    <div class="bbn-flex-fill">
-      <bbn-button text="` + bbn._('Excel') + `"
-                  icon="nf nf-fa-file_excel_o"
-                  @click="excel"
-                  class="bbn-right-space"
-      ></bbn-button>
-      <span>` + bbn._('Month') + `:</span>
-      <bbn-datepicker type="months"
-                      :nullable="true"
-                      v-model="currentMonth"
-                      class="bbn-right-space"
-                      :disabled="!!currentPeriod"
-      ></bbn-datepicker>
-      <span>` + bbn._('Period') + `:</span>
-      <bbn-dropdown :source="period"
-                    v-model="currentPeriod"
-                    :nullable="true"
-                    class="bbn-right-space"
-                    style="width: 8em"
-                    :disabled="!!currentMonth"
-      ></bbn-dropdown>
+    <bbn-button text="` + bbn._('Excel') + `"
+                icon="nf nf-fa-file_excel_o"
+                @click="excel"
+    ></bbn-button>
+    <div class="bbn-flex-fill bbn-r">
       <span>` + bbn._('Status') + `:</span>
       <bbn-dropdown :source="hr.holidaysStatus"
                     v-model="currentStatus"
                     :nullable="true"
       ></bbn-dropdown>
-    </div>
-    <div>
-      <div class="bbn-middle appui-hr-card-tab-holidays-legend bbn-h-100">
-        <div v-for="p in period">
-          <div class="bbn-vmiddle bbn-hsmargin">
-            <div class="bbn-hsmargin bbn-bordered appui-hr-card-tab-holidays-legend-item"
-                 :style="{backgroundColor: p.color}"
-            ></div>
-            <span v-text="p.text"></span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -222,27 +192,7 @@
         data(){
           return {
             hr: this.closest('appui-hr-main'),
-            card: this.closest('appui-hr-card'),
-            currentStatus: null,
-            currentMonth: null,
-            table: this.closest('bbn-table'),
-            period: [{
-              text: bbn._('Past'),
-              value: 'past',
-              icon: 'nf nf-fa-square appui-hr-card-tab-holidays-past',
-              color: 'lightpink'
-            }, {
-              text: bbn._('Ongoing'),
-              value: 'ongoing',
-              icon: 'nf nf-fa-square_o',
-              color: ''
-            }, {
-              text: bbn._('Future'),
-              value: 'future',
-              icon: 'nf nf-fa-square appui-hr-card-tab-holidays-future',
-              color: 'lightcyan'
-            }],
-            currentPeriod: null
+            currentStatus: null
           }
         },
         methods: {
@@ -271,89 +221,6 @@
               else if ( f > -1 ){
                 tab.currentFilters.conditions.splice(f, 1);
               }
-            }
-          },
-          currentMonth(newVal, oldVal){
-            if ( newVal !== oldVal ){
-              let mainFilter = {
-                field: 'id_staff',
-                value: this.card.source.id
-              };
-              if ( newVal ){
-                let m = moment(newVal, 'YYYY-MM');
-                this.table.currentFilters.conditions.splice(0, this.table.currentFilters.conditions.length, mainFilter, {
-                  logic: 'OR',
-                  conditions: [{
-                    conditions: [{
-                      field: 'start',
-                      operator: '<=',
-                      value: newVal + '-01'
-                    }, {
-                      field: 'end',
-                      operator: '>=',
-                      value: newVal + '-' + m.daysInMonth()
-                    }]
-                  }, {
-                    conditions: [{
-                      field: 'start',
-                      operator: '>=',
-                      value: newVal + '-01'
-                    }, {
-                      field: 'start',
-                      operator: '<=',
-                      value: newVal + '-' + m.daysInMonth()
-                    }]
-                  }]
-                });
-              }
-              else {
-                this.table.currentFilters.conditions.splice(0, this.table.currentFilters.conditions.length, mainFilter);
-              }
-              this.currentStatus = null;
-            }
-          },
-          currentPeriod(newVal, oldVal){
-            if ( newVal !== oldVal ){
-              let mainFilter = {
-                    field: 'id_staff',
-                    value: this.card.source.id
-                  },
-                  cond = {},
-                  currentDate = moment().format('YYYY-MM-DD');
-              if ( newVal ){
-                switch ( newVal ){
-                  case 'past':
-                    cond = {
-                      field: 'end',
-                      operator: '<',
-                      value: currentDate
-                    };
-                    break;
-                  case 'ongoing':
-                    cond.conditions = [{
-                      field: 'start',
-                      operator: '<',
-                      value: currentDate
-                    }, {
-                      field: 'end',
-                      operator: '>',
-                      value: currentDate
-                    }];
-                    break;
-                  case 'future':
-                    cond = {
-                      field: 'start',
-                      operator: '>',
-                      value: currentDate
-                    };
-                    break;
-                }
-                this.table.currentFilters.conditions.splice(0, this.table.currentFilters.conditions.length, mainFilter, cond);
-              }
-              else {
-                this.table.currentFilters.conditions.splice(0, this.table.currentFilters.conditions.length, mainFilter);
-              }
-              this.currentStatus = null;
             }
           }
         }

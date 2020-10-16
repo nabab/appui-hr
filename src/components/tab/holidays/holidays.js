@@ -1,4 +1,5 @@
 (() => {
+  let count = 0;
   return {
     data(){
       return {
@@ -168,6 +169,19 @@
           });
         }
         return bts
+      },
+      colorRow(row,){
+        let currentDate = moment(),
+            past = moment(row.end).isBefore(currentDate),
+            ongoing = moment(row.start).isBefore(currentDate) && moment(row.end).isAfter(currentDate),
+            future = moment(row.start).isAfter(currentDate);
+        count++;
+        if ( future ){
+          return 'appui-hr-tab-holidays-future' + (count % 2 === 0 ? ' bbn-alt-light' : '');
+        }
+        else if ( past ){
+          return 'appui-hr-tab-holidays-past' + (count % 2 === 0 ? ' bbn-alt-light' : '');
+        }
       }
     },
     component: {
@@ -175,16 +189,44 @@
         template: `
 <div class="bbn-header bbn-spadded">
   <div class="bbn-flex-width">
-    <bbn-button text="` + bbn._('Excel') + `"
-                icon="nf nf-fa-file_excel_o"
-                @click="excel"
-    ></bbn-button>
-    <div class="bbn-flex-fill bbn-r">
+    <div class="bbn-flex-fill">
+      <bbn-button text="` + bbn._('Excel') + `"
+                  icon="nf nf-fa-file_excel_o"
+                  @click="excel"
+                  class="bbn-right-space"
+      ></bbn-button>
+      <span>` + bbn._('Month') + `:</span>
+      <bbn-datepicker type="months"
+                      :nullable="true"
+                      v-model="currentMonth"
+                      class="bbn-right-space"
+                      :disabled="!!currentPeriod"
+      ></bbn-datepicker>
+      <span>` + bbn._('Period') + `:</span>
+      <bbn-dropdown :source="period"
+                    v-model="currentPeriod"
+                    :nullable="true"
+                    class="bbn-right-space"
+                    style="width: 8em"
+                    :disabled="!!currentMonth"
+      ></bbn-dropdown>
       <span>` + bbn._('Status') + `:</span>
       <bbn-dropdown :source="hr.holidaysStatus"
                     v-model="currentStatus"
                     :nullable="true"
       ></bbn-dropdown>
+    </div>
+    <div>
+      <div class="bbn-middle appui-hr-tab-holidays-legend bbn-h-100">
+        <div v-for="p in period">
+          <div class="bbn-vmiddle bbn-hsmargin">
+            <div class="bbn-hsmargin bbn-bordered appui-hr-tab-holidays-legend-item"
+                 :style="{backgroundColor: p.color}"
+            ></div>
+            <span v-text="p.text"></span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -192,26 +234,44 @@
         data(){
           return {
             hr: this.closest('appui-hr-main'),
-            currentStatus: null
+            currentStatus: null,
+            currentMonth: null,
+            table: this.closest('bbn-table'),
+            period: [{
+              text: bbn._('Past'),
+              value: 'past',
+              icon: 'nf nf-fa-square appui-hr-tab-holidays-past',
+              color: 'lightpink'
+            }, {
+              text: bbn._('Ongoing'),
+              value: 'ongoing',
+              icon: 'nf nf-fa-square_o',
+              color: ''
+            }, {
+              text: bbn._('Future'),
+              value: 'future',
+              icon: 'nf nf-fa-square appui-hr-tab-holidays-future',
+              color: 'lightcyan'
+            }],
+            currentPeriod: null
           }
         },
         methods: {
           excel(){
-            this.closest('bbn-table').exportExcel();
+            this.table.exportExcel();
           }
         },
         watch: {
           currentStatus(newVal, oldVal){
             if ( newVal !== oldVal ){
-              let tab = this.closest('bbn-table'),
-                  f = bbn.fn.search(tab.currentFilters.conditions, {field: 'status'});
+              let f = bbn.fn.search(this.table.currentFilters.conditions, {field: 'status'});
               if ( newVal ){
                 if ( f > -1 ){
-                  tab.currentFilters.conditions[f].operator = '=';
-                  tab.currentFilters.conditions[f].value = newVal;
+                  this.table.currentFilters.conditions[f].operator = '=';
+                  this.table.currentFilters.conditions[f].value = newVal;
                 }
                 else {
-                  tab.currentFilters.conditions.push({
+                  this.table.currentFilters.conditions.push({
                     field: 'status',
                     operator: '=',
                     value: newVal
@@ -219,8 +279,83 @@
                 }
               }
               else if ( f > -1 ){
-                tab.currentFilters.conditions.splice(f, 1);
+                this.table.currentFilters.conditions.splice(f, 1);
               }
+            }
+          },
+          currentMonth(newVal, oldVal){
+            if ( newVal !== oldVal ){
+              if ( newVal ){
+                let m = moment(newVal, 'YYYY-MM');
+                this.table.currentFilters.conditions.splice(0, this.table.currentFilters.conditions.length, {
+                  logic: 'OR',
+                  conditions: [{
+                    conditions: [{
+                      field: 'start',
+                      operator: '<=',
+                      value: newVal + '-01'
+                    }, {
+                      field: 'end',
+                      operator: '>=',
+                      value: newVal + '-' + m.daysInMonth()
+                    }]
+                  }, {
+                    conditions: [{
+                      field: 'start',
+                      operator: '>=',
+                      value: newVal + '-01'
+                    }, {
+                      field: 'start',
+                      operator: '<=',
+                      value: newVal + '-' + m.daysInMonth()
+                    }]
+                  }]
+                });
+              }
+              else {
+                this.table.currentFilters.conditions.splice(0);
+              }
+              this.currentStatus = null;
+            }
+          },
+          currentPeriod(newVal, oldVal){
+            if ( newVal !== oldVal ){
+              if ( newVal ){
+                let cond = {},
+                    currentDate = moment().format('YYYY-MM-DD');
+                switch ( newVal ){
+                  case 'past':
+                    cond = {
+                      field: 'end',
+                      operator: '<',
+                      value: currentDate
+                    };
+                    break;
+                  case 'ongoing':
+                    cond.conditions = [{
+                      field: 'start',
+                      operator: '<',
+                      value: currentDate
+                    }, {
+                      field: 'end',
+                      operator: '>',
+                      value: currentDate
+                    }];
+                    break;
+                  case 'future':
+                    cond = {
+                      field: 'start',
+                      operator: '>',
+                      value: currentDate
+                    };
+                    break;
+                }
+                this.table.currentFilters.conditions.splice(0, this.table.currentFilters.conditions.length, cond);
+              }
+              else {
+                this.table.currentFilters.conditions.splice(0);
+              }
+              this.currentStatus = null;
             }
           }
         }

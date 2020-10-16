@@ -30,14 +30,13 @@
                 :limit="50"
                 :order="[{
                   field: 'start',
-                  dir: 'DESC'
+                  dir: 'ASC'
                 }, {
                   field: 'end',
-                  dir: 'DESC'
+                  dir: 'ASC'
                 }]"
                 :toolbar="$options.component.toolbar"
                 :filters="{conditions:[{field: 'id_staff', value: source.id}]}"
-                :trClass="colorRow"
       >
         <bbns-column title="<?=_('Name')?>"
                      field="id_staff"

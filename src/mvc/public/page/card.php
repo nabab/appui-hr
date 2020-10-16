@@ -26,7 +26,7 @@ if ( !empty($id_staff) ){
       $ctrl->data = array_merge($ctrl->data, $m);
     }
     $ctrl->data['id'] = $ctrl->data['info']['id'];
-    unset($ctrl->data['info']['id']);
+    //unset($ctrl->data['info']['id']);
     $ctrl
       ->set_url(APPUI_HR_ROOT . 'page/card/' . $ctrl->data['id'])
       ->set_icon('nf nf-mdi-worker bbn-large')

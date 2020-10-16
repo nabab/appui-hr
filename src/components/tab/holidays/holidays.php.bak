@@ -1,4 +1,4 @@
-<div class="appui-hr-card-tab-holidays">
+<div class="appui-hr-tab-holidays">
   <bbn-router class="bbn-overlay"
               :nav="true"
               :autoload="false"
@@ -9,8 +9,8 @@
                     icon="nf nf-oct-calendar"
                     title="<?=_('Holidays Planning')?>"
                     :notext="true"
-                    component="appui-hr-card-tab-holidays-planning"
-                    v-if="source.tabs.holidays.tabs.planning"
+                    component="appui-hr-tab-holidays-planning"
+                    v-if="hr.source.tabs.holidays.tabs.planning"
     ></bbns-container>
     <bbn-container url="list"
                    :static="true"
@@ -18,7 +18,7 @@
                    icon="nf nf-fa-list"
                    title="<?=_('Holidays List')?>"
                    :notext="true"
-                   v-if="source.tabs.holidays.tabs.list"
+                   v-if="hr.source.tabs.holidays.tabs.list"
     >
       <bbn-table ref="table"
                 :source="root + 'data/holidays'"
@@ -30,18 +30,17 @@
                 :limit="50"
                 :order="[{
                   field: 'start',
-                  dir: 'DESC'
+                  dir: 'ASC'
                 }, {
                   field: 'end',
-                  dir: 'DESC'
+                  dir: 'ASC'
                 }]"
                 :toolbar="$options.component.toolbar"
-                :filters="{conditions:[{field: 'id_staff', value: source.id}]}"
-                :trClass="colorRow"
       >
         <bbns-column title="<?=_('Name')?>"
                      field="id_staff"
-                     :hidden="true"
+                     :render="renderName"
+                     :source="staff"
         ></bbns-column>
         <bbns-column title="<?=_('From')?>"
                      field="start"
@@ -86,9 +85,8 @@
                      :width="50"
         ></bbns-column>
         <bbns-column :buttons="buttons"
-                     :width="150"
+                     :width="hr.source.perms.write ? 180 : 60"
                      cls="bbn-c"
-                     v-if="hr.source.perms.write"
         ></bbns-column>
       </bbn-table>
     </bbn-container>
