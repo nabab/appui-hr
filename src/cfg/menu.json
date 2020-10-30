@@ -1,29 +1,13 @@
 {
   "text": "HR",
-  "icon": "nf nf-fa-group",
-  "items": [{
-    "text": "Dashboard",
-    "icon": "nf nf-fa-home",
-    "link": "page/home"
-  }, {
-    "text": "Staff",
-    "icon": "nf nf-oct-organization",
-    "link": "page/staff"
-  }, {
-    "text": "Planning",
-    "icon": "nf nf-fa-calendar",
-    "link": "page/planning"
-  }, {
-    "text": "Holidays calendar",
-    "icon": "nf nf-oct-organization",
-    "link": "page/holidays/planning"
-  }, {
-    "text": "Holidays list",
-    "icon": "nf nf-fa-th_list",
-    "link": "page/holidays/list"
-  }, {
-    "text": "My card",
-    "icon": "nf nf-fa-address_card",
-    "link": "page/card"
-  }]
+  "num": 15,
+  "icon": "nf nf-fa-users",
+  "items": [
+    {
+      "text": "HR dashboard",
+      "num": 1,
+      "icon": "nf nf-fa-cog",
+      "link": "page"
+    }
+  ]
 }
