@@ -23,11 +23,14 @@
       </div>
       <div v-if="status" :class="'bbn-' + status.color">
         <i :class="status.icon"></i>
-        <strong><span v-text="status.text"></span></strong>
+        <strong><span class="bbn-hsmargin" v-text="status.text"></span></strong>
       </div>
       <div v-if="source.note">
         <i class="nf nf-fa-comment_o"></i>
-        <span class="bbn-hsmargin" v-text="source.note"></span>
+        <span class="bbn-hsmargin"
+              v-text="source.note"
+              style="white-space: normal"
+        ></span>
       </div>
     </div>
     <div class="bbn-xl bbn-vmiddle">
