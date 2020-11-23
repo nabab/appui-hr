@@ -1,0 +1,36 @@
+.appui-hr-card-tab-holidays {
+  @past: lightpink;
+  @future: lightcyan;
+  tr.appui-hr-card-tab-holidays-past {
+    td {
+      background-color: @past !important;
+    }
+  }
+  tr.appui-hr-card-tab-holidays-future {
+    td {
+      background-color: @future !important;
+    }
+  }
+  tr.bbn-alt-light {
+    td {
+      -moz-box-shadow: inset 0px 0px 1000px 1000px rgba(255, 255, 255, .125)!important;
+      -webkit-box-shadow: inset 0px 0px 1000px 1000px rgba(255, 255, 255, .125)!important;
+      box-shadow: inset 0px 0px 1000px 1000px rgba(255, 255, 255, .125)!important;
+    }
+  }
+  i.appui-hr-card-tab-holidays-past {
+    color: @past;
+  }
+  i.appui-hr-card-tab-holidays-future {
+    color: @future;
+  }
+  .appui-hr-card-tab-holidays-legend {
+    display: grid !important;
+    grid-template-columns: repeat(3, auto)  !important;
+    .appui-hr-card-tab-holidays-legend-item {
+      height: 1em;
+      width: 2em;
+    }
+  }
+}
+

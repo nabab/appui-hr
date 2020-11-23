@@ -1,4 +1,4 @@
-<div class="appui-hr-card-widget-upcoming">
+<div class="appui-hr-card-widget-upcoming bbn-rel">
   <bbn-table :source="source.upcoming"
              :pageable="false"
 						 :scrollable="false"
