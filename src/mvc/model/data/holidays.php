@@ -40,11 +40,11 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
       'conditions' => [[
         'field' => 'bbn_events.id',
         'exp' => 'bbn_hr_staff_events.id_event'
-      ], [
+      ]/*, [
         'field' => 'bbn_events.end',
         'operator' => '>=',
         'value' => date('Y-01-01 00:00:00')
-      ]]
+      ]*/]
     ]
   ], [
 		'table' => 'bbn_hr_planning',
