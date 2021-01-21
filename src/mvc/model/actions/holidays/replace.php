@@ -3,7 +3,7 @@ if (
   !empty($model->data['id_entity']) &&
   !empty($model->data['events']) &&
   ($events = new \bbn\appui\events($model->db)) &&
-  ($id_type = $model->inc->options->from_code('wp', 'events', 'appui'))
+  ($id_type = $model->inc->options->from_code('wp', 'event', 'appui'))
 ){
   $success = false;
   foreach ( $model->data['events'] as $ev ){
@@ -50,7 +50,7 @@ else if (
   ])) &&
   !empty($list['data']) &&
   ($events = new \bbn\appui\events($model->db)) &&
-  ($id_type = $model->inc->options->from_code('wp', 'events', 'appui'))
+  ($id_type = $model->inc->options->from_code('wp', 'event', 'appui'))
 ) {
   $success = false;
   foreach ( $list['data'] as $ev ){

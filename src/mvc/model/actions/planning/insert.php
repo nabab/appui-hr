@@ -22,7 +22,7 @@ if (
     [
       $ef['start'] => $start,
       $ef['end'] => $end,
-      $ef['id_type'] => $model->inc->options->from_code('wp', 'events', 'appui'),
+      $ef['id_type'] => $model->inc->options->from_code('wp', 'event', 'appui'),
       $ef['recurring'] => empty($model->data[$ef['recurring']]) ? 0 : 1,
       $rf['type'] => $model->data[$rf['type']],
       $rf['interval'] => $model->data[$rf['interval']],
