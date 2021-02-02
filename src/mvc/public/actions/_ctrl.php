@@ -1,9 +1,9 @@
 <?php
-$path = $ctrl->get_path();
+$path = $ctrl->getPath();
 $path = explode('/', $path);
 array_shift($path);
 $path = implode('/', $path);
-if ( $m = $ctrl->get_plugin_model($path, $ctrl->post) ){
+if ( $m = $ctrl->getPluginModel($path, $ctrl->post) ){
   $ctrl->obj = $m;
   return false;
 }

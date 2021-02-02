@@ -6,14 +6,14 @@ if (
     'id_staff' => $model->data['id_staff'],
     'id_event' => $model->data['id_event']
   ]) &&
-  ($planning = new \bbn\appui\planning($model->db))
+  ($planning = new \bbn\Appui\Planning($model->db))
 ){
   $event = $model->db->select('bbn_events', [], ['id' => $model->data['id_event']]);
-  $workingdays = $planning->get_all($event->start, $event->end, $model->data['id_staff']);
+  $workingdays = $planning->getAll($event->start, $event->end, $model->data['id_staff']);
   $substitutes = [];
   foreach ( $workingdays as $wd ){
     if ( !isset($substitutes[$wd['id']]) ){
-      $substitutes[$wd['id']] = $model->db->select_all([
+      $substitutes[$wd['id']] = $model->db->selectAll([
         'table' => 'bbn_hr_planning',
         'fields' => [],
         'where' => [
@@ -23,11 +23,11 @@ if (
           ], [
             'field' => 'alias',
             'operator' => '>=',
-            'value' => date('Y-m-d', strtotime($event->start))
+            'value' => date('Y-m-d', Strtotime($event->start))
           ], [
             'field' => 'alias',
             'operator' => '<=',
-            'value' => date('Y-m-d', strtotime($event->end))
+            'value' => date('Y-m-d', Strtotime($event->end))
           ]]
         ]
       ]);

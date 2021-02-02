@@ -1,6 +1,6 @@
 <?php
-$cfg = $model->inc->user->get_class_cfg();
-$manager = $model->inc->user->get_manager();
+$cfg = $model->inc->user->getClassCfg();
+$manager = $model->inc->user->getManager();
 $tiers = new \amiral\tiers($model->db);
 $ok = false;
 if ( !empty($model->data[$cfg['arch']['users']['id_group']]) ){
@@ -14,7 +14,7 @@ if ( !empty($model->data[$cfg['arch']['users']['id_group']]) ){
 
   if (
     isset($model->data[$cfg['arch']['users']['id_group']], $model->data[$cfg['arch']['users']['email']]) &&
-    \bbn\str::is_email($model->data[$cfg['arch']['users']['email']])
+    \bbn\Str::isEmail($model->data[$cfg['arch']['users']['email']])
    ){
     $data_user = [
       $cfg['arch']['users']['id_group'] => $model->data['id_group'],
@@ -32,7 +32,7 @@ if ( !empty($model->data[$cfg['arch']['users']['id_group']]) ){
 
     if (
       !empty($model->data['id_user']) ||
-      ($model->data['id_user'] = $model->db->select_one(
+      ($model->data['id_user'] = $model->db->selectOne(
         $cfg['table'],
         $cfg['arch']['users']['id'],
         [$cfg['arch']['users']['email'] => $model->data[$cfg['arch']['users']['email']]]
@@ -40,14 +40,14 @@ if ( !empty($model->data[$cfg['arch']['users']['id_group']]) ){
     ){
       $manager->reactivate($model->data['id_user']);
       $manager->edit($data_user, $model->data['id_user']);
-      $manager->set_unique_group($model->data['id_user'], $model->data['id_group']);
+      $manager->setUniqueGroup($model->data['id_user'], $model->data['id_group']);
       $ok = true;
     }
     else {
       if ($user = $manager->add($data_user) ){
         $ok = true;
         $model->data['id_user'] = $user[$cfg['arch']['users']['id']];
-        $manager->set_unique_group($user[$cfg['arch']['users']['id']], $model->data['id_group']);
+        $manager->setUniqueGroup($user[$cfg['arch']['users']['id']], $model->data['id_group']);
       }
     }
   }
@@ -56,7 +56,7 @@ else if (
   !empty($model->data['id_user']) ||
   (
     !empty($model->data[$cfg['arch']['users']['email']]) &&
-    ($model->data['id_user'] = $model->db->select_one(
+    ($model->data['id_user'] = $model->db->selectOne(
       $cfg['table'],
       $cfg['arch']['users']['id'],
       [$cfg['arch']['users']['email'] => $model->data[$cfg['arch']['users']['email']]]

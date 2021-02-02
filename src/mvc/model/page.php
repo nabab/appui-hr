@@ -1,8 +1,8 @@
 <?php
 
 try {
-  $dashboard = new \bbn\appui\dashboard('hr');
-  $widgets = $dashboard->get_widgets_code(APPUI_HR_ROOT . 'data/home/widget/');
+  $dashboard = new \bbn\Appui\Dashboard('hr');
+  $widgets = $dashboard->getWidgetsCode(APPUI_HR_ROOT . 'data/home/widget/');
 }
 catch ( Exception $e ){
   $dashboard = false;
@@ -20,7 +20,7 @@ $ret = [
       'fcolor' => 'white',
       'source' => [
         'widgets' => !empty($widgets) ? $widgets : [],
-        'widgets_order' => !empty($dashboard) ? $dashboard->get_order($widgets) : []
+        'widgets_order' => !empty($dashboard) ? $dashboard->getOrder($widgets) : []
       ]
     ],
     'staff' => [
@@ -54,17 +54,17 @@ $ret = [
   ]
 ];
 
-if ( $cfg = $model->get_plugin_model('page') ){
-  $ret['tabs'] = empty($cfg['tabs']) ? $ret['tabs'] : \bbn\x::merge_arrays($ret['tabs'], $cfg['tabs']);
+if ( $cfg = $model->getPluginModel('page') ){
+  $ret['tabs'] = empty($cfg['tabs']) ? $ret['tabs'] : \bbn\X::mergeArrays($ret['tabs'], $cfg['tabs']);
 }
 
 if (
-  ($tabs_perm = $model->inc->perm->get_all(APPUI_HR_ROOT . '/page')) &&
-  (($t = \bbn\x::find($tabs_perm, ['code' => 'tabs'])) !== null) &&
-  ($tabs_perm = $model->inc->perm->get_all($tabs_perm[$t]['id']))
+  ($tabs_perm = $model->inc->perm->getAll(APPUI_HR_ROOT . '/page')) &&
+  (($t = \bbn\X::find($tabs_perm, ['code' => 'tabs'])) !== null) &&
+  ($tabs_perm = $model->inc->perm->getAll($tabs_perm[$t]['id']))
 ){
   foreach ( $ret['tabs'] as $code => $tab ){
-    $idx = \bbn\x::find($tabs_perm, ['code' => $code]);
+    $idx = \bbn\X::find($tabs_perm, ['code' => $code]);
     if (
       ($idx === null) ||
       !$model->inc->perm->has($tabs_perm[$idx]['id'])
@@ -73,7 +73,7 @@ if (
     }
     else {
       if ( !empty($tabs_perm[$idx]['num_children']) ){
-        $subtabs = $model->inc->perm->get_all($tabs_perm[$idx]['id']);
+        $subtabs = $model->inc->perm->getAll($tabs_perm[$idx]['id']);
         foreach ( $subtabs as $subtab ){
           if ( $model->inc->perm->has($subtab['id']) ){
             if ( !array_key_exists('tabs', $ret['tabs'][$code]) ){
@@ -95,7 +95,7 @@ $ret['perms'] = [
   'cards' => $model->inc->perm->has('hr/perms/cards')
 ];
 if ( !empty($cfg) && !empty($cfg['perms']) ){
-  $ret['perms'] = \bbn\x::merge_arrays($ret['perms'], $cfg['perms']);
+  $ret['perms'] = \bbn\X::mergeArrays($ret['perms'], $cfg['perms']);
 }
 
 return $ret;

@@ -1,5 +1,5 @@
 <?php
-if ( $m = $ctrl->get_plugin_model('employes') ){
+if ( $m = $ctrl->getPluginModel('employes') ){
   $ctrl->obj = $m;
 }
 else {

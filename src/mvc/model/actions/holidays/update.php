@@ -1,32 +1,32 @@
 <?php
 if (
   !empty($model->data['id']) &&
-  ($events = new \bbn\appui\events($model->db)) &&
+  ($events = new \bbn\Appui\Events($model->db)) &&
   ($event = $events->get($model->data['id'])) &&
-  ($id_staff = $model->db->select_one('bbn_hr_staff_events', 'id_staff', ['id_event' => $model->data['id']])) &&
-  ($planning = new \bbn\appui\planning($model->db))
+  ($id_staff = $model->db->selectOne('bbn_hr_staff_events', 'id_staff', ['id_event' => $model->data['id']])) &&
+  ($planning = new \bbn\Appui\Planning($model->db))
 ){
   $dates_to_remove = [];
   $staff_changed = $id_staff !== $model->data['id_staff'];
   if ( !$staff_changed && (($event['start'] !== $model->data['start']) || ($event['end'] !== $model->data['end'])) ){
-    $date = date('Y-m-d', strtotime($event['start']));
-    $end = date('Y-m-d', strtotime($event['end']));
+    $date = date('Y-m-d', Strtotime($event['start']));
+    $end = date('Y-m-d', Strtotime($event['end']));
     while ( $date <= $end ){
       if (
-        ($date < date('Y-m-d', strtotime($model->data['start']))) ||
-        ($date > date('Y-m-d', strtotime($model->data['end'])))
+        ($date < date('Y-m-d', Strtotime($model->data['start']))) ||
+        ($date > date('Y-m-d', Strtotime($model->data['end'])))
       ){
         $dates_to_remove[] = $date;
       }
-      $date = date('Y-m-d', strtotime('+1 day', strtotime($date)));
+      $date = date('Y-m-d', Strtotime('+1 day', Strtotime($date)));
     }
   }
   if ( !empty($dates_to_remove) || $staff_changed ){
-    $workingdays = $planning->get_all($event['start'], $event['end'], $id_staff);
+    $workingdays = $planning->getAll($event['start'], $event['end'], $id_staff);
     $substitutes = [];
     foreach ( $workingdays as $wd ){
       if ( !isset($substitutes[$wd['id']]) ){
-        $substitutes[$wd['id']] = $model->db->select_all([
+        $substitutes[$wd['id']] = $model->db->selectAll([
           'table' => 'bbn_hr_planning',
           'fields' => [],
           'where' => [
@@ -36,11 +36,11 @@ if (
             ], [
               'field' => 'alias',
               'operator' => '>=',
-              'value' => date('Y-m-d', strtotime($event['start']))
+              'value' => date('Y-m-d', Strtotime($event['start']))
             ], [
               'field' => 'alias',
               'operator' => '<=',
-              'value' => date('Y-m-d', strtotime($event['end']))
+              'value' => date('Y-m-d', Strtotime($event['end']))
             ]]
           ]
         ]);

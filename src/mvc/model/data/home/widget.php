@@ -1,5 +1,5 @@
 <?php
-/* @var \bbn\mvc\model $model */
+/* @var \bbn\Mvc\Model $model */
 if ( !empty($model->data['code']) ){
-  return $model->get_plugin_model('home/'. $model->data['code'], $model->data);
+  return $model->getPluginModel('home/'. $model->data['code'], $model->data);
 }

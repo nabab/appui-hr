@@ -1,5 +1,5 @@
 <?php
-$cfg = $model->inc->user->get_class_cfg();
+$cfg = $model->inc->user->getClassCfg();
 
 if (
   empty($model->data[$cfg['arch']['users']['id']]) &&
@@ -16,7 +16,7 @@ if (
 
   if (
     isset($model->data[$cfg['arch']['users']['id_group']], $model->data[$cfg['arch']['users']['email']]) &&
-    \bbn\str::is_email($model->data[$cfg['arch']['users']['email']])
+    \bbn\Str::isEmail($model->data[$cfg['arch']['users']['email']])
   ){
     $data_user = [
       $cfg['arch']['users']['id_group'] => $model->data['id_group'],
@@ -32,11 +32,11 @@ if (
       $cfg['arch']['users']['theme'] => 'default'
     ];
     if (
-      ($manager = $model->inc->user->get_manager()) &&
+      ($manager = $model->inc->user->getManager()) &&
       ($user = $manager->add($data_user)) &&
       !empty($user[$cfg['arch']['users']['id']])
     ){
-      $manager->set_unique_group($user[$cfg['arch']['users']['id']], $model->data['id_group']);
+      $manager->setUniqueGroup($user[$cfg['arch']['users']['id']], $model->data['id_group']);
     }
   }
 

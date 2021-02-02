@@ -2,8 +2,8 @@
 if ( 
   !empty($model->data['id_entity']) &&
   !empty($model->data['events']) &&
-  ($events = new \bbn\appui\events($model->db)) &&
-  ($id_type = $model->inc->options->from_code('wp', 'event', 'appui'))
+  ($events = new \bbn\Appui\Events($model->db)) &&
+  ($id_type = $model->inc->options->fromCode('wp', 'event', 'appui'))
 ){
   $success = false;
   foreach ( $model->data['events'] as $ev ){
@@ -44,13 +44,13 @@ else if (
   !empty($model->data['start']) &&
   !empty($model->data['end']) &&
   ($model->data['id_employe'] !== $model->data['id_old_employe']) &&
-  ($list = $model->get_model('data/hr/entities/planning', [
+  ($list = $model->getModel('data/hr/entities/planning', [
     'id_entity' => $model->data['id_entity'],
     'id_employe' => $model->data['id_old_employe']
   ])) &&
   !empty($list['data']) &&
-  ($events = new \bbn\appui\events($model->db)) &&
-  ($id_type = $model->inc->options->from_code('wp', 'event', 'appui'))
+  ($events = new \bbn\Appui\Events($model->db)) &&
+  ($id_type = $model->inc->options->fromCode('wp', 'event', 'appui'))
 ) {
   $success = false;
   foreach ( $list['data'] as $ev ){

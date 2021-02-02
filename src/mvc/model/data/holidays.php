@@ -2,11 +2,11 @@
 if ( 
   !empty($model->data['filters']) &&
   !empty($model->data['filters']['conditions']) &&
-  (($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null)
+  (($idx = \bbn\X::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null)
 ){
   $model->data['filters']['conditions'][$idx]['field'] = 'bbn_people.id';
 }
-$grid = new \bbn\appui\grid($model->db, $model->data, [
+$grid = new \bbn\Appui\Grid($model->db, $model->data, [
   'table' => 'bbn_people',
   'fields' => [
     'id_staff' => 'bbn_people.id',
@@ -110,7 +110,7 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
       $row['substitutes'] = $sub;
     },
     'params' => [
-      'staff' => $model->db->select_all_by_keys([
+      'staff' => $model->db->selectAllByKeys([
         'table' => 'bbn_people',
         'fields' => ['id', 'fullname'],
         'join' => [[
@@ -129,5 +129,5 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
 ]);
 
 if ( $grid->check() ){
-  return $grid->get_excel() ? $grid->to_excel() : $grid->get_datatable(true);
+  return $grid->getExcel() ? $grid->toExcel() : $grid->getDatatable(true);
 }

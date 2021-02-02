@@ -2,9 +2,9 @@
 if ( 
   !empty($model->data['start']) &&
   !empty($model->data['end']) &&
-  \bbn\str::is_uid($model->data['id_staff']) &&
-  \bbn\str::is_uid($model->data['id_type']) &&
-  ($events = new \bbn\appui\events($model->db)) &&
+  \bbn\Str::isUid($model->data['id_staff']) &&
+  \bbn\Str::isUid($model->data['id_type']) &&
+  ($events = new \bbn\Appui\Events($model->db)) &&
   ($id_event = $events->insert([
     'id_type' => $model->data['id_type'],
     'start' => $model->data['start'],

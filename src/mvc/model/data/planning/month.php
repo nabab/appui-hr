@@ -1,17 +1,17 @@
 <?php
-/* @var \bbn\mvc\model $model */
+/* @var \bbn\Mvc\Model $model */
 if ( !empty($model->data['data']['start']) && !empty($model->data['data']['end']) ){
   $id_staff = null;
   if ( 
     !empty($model->data['filters']) &&
     !empty($model->data['filters']['conditions']) &&
-    (($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null)
+    (($idx = \bbn\X::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null)
   ){
     $id_staff = $model->data['filters']['conditions'][$idx]['value'];
   }
-  $pla = new \bbn\appui\planning($model->db);
+  $pla = new \bbn\Appui\Planning($model->db);
   return [
-    'data' => $pla->get_all(
+    'data' => $pla->getAll(
       $model->data['data']['start'],
       $model->data['data']['end'],
       $id_staff

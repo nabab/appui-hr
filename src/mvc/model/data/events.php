@@ -1,13 +1,13 @@
 <?php
-/* @var \bbn\mvc\model $model */
+/* @var \bbn\Mvc\Model $model */
 if (
   !empty($model->data['filters']) &&
   !empty($model->data['filters']['conditions'])
 ){
-  if ( ($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null ){
+  if ( ($idx = \bbn\X::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null ){
     $model->data['data']['staff'] = $model->data['filters']['conditions'][$idx]['value'];
   }
-  if ( ($idx = \bbn\x::find($model->data['filters']['conditions'], ['field' => 'status'])) !== null ){
+  if ( ($idx = \bbn\X::find($model->data['filters']['conditions'], ['field' => 'status'])) !== null ){
     $model->data['data']['status'] = $model->data['filters']['conditions'][$idx]['value'];
   }
 }
@@ -125,7 +125,7 @@ else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty
     $args[] = $model->data['status'];
   }
   return [
-    'data' => $model->db->get_rows("
+    'data' => $model->db->getRows("
       SELECT bbn_events.id, bbn_events.id_type, bbn_events.`start`, bbn_events.`end`,
         bbn_hr_staff_events.id_staff, bbn_hr_staff_events.note, bbn_hr_staff_events.status, bbn_people.fullname AS staff
       FROM bbn_events
@@ -152,7 +152,7 @@ else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty
 
 if ( !empty($where) ){
   return [
-    'data' => $model->db->rselect_all([
+    'data' => $model->db->rselectAll([
       'table' => 'bbn_events',
       'fields' => [
         'bbn_events.id',

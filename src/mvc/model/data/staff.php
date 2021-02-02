@@ -1,5 +1,5 @@
 <?php
-$grid = new \bbn\appui\grid($model->db, $model->data, [
+$grid = new \bbn\Appui\Grid($model->db, $model->data, [
   'table' => 'bbn_people',
   'fields' => [
     'bbn_people.id',
@@ -43,11 +43,11 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
       $row['id_group'] = $par['groups'][$row['id_group']];
     },
     'params' => [
-      'groups' => $model->db->select_all_by_keys('bbn_users_groups', ['id', 'group'])
+      'groups' => $model->db->selectAllByKeys('bbn_users_groups', ['id', 'group'])
     ]
   ]
 ]);
 
 if ( $grid->check() ){
-  return $grid->get_excel() ? $grid->to_excel() : $grid->get_datatable(true);
+  return $grid->getExcel() ? $grid->toExcel() : $grid->getDatatable(true);
 }

@@ -1,5 +1,5 @@
 <?php
-/** @var $ctrl \bbn\mvc\controller */
+/** @var $ctrl \bbn\Mvc\Controller */
 if ( !\defined('APPUI_HR_ROOT') ){
-  define('APPUI_HR_ROOT', $ctrl->plugin_url('appui-hr').'/');
+  define('APPUI_HR_ROOT', $ctrl->pluginUrl('appui-hr').'/');
 }

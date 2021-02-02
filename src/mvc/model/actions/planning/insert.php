@@ -1,13 +1,13 @@
 <?php
-/* @var \bbn\mvc\model $model */
+/* @var \bbn\Mvc\Model $model */
 if ( 
   !empty($model->data['day']) &&
   !empty($model->data['id_staff']) &&
   !empty($model->data['id_entity']) &&
   !empty($model->data['hour']) &&
-  ($pla = new \bbn\appui\planning($model->db))
+  ($pla = new \bbn\Appui\Planning($model->db))
 ){
-  $ecfg = $pla->get_events()->get_class_cfg();
+  $ecfg = $pla->getEvents()->getClassCfg();
   $ef = $ecfg['arch']['events'];
   $rf = $ecfg['arch']['recurring'];
   $h = floor($model->data['hour']);
@@ -22,7 +22,7 @@ if (
     [
       $ef['start'] => $start,
       $ef['end'] => $end,
-      $ef['id_type'] => $model->inc->options->from_code('wp', 'event', 'appui'),
+      $ef['id_type'] => $model->inc->options->fromCode('wp', 'event', 'appui'),
       $ef['recurring'] => empty($model->data[$ef['recurring']]) ? 0 : 1,
       $rf['type'] => $model->data[$rf['type']],
       $rf['interval'] => $model->data[$rf['interval']],

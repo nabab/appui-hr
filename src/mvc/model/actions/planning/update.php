@@ -1,5 +1,5 @@
 <?php
-/* @var \bbn\mvc\model $model */
+/* @var \bbn\Mvc\Model $model */
 if ( 
   !empty($model->data['day']) &&
   !empty($model->data['id']) &&
@@ -36,14 +36,14 @@ if (
     }
   }
   else {
-    $year = date('Y', strtotime($model->data['day']));
-    $filename = date('Y-m', strtotime($model->data['day'])).'.json';
+    $year = date('Y', Strtotime($model->data['day']));
+    $filename = date('Y-m', Strtotime($model->data['day'])).'.json';
     $path = BBN_DATA_PATH."/hr/planning/$year/";
     if ( 
       is_file($path.$filename) && 
       ($d = file_get_contents($path.$filename)) &&
       ($d = json_decode($d, true)) &&
-      (($idx = \bbn\x::find($d, ['id' => $model->data['id']])) !== null)
+      (($idx = \bbn\X::find($d, ['id' => $model->data['id']])) !== null)
     ){
       $entity = $model->db->rselect([
         'table' => 'amiral_entities',
@@ -59,7 +59,7 @@ if (
               'exp' => 'amiral_liens.id_entity'
             ],[
               'field' => 'amiral_liens.type_lien',
-              'value' => $model->inc->options->from_code('siege', 'liens')
+              'value' => $model->inc->options->fromCode('siege', 'liens')
             ]]
           ]
         ], [
@@ -84,7 +84,7 @@ if (
         'entity_nom' => $entity['nom'],
         'entity_adresse' => $entity['fulladdress']
       ];
-      if ( file_put_contents($path.$filename, json_encode($d)) && is_file($path.$filename) ){
+      if ( file_put_contents($path.$filename, Json_encode($d)) && is_file($path.$filename) ){
         return [
           'json' => filemtime($path.$filename),
           'success' => true
