@@ -1,48 +1,75 @@
-[{
+{
   "text": "HR",
   "code": "hr",
   "id_parent": "appui",
   "icon": "nf nf-fa-users",
   "cfg": {
-    "allow_children": 1,
-    "show_code": 1
+    "show_code": 1,
+    "allow_children": 1
   },
-  "items": [{
-    "text": "Types of absences",
-    "code": "absences",
-    "value": null,
-    "num_children": 3,
-    "items": [{
-      "text": "Holidays",
-      "code": "holidays",
-      "color": "skyblue"
+  "items": [
+    {
+      "text": "Types of absences",
+      "code": "absences",
+      "value": null,
+      "num_children": 3,
+      "items": [{
+        "text": "Holidays",
+        "code": "holidays",
+        "color": "skyblue"
+      }, {
+        "text": "Permission",
+        "code": "permission",
+        "color": "sandybrown"
+      }, {
+        "text": "Sick holidays",
+        "code": "sick",
+        "color": "tomato"
+      }]
     }, {
-      "text": "Permission",
-      "code": "permission",
-      "color": "sandybrown"
-    }, {
-      "text": "Sick holidays",
-      "code": "sick",
-      "color": "tomato"
-    }]
-  }]
-}, {
-  "text": "Working plane",
-  "code": "wp",
-  "id_parent": ["events","appui"],
-  "after": 1
-}, {
-  "text": "Staff absents",
-  "code": "staff_absent",
-  "id_parent": ["default","dashboard","appui"],
-  "id_alias": ["staff_absent","appui-dashboard","plugins","|*appui-hr*|/","page","permissions","appui"],
-  "value": "{\"limit\":5,\"observe\":false,\"options\":{},\"closable\":true,\"buttonsLeft\":[],\"buttonsRight\":[],\"itemComponent\":\"appui-hr-widget-staff-absent\"}",
-  "after": 1
-}, {
-  "text": "Staff absents (\u00e0 venir)",
-  "code": "staff_absent_soon",
-  "id_parent": ["default","dashboard","appui"],
-  "id_alias": ["staff_absent_soon","appui-dashboard","plugins","|*appui-hr*|/","page","permissions","appui"],
-  "value": "{\"limit\":5,\"observe\":false,\"options\":{},\"closable\":true,\"buttonsLeft\":[],\"buttonsRight\":[],\"itemComponent\":\"appui-hr-widget-staff-absent\"}",
-  "after": 1
-}]
+      "text": "Permissions",
+      "code": "permissions",
+      "cfg": {
+        "allow_children": 1
+      },
+      "items": [
+        {
+          "text": "Access",
+          "code": "access"
+        }, {
+          "text": "Options",
+          "code": "options"
+        }, {
+          "text": "Plugins",
+          "code": "plugins",
+          "items": [
+            {
+              "text": "Dashboard",
+              "code": "appui-dashboard",
+              "id_alias": ["list", "dashboard", "appui"],
+              "items": [
+                {
+                  "text": "Working plane",
+                  "code": "wp"
+                }, {
+                  "text": "Staff absents",
+                  "code": "staff_absent",
+                  "limit":5,
+                  "observe":false,
+                  "closable":true,
+                  "itemComponent":"appui-hr-widget-staff-absent"
+                }, {
+                  "text": "Staff absents (à venir)",
+                  "code": "staff_absent_soon",
+                  "limit":5,
+                  "closable":true,
+                  "itemComponent": "appui-hr-widget-staff-absent"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

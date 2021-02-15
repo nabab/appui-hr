@@ -8,7 +8,7 @@
              :editable="true"
              :filterable="true"
              :limit="50"
-             :order="[{field: 'surname', Dir: 'ASC'}]"
+             :order="[{field: 'surname', dir: 'ASC'}]"
              :showable="true"
   >
     <bbns-column field="id"

@@ -20,11 +20,11 @@ if (
           ], [
             'field' => 'alias',
             'operator' => '>=',
-            'value' => date('Y-m-d', Strtotime($event['start']))
+            'value' => date('Y-m-d', strtotime($event['start']))
           ], [
             'field' => 'alias',
             'operator' => '<=',
-            'value' => date('Y-m-d', Strtotime($event['end']))
+            'value' => date('Y-m-d', strtotime($event['end']))
           ]]
         ]
       ]);

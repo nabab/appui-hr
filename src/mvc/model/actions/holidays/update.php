@@ -9,16 +9,16 @@ if (
   $dates_to_remove = [];
   $staff_changed = $id_staff !== $model->data['id_staff'];
   if ( !$staff_changed && (($event['start'] !== $model->data['start']) || ($event['end'] !== $model->data['end'])) ){
-    $date = date('Y-m-d', Strtotime($event['start']));
-    $end = date('Y-m-d', Strtotime($event['end']));
+    $date = date('Y-m-d', strtotime($event['start']));
+    $end = date('Y-m-d', strtotime($event['end']));
     while ( $date <= $end ){
       if (
-        ($date < date('Y-m-d', Strtotime($model->data['start']))) ||
-        ($date > date('Y-m-d', Strtotime($model->data['end'])))
+        ($date < date('Y-m-d', strtotime($model->data['start']))) ||
+        ($date > date('Y-m-d', strtotime($model->data['end'])))
       ){
         $dates_to_remove[] = $date;
       }
-      $date = date('Y-m-d', Strtotime('+1 day', Strtotime($date)));
+      $date = date('Y-m-d', strtotime('+1 day', strtotime($date)));
     }
   }
   if ( !empty($dates_to_remove) || $staff_changed ){
@@ -36,11 +36,11 @@ if (
             ], [
               'field' => 'alias',
               'operator' => '>=',
-              'value' => date('Y-m-d', Strtotime($event['start']))
+              'value' => date('Y-m-d', strtotime($event['start']))
             ], [
               'field' => 'alias',
               'operator' => '<=',
-              'value' => date('Y-m-d', Strtotime($event['end']))
+              'value' => date('Y-m-d', strtotime($event['end']))
             ]]
           ]
         ]);

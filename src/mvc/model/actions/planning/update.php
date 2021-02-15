@@ -36,8 +36,8 @@ if (
     }
   }
   else {
-    $year = date('Y', Strtotime($model->data['day']));
-    $filename = date('Y-m', Strtotime($model->data['day'])).'.json';
+    $year = date('Y', strtotime($model->data['day']));
+    $filename = date('Y-m', strtotime($model->data['day'])).'.json';
     $path = BBN_DATA_PATH."/hr/planning/$year/";
     if ( 
       is_file($path.$filename) && 
