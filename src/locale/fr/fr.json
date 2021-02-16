@@ -1,5 +1,5 @@
 {
-    "components\/card\/tab\/holidays\/holidays": {
+    "components\/card\/tab\/holidays": {
         "Are you sure you want to delete it?": "\u00cates-vous s\u00fbr de vouloir supprimer?",
         "Deleted": "Supprim\u00e9",
         "Are you sure you want to accept it?": "\u00cates-vous s\u00fbr de vouloir accepter?",
@@ -20,7 +20,7 @@
         "Ongoing": "En cours",
         "Future": "Futur"
     },
-    "components\/tab\/holidays\/holidays": {
+    "components\/tab\/holidays": {
         "Are you sure you want to delete it?": "\u00cates-vous s\u00fbr de vouloir supprimer?",
         "Deleted": "Supprim\u00e9",
         "Are you sure you want to accept it?": "\u00cates-vous s\u00fbr de vouloir accepter?",
@@ -42,7 +42,7 @@
         "Future": "Futur",
         "Look at the staff card": "Voir la carte de l'employ\u00e9"
     },
-    "components\/card\/tab\/holidays\/planning\/event\/event": {
+    "components\/card\/tab\/holidays\/planning\/event": {
         "Deleted": "Supprim\u00e9",
         "Are you sure you want to accept it?": "\u00cates-vous s\u00fbr de vouloir accepter?",
         "Accepted": "Accept\u00e9",
@@ -53,7 +53,7 @@
         "Edit": "Modifier",
         "Are you sure you want to delete this item?": "\u00cates-vous s\u00fbr de vouloir supprimer cet \u00e9l\u00e9ment?"
     },
-    "components\/tab\/holidays\/planning\/event\/event": {
+    "components\/tab\/holidays\/planning\/event": {
         "Deleted": "Supprim\u00e9",
         "Are you sure you want to accept it?": "\u00cates-vous s\u00fbr de vouloir accepter?",
         "Accepted": "Accept\u00e9",
@@ -64,7 +64,7 @@
         "Edit": "Modifier",
         "Are you sure you want to delete this item?": "\u00cates-vous s\u00fbr de vouloir supprimer cet \u00e9l\u00e9ment?"
     },
-    "components\/tab\/planning\/events\/events": {
+    "components\/tab\/planning\/events": {
         "Deleted": "Supprim\u00e9",
         "Cancel": "Annuler",
         "Future": "Futur",
@@ -97,7 +97,7 @@
         "ann\u00e9e(s)": "",
         "What events do you want to edit?": "Quels \u00e9v\u00e8nements souhaitez-vous modifier?"
     },
-    "components\/tab\/staff\/staff": {
+    "components\/tab\/staff": {
         "Deleted": "Supprim\u00e9",
         "Excel": "Excel",
         "Add": "Ajouter",
@@ -114,27 +114,27 @@
         "Deactivate": "D\u00e9sactiver",
         "Initialize password": "Initialiser le mot de passe"
     },
-    "components\/main\/main": {
+    "components\/main": {
         "Accepted": "Accept\u00e9",
         "Cancelled": "Annul\u00e9",
         "Refused": "Refus\u00e9"
     },
-    "components\/card\/tab\/holidays\/planning\/planning": {
+    "components\/card\/tab\/holidays\/planning": {
         "Add": "Ajouter"
     },
-    "components\/tab\/holidays\/planning\/planning": {
+    "components\/tab\/holidays\/planning": {
         "Add": "Ajouter"
     },
-    "components\/card\/tab\/home\/home": {
+    "components\/card\/tab\/home": {
         "Edit": "Modifier"
     },
-    "components\/card\/widget\/info\/info": {
+    "components\/card\/widget\/info": {
         "PRESENT": "PRESENT"
     },
-    "components\/form\/event\/event": {
+    "components\/form\/event": {
         "Saved": "Sauvegard\u00e9"
     },
-    "components\/form\/staff\/staff": {
+    "components\/form\/staff": {
         "Saved": "Sauvegard\u00e9",
         "Error": "Erreur"
     }
