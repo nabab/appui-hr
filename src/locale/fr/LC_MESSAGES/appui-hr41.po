@@ -3,33 +3,33 @@ msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: info@bbn.so\n"
 "last-Translator: BBN Solutions <support@bbn.solutions>\n"
-"Language-Team: ES <ES@li.org>\n"
+"Language-Team: FR <FR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-16 15:11+0100\n"
-"POT-Revision-Date: 2021-02-16 15:11+0100\n"
-"Language: es\n"
+"POT-Creation-Date: 2021-02-16 17:30+0100\n"
+"POT-Revision-Date: 2021-02-16 17:30+0100\n"
+"Language: fr\n"
 "X-Domain: appui-hr\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/card.php
 msgid "Home"
-msgstr ""
+msgstr "Accueil"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/card.php
 msgid "List of working days"
-msgstr ""
+msgstr "Liste des jours travaillés"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/card.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/mvc/model/page.php
 msgid "Holidays"
-msgstr ""
+msgstr "Vacances"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 msgid "Are you sure you want to delete it?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.js
@@ -38,14 +38,14 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Deleted"
-msgstr ""
+msgstr "Supprimé"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.js
 msgid "Are you sure you want to accept it?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir accepter?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.js
@@ -53,14 +53,14 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.js
 msgid "Accepted"
-msgstr ""
+msgstr "Accepté"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.js
 msgid "Are you sure you want to cancel it?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir annuler?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.js
@@ -68,14 +68,14 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.js
 msgid "Cancelled"
-msgstr ""
+msgstr "Annulé"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.js
 msgid "Are you sure you want to refuse it?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir refuser?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.js
@@ -83,7 +83,7 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.js
 msgid "Refused"
-msgstr ""
+msgstr "Refusé"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.php
@@ -91,21 +91,21 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.php
 msgid "Accept"
-msgstr ""
+msgstr "Accepter"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.php
 msgid "Refuse"
-msgstr ""
+msgstr "Refuser"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.php
@@ -113,7 +113,7 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.php
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
@@ -121,17 +121,17 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Excel"
-msgstr ""
+msgstr "Excel"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 msgid "Month"
-msgstr ""
+msgstr "Mois"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 msgid "Period"
-msgstr ""
+msgstr "Periode"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.php
@@ -141,33 +141,33 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/planning.php
 msgid "Status"
-msgstr ""
+msgstr "Statut"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 msgid "Past"
-msgstr ""
+msgstr "Passé"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 msgid "Ongoing"
-msgstr ""
+msgstr "En cours"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Future"
-msgstr ""
+msgstr "Futur"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.php
 msgid "Holidays Planning"
-msgstr ""
+msgstr "Planning des vacances"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.php
 msgid "Holidays List"
-msgstr ""
+msgstr "Liste des vacances"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
@@ -175,37 +175,37 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/event/event.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.php
 msgid "From"
-msgstr ""
+msgstr "de"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/event/event.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.php
 msgid "To"
-msgstr ""
+msgstr "À"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/upcoming/upcoming.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.php
 msgid "Substitute(s)"
-msgstr ""
+msgstr "Remplaçant(es)"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/holidays.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/event/event.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.php
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/planning.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/planning.php
@@ -215,36 +215,36 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Add"
-msgstr ""
+msgstr "Ajouter"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/planning.php
 msgid "Previous year"
-msgstr ""
+msgstr "Année précédente"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/planning.php
 msgid "Year"
-msgstr ""
+msgstr "Année"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/planning.php
 msgid "Next year"
-msgstr ""
+msgstr "Année suivante"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/planning.php
 msgid "Refresh"
-msgstr ""
+msgstr "Rafraîchir"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/planning.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/planning.php
 msgid "Back to calendar"
-msgstr ""
+msgstr "Retour au calendrier"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.php
@@ -255,40 +255,40 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Edit"
-msgstr ""
+msgstr "Modifier"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/holidays/planning/event/event.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.js
 msgid "Are you sure you want to delete this item?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer cet élément?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/jobs/jobs.php
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/jobs/jobs.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.php
 msgid "Hours"
-msgstr ""
+msgstr "heures"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/jobs/jobs.php
 msgid "Entity"
-msgstr ""
+msgstr "Entité"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/tab/jobs/jobs.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/entities/entities.php
 msgid "Nom"
-msgstr ""
+msgstr "Nom"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/entities/entities.php
 msgid "Adresse"
-msgstr ""
+msgstr "Adresse"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/entities/entities.php
 msgid "h/sem"
@@ -296,47 +296,47 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.js
 msgid "PRESENT"
-msgstr ""
+msgstr "PRESENT"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 msgid "Surname"
-msgstr ""
+msgstr "Nom"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
 msgid "eMail"
-msgstr ""
+msgstr "eMail"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
 msgid "Phone"
-msgstr ""
+msgstr "Téléphone"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
 msgid "Postal Code"
-msgstr ""
+msgstr "Code postal"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
 msgid "City"
-msgstr ""
+msgstr "Ville"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 msgid "Birth"
-msgstr ""
+msgstr "Naissance"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/info/info.php
 msgid "Today"
-msgstr ""
+msgstr "Aujourd'hui"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/summary/summary.php
 msgid "journée"
@@ -348,7 +348,7 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/upcoming/upcoming.php
 msgid "Du"
-msgstr ""
+msgstr "du"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/card/widget/upcoming/upcoming.php
 msgid "Au"
@@ -358,11 +358,11 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Saved"
-msgstr ""
+msgstr "Sauvegardé"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/event/event.php
 msgid "Type of absence"
-msgstr ""
+msgstr "Type d'absence"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/event/event.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/planning.php
@@ -370,26 +370,26 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/widget/staff/absent/absent.php
 msgid "Staff"
-msgstr ""
+msgstr "Personnel"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Error"
-msgstr ""
+msgstr "Erreur"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
 msgid "Group"
-msgstr ""
+msgstr "Groupe"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
 msgid "Email"
-msgstr ""
+msgstr "eMail"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/form/staff/staff.php
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
@@ -399,35 +399,35 @@ msgstr ""
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/holidays.js
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/holidays/planning/event/event.php
 msgid "Look at the staff card"
-msgstr ""
+msgstr "Voir la carte de l'employé"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/planning.php
 msgid "Filter by staff"
-msgstr ""
+msgstr "Filter par employé"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/planning.php
 msgid "Back to the calendar"
-msgstr ""
+msgstr "Retour au calendrier"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Attention"
-msgstr ""
+msgstr "Attention"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "What events do you want to delete?"
-msgstr ""
+msgstr "Quels évènements souhaitez-vous supprimer?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Only this"
-msgstr ""
+msgstr "Seulement celui-ci"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "All series"
-msgstr ""
+msgstr "Toutes les séries"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Are you sure you want to delete this element?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer cet élément?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Heures"
@@ -455,7 +455,7 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Mois"
-msgstr ""
+msgstr "mois"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "Jusqu'à"
@@ -491,7 +491,7 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "mois"
-msgstr ""
+msgstr "mois"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "année(s)"
@@ -499,51 +499,51 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/planning/events/events.js
 msgid "What events do you want to edit?"
-msgstr ""
+msgstr "Quels évènements souhaitez-vous modifier?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "New employe"
-msgstr ""
+msgstr "Nouvel personnel"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Edit employe"
-msgstr ""
+msgstr "Modifier le personnel"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Are you sure you want to delete this employe?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer ce personnel?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Are you sure you want to reset the password of this user?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir réinitialiser le mot de passe de cet utilisateur?"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "An email has been sent to"
-msgstr ""
+msgstr "Un eMail vient d'être envoyé à"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Success"
-msgstr ""
+msgstr "Succès"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "A problem has occurred"
-msgstr ""
+msgstr "Un problème est survenu"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "See card"
-msgstr ""
+msgstr "Voir la fiche"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Deactivate"
-msgstr ""
+msgstr "Désactiver"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.js
 msgid "Initialize password"
-msgstr ""
+msgstr "Initialiser le mot de passe"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
 msgid "ID User"
-msgstr ""
+msgstr "ID utilisateur"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/components/tab/staff/staff.php
 msgid "Naissance"
@@ -559,24 +559,24 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/mvc/model/page.php
 msgid "Dashboard"
-msgstr ""
+msgstr "Tableau de bord"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/mvc/model/page.php
 msgid "Staff list"
-msgstr ""
+msgstr "Liste du personnel"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/mvc/model/page.php
 msgid "Planning"
-msgstr ""
+msgstr "Planning"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/mvc/public/page.php
 msgid "HR"
-msgstr ""
+msgstr "RH"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/mvc/public/page/card.php
 msgid "Unauthorized"
-msgstr ""
+msgstr "Non authorisé"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-hr/src/mvc/public/page/card.php
 msgid "Sorry but you don't have the permission for "
-msgstr ""
+msgstr "Désolé mais vous n'avez pas la permission pour"
