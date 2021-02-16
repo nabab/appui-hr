@@ -1,1 +1,141 @@
-{"":{"Are you sure you want to delete it?":"Are you sure you want to delete it?","Deleted":"Deleted","Are you sure you want to accept it?":"Are you sure you want to accept it?","Accepted":"Accepted","Are you sure you want to cancel it?":"Are you sure you want to cancel it?","Cancelled":"Cancelled","Are you sure you want to refuse it?":"Are you sure you want to refuse it?","Refused":"Refused","Cancel":"Cancel","Accept":"Accept","Refuse":"Refuse","Delete":"Delete","Excel":"Excel","Month":"Month","Period":"Period","Status":"Status","Past":"Past","Ongoing":"Ongoing","Future":"Future","Type":"Type","Add":"Add","Edit":"Edit","Are you sure you want to delete this item?":"Are you sure you want to delete this item?","PRESENT":"PRESENT","Saved":"Saved","Staff":"Staff","Error":"Error","Look at the staff card":"Look at the staff card","Attention":"Attention","What events do you want to delete?":"What events do you want to delete?","Only this":"Only this","All series":"All series","Are you sure you want to delete this element?":"Are you sure you want to delete this element?","Heures":"Heures","R\u00e9p\u00e9tition":"R\u00e9p\u00e9tition","Intervale":"Intervale","Jours de la semaine":"Jours de la semaine","Jours du mois":"Jours du mois","Semaine du mois":"Semaine du mois","Mois":"Mois","Jusqu'\u00e0":"Jusqu'\u00e0","Nombre de fois":"Nombre de fois","Quotidienne":"Quotidienne","Hebdomadaire":"Hebdomadaire","Mensuelle":"Mensuelle","Annuelle":"Annuelle","jour(s)":"jour(s)","semaine(s)":"semaine(s)","mois":"Mois","ann\u00e9e(s)":"ann\u00e9e(s)","What events do you want to edit?":"What events do you want to edit?","New employe":"New employe","Edit employe":"Edit employe","Are you sure you want to delete this employe?":"Are you sure you want to delete this employe?","Are you sure you want to reset the password of this user?":"Are you sure you want to reset the password of this user?","An email has been sent to":"An email has been sent to","Success":"success","A problem has occurred":"A problem has occurred","See card":"See card","Deactivate":"Deactivate","Initialize password":"Initialize password"}}
+{
+    "components\/card\/tab\/holidays\/holidays": {
+        "Are you sure you want to delete it?": "Are you sure you want to delete it?",
+        "Deleted": "Deleted",
+        "Are you sure you want to accept it?": "Are you sure you want to accept it?",
+        "Accepted": "Accepted",
+        "Are you sure you want to cancel it?": "Are you sure you want to cancel it?",
+        "Cancelled": "Cancelled",
+        "Are you sure you want to refuse it?": "Are you sure you want to refuse it?",
+        "Refused": "Refused",
+        "Cancel": "Cancel",
+        "Accept": "Accept",
+        "Refuse": "Refuse",
+        "Delete": "Delete",
+        "Excel": "Excel",
+        "Month": "Month",
+        "Period": "Period",
+        "Status": "Status",
+        "Past": "Past",
+        "Ongoing": "Ongoing",
+        "Future": "Future"
+    },
+    "components\/tab\/holidays\/holidays": {
+        "Are you sure you want to delete it?": "Are you sure you want to delete it?",
+        "Deleted": "Deleted",
+        "Are you sure you want to accept it?": "Are you sure you want to accept it?",
+        "Accepted": "Accepted",
+        "Are you sure you want to cancel it?": "Are you sure you want to cancel it?",
+        "Cancelled": "Cancelled",
+        "Are you sure you want to refuse it?": "Are you sure you want to refuse it?",
+        "Refused": "Refused",
+        "Cancel": "Cancel",
+        "Accept": "Accept",
+        "Refuse": "Refuse",
+        "Delete": "Delete",
+        "Excel": "Excel",
+        "Month": "Month",
+        "Period": "Period",
+        "Status": "Status",
+        "Past": "Past",
+        "Ongoing": "Ongoing",
+        "Future": "Future",
+        "Look at the staff card": "Look at the staff card"
+    },
+    "components\/card\/tab\/holidays\/planning\/event\/event": {
+        "Deleted": "Deleted",
+        "Are you sure you want to accept it?": "Are you sure you want to accept it?",
+        "Accepted": "Accepted",
+        "Are you sure you want to cancel it?": "Are you sure you want to cancel it?",
+        "Cancelled": "Cancelled",
+        "Are you sure you want to refuse it?": "Are you sure you want to refuse it?",
+        "Refused": "Refused",
+        "Edit": "Edit",
+        "Are you sure you want to delete this item?": "Are you sure you want to delete this item?"
+    },
+    "components\/tab\/holidays\/planning\/event\/event": {
+        "Deleted": "Deleted",
+        "Are you sure you want to accept it?": "Are you sure you want to accept it?",
+        "Accepted": "Accepted",
+        "Are you sure you want to cancel it?": "Are you sure you want to cancel it?",
+        "Cancelled": "Cancelled",
+        "Are you sure you want to refuse it?": "Are you sure you want to refuse it?",
+        "Refused": "Refused",
+        "Edit": "Edit",
+        "Are you sure you want to delete this item?": "Are you sure you want to delete this item?"
+    },
+    "components\/tab\/planning\/events\/events": {
+        "Deleted": "Deleted",
+        "Cancel": "Cancel",
+        "Future": "Future",
+        "Type": "Type",
+        "Add": "Add",
+        "Edit": "Edit",
+        "Saved": "Saved",
+        "Staff": "Staff",
+        "Attention": "Attention",
+        "What events do you want to delete?": "What events do you want to delete?",
+        "Only this": "Only this",
+        "All series": "All series",
+        "Are you sure you want to delete this element?": "Are you sure you want to delete this element?",
+        "Heures": "Heures",
+        "R\u00e9p\u00e9tition": "R\u00e9p\u00e9tition",
+        "Intervale": "Intervale",
+        "Jours de la semaine": "Jours de la semaine",
+        "Jours du mois": "Jours du mois",
+        "Semaine du mois": "Semaine du mois",
+        "Mois": "Mois",
+        "Jusqu'\u00e0": "Jusqu'\u00e0",
+        "Nombre de fois": "Nombre de fois",
+        "Quotidienne": "Quotidienne",
+        "Hebdomadaire": "Hebdomadaire",
+        "Mensuelle": "Mensuelle",
+        "Annuelle": "Annuelle",
+        "jour(s)": "jour(s)",
+        "semaine(s)": "semaine(s)",
+        "mois": "Mois",
+        "ann\u00e9e(s)": "ann\u00e9e(s)",
+        "What events do you want to edit?": "What events do you want to edit?"
+    },
+    "components\/tab\/staff\/staff": {
+        "Deleted": "Deleted",
+        "Excel": "Excel",
+        "Add": "Add",
+        "Edit": "Edit",
+        "Error": "Error",
+        "New employe": "New employe",
+        "Edit employe": "Edit employe",
+        "Are you sure you want to delete this employe?": "Are you sure you want to delete this employe?",
+        "Are you sure you want to reset the password of this user?": "Are you sure you want to reset the password of this user?",
+        "An email has been sent to": "An email has been sent to",
+        "Success": "success",
+        "A problem has occurred": "A problem has occurred",
+        "See card": "See card",
+        "Deactivate": "Deactivate",
+        "Initialize password": "Initialize password"
+    },
+    "components\/main\/main": {
+        "Accepted": "Accepted",
+        "Cancelled": "Cancelled",
+        "Refused": "Refused"
+    },
+    "components\/card\/tab\/holidays\/planning\/planning": {
+        "Add": "Add"
+    },
+    "components\/tab\/holidays\/planning\/planning": {
+        "Add": "Add"
+    },
+    "components\/card\/tab\/home\/home": {
+        "Edit": "Edit"
+    },
+    "components\/card\/widget\/info\/info": {
+        "PRESENT": "PRESENT"
+    },
+    "components\/form\/event\/event": {
+        "Saved": "Saved"
+    },
+    "components\/form\/staff\/staff": {
+        "Saved": "Saved",
+        "Error": "Error"
+    }
+}
