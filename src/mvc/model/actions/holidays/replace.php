@@ -2,7 +2,7 @@
 if ( 
   !empty($model->data['id_entity']) &&
   !empty($model->data['events']) &&
-  ($events = new \bbn\Appui\Events($model->db)) &&
+  ($events = new \bbn\Appui\Event($model->db)) &&
   ($id_type = $model->inc->options->fromCode('wp', 'event', 'appui'))
 ){
   $success = false;
@@ -49,7 +49,7 @@ else if (
     'id_employe' => $model->data['id_old_employe']
   ])) &&
   !empty($list['data']) &&
-  ($events = new \bbn\Appui\Events($model->db)) &&
+  ($events = new \bbn\Appui\Event($model->db)) &&
   ($id_type = $model->inc->options->fromCode('wp', 'event', 'appui'))
 ) {
   $success = false;

@@ -1,7 +1,7 @@
 <?php
 if (
   !empty($model->data['id']) &&
-  ($events = new \bbn\Appui\Events($model->db)) &&
+  ($events = new \bbn\Appui\Event($model->db)) &&
   ($planning = new \bbn\Appui\Planning($model->db)) &&
   ($event = $events->get($model->data['id'])) &&
   ($id_staff = $model->db->selectOne('bbn_hr_staff_events', 'id_staff', ['id_event' => $model->data['id']]))

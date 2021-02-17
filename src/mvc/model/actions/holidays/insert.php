@@ -4,7 +4,7 @@ if (
   !empty($model->data['end']) &&
   \bbn\Str::isUid($model->data['id_staff']) &&
   \bbn\Str::isUid($model->data['id_type']) &&
-  ($events = new \bbn\Appui\Events($model->db)) &&
+  ($events = new \bbn\Appui\Event($model->db)) &&
   ($id_event = $events->insert([
     'id_type' => $model->data['id_type'],
     'start' => $model->data['start'],
