@@ -110,7 +110,14 @@
                 ></bbn-button>
               </div>
               <div class="bbn-flex-fill bbn-spadded">
-                <component :is="hr.source.tabs.planning.components.events"
+                <div v-if="isLoading"
+                    class="bbn-overlay bbn-middle bbn-background">
+                  <bbn-loadicon class="bbn-vmiddle"
+                                :size="24"/>
+                  <span class="bbn-xl bbn-b bbn-left-sspace"><?=_('Loading')?>...</span>
+                </div>
+                <component v-else
+                           :is="hr.source.tabs.planning.components.events"
                            :source="events"
                            ref="events"
                 ></component>

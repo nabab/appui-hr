@@ -15,7 +15,8 @@
         isYearMode: this.yearMode,
         root: appui.plugins['appui-hr'] + '/',
         staff: appui.app.staffActive,
-        currentStaff: null
+        currentStaff: null,
+        isLoading: false
       }
     },
     computed: {
@@ -83,11 +84,14 @@
             else {
               this.$set(this, 'events', []);
             }
+            this.isLoading = false;
             this.$nextTick(() => {
               if ( this.getRef('events') ){
                 this.getRef('events').getRef('table').updateData();
               }
             });
+          }, () => {
+            this.isLoading = false;
           });
         }
       },
