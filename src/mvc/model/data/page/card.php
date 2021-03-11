@@ -2,7 +2,7 @@
 if ( !empty($model->data['id']) ){
 
   if ( $dashboard = new \bbn\Appui\Dashboard('hrcard') ){
-    $widgets = $dashboard->getWidgetsCode();
+    $widgets = $dashboard->getUserWidgetsCode();
   }
 
   $tabs = [];

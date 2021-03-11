@@ -2,7 +2,7 @@
 
 try {
   $dashboard = new \bbn\Appui\Dashboard('hr');
-  $widgets = $dashboard->getWidgetsCode(APPUI_HR_ROOT . 'data/home/widget/');
+  $widgets = $dashboard->getUserWidgetsCode(APPUI_HR_ROOT . 'data/home/widget/');
 }
 catch ( Exception $e ){
   $dashboard = false;
