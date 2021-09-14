@@ -9,12 +9,12 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
     'bbn_people.fullname',
     'bbn_people.email',
     'bbn_people.tel',
-    'naissance' => 'bbn_people.cfg->>"$.naissance"',
-    'contact' => 'bbn_people.cfg->>"$.contact"',
-    'secu_id' => 'bbn_people.cfg->>"$.secu_id"',
-    'adresse' => 'bbn_people.cfg->>"$.adresse"',
-    'cp' => 'bbn_people.cfg->>"$.cp"',
-    'ville' => 'bbn_people.cfg->>"$.ville"',
+    'naissance' => 'JSON_UNQUOTE(JSON_EXTRACT(bbn_people.cfg, "$.naissance"))',
+    'contact' => 'JSON_UNQUOTE(JSON_EXTRACT(bbn_people.cfg, "$.contact"))',
+    'secu_id' => 'JSON_UNQUOTE(JSON_EXTRACT(bbn_people.cfg, "$.secu_id"))',
+    'adresse' => 'JSON_UNQUOTE(JSON_EXTRACT(bbn_people.cfg, "$.adresse"))',
+    'cp' => 'JSON_UNQUOTE(JSON_EXTRACT(bbn_people.cfg, "$.cp"))',
+    'ville' => 'JSON_UNQUOTE(JSON_EXTRACT(bbn_people.cfg, "$.ville"))',
     'bbn_users.id_group'
   ],
   'join' => [[
