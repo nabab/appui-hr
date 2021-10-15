@@ -5,12 +5,12 @@
              :show-limit="false"
              :show-total-items="false"
   >
-    <bbns-column title="<?=_('Du')?>"
+    <bbns-column title="<?=_('From')?>"
                  field="start"
                  cls="bbn-c"
 								 type="date"
     ></bbns-column>
-    <bbns-column title="<?=_('Au')?>"
+    <bbns-column title="<?=_('To')?>"
                  field="end"
                  cls="bbn-c"
 								 type="date"

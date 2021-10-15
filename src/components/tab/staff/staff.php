@@ -58,7 +58,7 @@
                     hidden: false
                   }"
      ></bbns-column>
-     <bbns-column title="<?=_('Portable')?>"
+     <bbns-column title="<?=_('Mobile')?>"
                   field="tel"
                   :width="200"
                   :hidden="true"
@@ -73,7 +73,7 @@
                   :export="{
                     excluded: false,
                     hidden: false,
-                    title: '<?=_('Naissance')?>'
+                    title: '<?=_('DoB')?>'
                   }"
      ></bbns-column>
      <bbns-column field="contact"

@@ -128,7 +128,7 @@
                   v-model="source.row.id_staff"
                   required="required"
     ></bbn-dropdown>
-    <label>` + bbn._('Heures') + `</label>
+    <label>` + bbn._('Hours') + `</label>
     <div>
       <bbn-numeric v-model="source.row.hour"
                   :step="0.5"
@@ -139,7 +139,7 @@
                   style="width: 6em"
       ></bbn-numeric>
     </div>
-    <label>` + bbn._('Répétition') + `</label>
+    <label>` + bbn._('Recurrence') + `</label>
     <div class="bbn-vmiddle">
       <bbn-switch v-model="source.row.recurring"
                   :value="1"
@@ -166,11 +166,11 @@
             ></span>
           </div>
           <label v-if="ifVisible('wd')">
-            <span>` + bbn._('Jours de la semaine') + `</span>
+            <span>` + bbn._('Days of the week') + `</span>
             <div v-if="source.row.type === 'monthly'"
                   class="bbn-p bbn-s bbn-i"
                   @click="showMonthDays = !showMonthDays"
-            >` + bbn._('Jours du mois') + `</div>
+            >` + bbn._('Days of the month') + `</div>
           </label>
           <div v-if="ifVisible('wd')">
             <div class="bbn-grid"
@@ -184,11 +184,11 @@
             </div>
           </div>
           <label v-if="ifVisible('md')">
-            <span>` + bbn._('Jours du mois') + `</span>
+            <span>` + bbn._('Days of the month') + `</span>
             <div v-if="source.row.type === 'monthly'"
                   class="bbn-p bbn-s bbn-i"
                   @click="showMonthDays = !showMonthDays"
-            >` + bbn._('Jours de la semaine') + `</div>
+            >` + bbn._('Days of the week') + `</div>
           </label>
           <div v-if="ifVisible('md')">
             <div class="bbn-grid"
@@ -201,7 +201,7 @@
               ></div>
             </div>
           </div>
-          <label v-if="ifVisible('mw')">` + bbn._('Semaine du mois') + `</label>
+          <label v-if="ifVisible('mw')">` + bbn._('Week of the month') + `</label>
           <div v-if="ifVisible('mw')">
             <div class="bbn-grid"
                 style="grid-template-columns: repeat(6, 1fr)"
@@ -213,7 +213,7 @@
               ></div>
             </div>
           </div>
-          <label v-if="ifVisible('ym')">` + bbn._('Mois') + `</label>
+          <label v-if="ifVisible('ym')">` + bbn._('Month') + `</label>
           <div v-if="ifVisible('ym')">
             <div class="bbn-grid"
                 style="grid-template-columns: repeat(6, 1fr)"
@@ -225,13 +225,13 @@
               ></div>
             </div>
           </div>
-          <label v-if="ifVisible('until')">` + bbn._("Jusqu'à") + `</label>
+          <label v-if="ifVisible('until')">` + bbn._("Until") + `</label>
           <div v-if="ifVisible('until')">
             <bbn-datepicker v-model="source.row.until"
                             :min="minUntil"
             ></bbn-datepicker>
           </div>
-          <label v-if="ifVisible('occurrences')">` + bbn._('Nombre de fois') + `</label>
+          <label v-if="ifVisible('occurrences')">` + bbn._('Number of times') + `</label>
           <div v-if="ifVisible('occurrences')">
             <bbn-numeric v-model="source.row.occurrences"
                         :min="0"
@@ -251,23 +251,23 @@
             staff: appui.app.staffActive,
             root: appui.plugins['appui-hr'] + '/',
             frequencies: [{
-              text: bbn._('Quotidienne'),
+              text: bbn._('Daily'),
               value: 'daily'
             }, {
-              text: bbn._('Hebdomadaire'),
+              text: bbn._('Weekly'),
               value: 'weekly'
             }, {
-              text: bbn._('Mensuelle'),
+              text: bbn._('Monthly'),
               value: 'monthly'
             }, {
-              text: bbn._('Annuelle'),
+              text: bbn._('Yearly'),
               value: 'yearly'
             }],
             intervals: {
-              daily: bbn._('jour(s)'),
-              weekly: bbn._('semaine(s)'),
-              monthly: bbn._('mois'),
-              yearly: bbn._('année(s)')
+              daily: bbn._('day(s)'),
+              weekly: bbn._('week(s)'),
+              monthly: bbn._('month(s)'),
+              yearly: bbn._('year(s)')
             },
             monthWeeks: [-3, -2, -1 , 1, 2, 3],
             showMonthDays: true

@@ -11,7 +11,7 @@
     <span class="label-icon">
       <i class="nf nf-mdi-beach label-icon"></i>
     </span>
-    <?=_('Pour')?>
+    <?=_('For')?>
   </div>
   <div v-text="type" :style="{color: color}"></div>
 
@@ -19,7 +19,7 @@
     <span class="label-icon">
       <i class="nf nf-fa-calendar label-icon"></i>
     </span>
-    <?=_('Du/Au')?>
+    <?=_('From/To')?>
   </div>
 
   <div>

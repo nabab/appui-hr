@@ -40,7 +40,7 @@
     <bbn-input v-model="source.row.ville"
                 max-length="255"
     ></bbn-input>
-    <label><?=_("Portable")?></label>
+    <label><?=_("Mobile")?></label>
     <div>
       <bbn-input v-model="source.row.tel"
                  max-length="13"
