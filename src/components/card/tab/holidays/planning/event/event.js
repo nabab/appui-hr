@@ -12,13 +12,13 @@
         return this.startDay === this.endDay;
       },
       startDay(){
-        return moment(this.source.start).format('DD/MM/YYYY');
+        return dayjs(this.source.start).format('DD/MM/YYYY');
       },
       dayBlock(){
-        return '<div>' + moment(this.source.start).format('DD') + '</div>' + '<div>' + moment(this.source.start).format('MMM') + '</div>'
+        return '<div>' + dayjs(this.source.start).format('DD') + '</div>' + '<div>' + dayjs(this.source.start).format('MMM') + '</div>'
       },
       endDay(){
-        return moment(this.source.end).format('DD/MM/YYYY');
+        return dayjs(this.source.end).format('DD/MM/YYYY');
       },
       color(){
         return bbn.fn.getField(appui.options.hr.absences, 'color', 'value', this.source.id_type);

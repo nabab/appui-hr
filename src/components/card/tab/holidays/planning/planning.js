@@ -9,7 +9,7 @@
     data(){
       return {
         absences: appui.options.hr.absences,
-        currentYear: moment().format('YYYY'),
+        currentYear: dayjs().format('YYYY'),
         selected: '',
         calendarSelected: false,
         events: [],
@@ -25,7 +25,7 @@
         return this.closest(`appui-hr-card`)
       },
       dayText(){
-        return this.selected ? moment(this.selected).format('dddd	DD MMMM YYYY') : '';
+        return this.selected ? dayjs(this.selected).format('dddd	DD MMMM YYYY') : '';
       },
       calendars(){
         if ( this.isYearMode ){
@@ -81,8 +81,8 @@
           width: 600,
           component: 'appui-hr-form-event',
           source: {
-            start: moment(this.selected).format('YYYY-MM-DD HH:mm:ss'),
-            end: moment(this.selected).format('YYYY-MM-DD 23:59:59'),
+            start: dayjs(this.selected).format('YYYY-MM-DD HH:mm:ss'),
+            end: dayjs(this.selected).format('YYYY-MM-DD 23:59:59'),
             id_staff: this.card.source.id,
             id_type: '',
             note: '',
@@ -134,13 +134,13 @@
       },
       nextYear(){
         if ( this.isYearMode ){
-          this.currentYear = moment(this.currentYear).add(1, 'Y').format('YYYY');
+          this.currentYear = dayjs(this.currentYear).add(1, 'Y').format('YYYY');
           bbn.fn.each(this.calendars, c => c.next(true));
         }
       },
       prevYear(){
         if ( this.isYearMode ){
-          this.currentYear = moment(this.currentYear).subtract(1, 'Y').format('YYYY');
+          this.currentYear = dayjs(this.currentYear).subtract(1, 'Y').format('YYYY');
           bbn.fn.each(this.calendars, c => c.prev(true));
         }
       }

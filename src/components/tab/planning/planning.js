@@ -8,7 +8,7 @@
     },
     data(){
       return {
-        currentYear: moment().format('YYYY'),
+        currentYear: dayjs().format('YYYY'),
         selected: '',
         calendarSelected: false,
         events: [],
@@ -24,7 +24,7 @@
         return this.closest('appui-hr-main');
       },
       dayText(){
-        return this.selected ? moment(this.selected).format('dddd	DD MMMM YYYY') : '';
+        return this.selected ? dayjs(this.selected).format('dddd	DD MMMM YYYY') : '';
       },
       calendars(){
         if ( this.isYearMode ){
@@ -75,7 +75,7 @@
           this.post(this.root + 'data/planning/day', {day: day, filters: this.currentFilters}, (d) => {
             if ( d.data ){
               d.data = d.data.map((e, i) => {
-                e.hour = moment(e.end).diff(moment(e.start), 'minutes') / 60;
+                e.hour = dayjs(e.end).diff(dayjs(e.start), 'minutes') / 60;
                 e.nom = bbn.fn.getField(appui.app.staffActive, 'text', 'value', e.id_staff);
                 return e;
               });
@@ -109,11 +109,11 @@
               tmp.push({
                 id: e.id_staff,
                 name: bbn.fn.getField(appui.app.staffActive, 'text', 'value', e.id_staff),
-                hour: moment(e.end).diff(moment(e.start), 'minutes')
+                hour: dayjs(e.end).diff(dayjs(e.start), 'minutes')
               });
             }
             else {
-              tmp[idx].hour += moment(e.end).diff(moment(e.start), 'minutes');
+              tmp[idx].hour += dayjs(e.end).diff(dayjs(e.start), 'minutes');
             }
           });
           tmp = bbn.fn.order(tmp, 'name', 'ASC');
@@ -137,13 +137,13 @@
       },
       nextYear(){
         if ( this.isYearMode ){
-          this.currentYear = moment(this.currentYear, 'YYYY').add(1, 'Y').format('YYYY');
+          this.currentYear = dayjs(this.currentYear, 'YYYY').add(1, 'Y').format('YYYY');
           bbn.fn.each(this.calendars, c => c.next(true));
         }
       },
       prevYear(){
         if ( this.isYearMode ){
-          this.currentYear = moment(this.currentYear, 'YYYY').subtract(1, 'Y').format('YYYY');
+          this.currentYear = dayjs(this.currentYear, 'YYYY').subtract(1, 'Y').format('YYYY');
           bbn.fn.each(this.calendars, c => c.prev(true));
         }
       }

@@ -2,7 +2,7 @@
   return {
     data(){
       return {
-        currentYear: moment().format('YYYY')
+        currentYear: dayjs().format('YYYY')
       }
     },
     computed: {

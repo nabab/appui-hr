@@ -171,10 +171,10 @@
         return bts
       },
       colorRow(row,){
-        let currentDate = moment(),
-            past = moment(row.end).isBefore(currentDate),
-            ongoing = moment(row.start).isBefore(currentDate) && moment(row.end).isAfter(currentDate),
-            future = moment(row.start).isAfter(currentDate);
+        let currentDate = dayjs(),
+            past = dayjs(row.end).isBefore(currentDate),
+            ongoing = dayjs(row.start).isBefore(currentDate) && dayjs(row.end).isAfter(currentDate),
+            future = dayjs(row.start).isAfter(currentDate);
         count++;
         if ( future ){
           return 'appui-hr-tab-holidays-future' + (count % 2 === 0 ? ' bbn-alt-light' : '');
@@ -286,7 +286,7 @@
           currentMonth(newVal, oldVal){
             if ( newVal !== oldVal ){
               if ( newVal ){
-                let m = moment(newVal, 'YYYY-MM');
+                let m = dayjs(newVal, 'YYYY-MM');
                 this.table.currentFilters.conditions.splice(0, this.table.currentFilters.conditions.length, {
                   logic: 'OR',
                   conditions: [{
@@ -322,7 +322,7 @@
             if ( newVal !== oldVal ){
               if ( newVal ){
                 let cond = {},
-                    currentDate = moment().format('YYYY-MM-DD');
+                    currentDate = dayjs().format('YYYY-MM-DD');
                 switch ( newVal ){
                   case 'past':
                     cond = {

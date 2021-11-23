@@ -275,7 +275,7 @@
         },
         computed: {
           minUntil(){
-            return moment(this.source.row.start).add(1, 'days').format('YYYY-MM-DD');
+            return dayjs(this.source.row.start).add(1, 'days').format('YYYY-MM-DD');
           }, 
         },
         methods: {
@@ -322,10 +322,10 @@
             }
           },
           getDayName(day){
-            return moment().day(day).format('dd');
+            return dayjs().day(day).format('dd');
           },
           getMonthName(month){
-            return moment().month(month).format('MMM');
+            return dayjs().month(month).format('MMM');
           },
           addRemove(t, v){
             let idx = this.source.row[t].indexOf(v);
