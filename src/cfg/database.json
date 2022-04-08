@@ -81,7 +81,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -89,7 +88,6 @@
                 "maxlength": 16
             },
             "id_staff": {
-                "position": 2,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -97,7 +95,6 @@
                 "maxlength": 16
             },
             "id_event": {
-                "position": 3,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -105,7 +102,6 @@
                 "maxlength": 16
             },
             "id_alias": {
-                "position": 4,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -114,7 +110,6 @@
                 "maxlength": 16
             },
             "alias": {
-                "position": 5,
                 "type": "date",
                 "null": 1,
                 "key": null,
@@ -160,7 +155,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -168,7 +162,6 @@
                 "maxlength": 16
             },
             "id_user": {
-                "position": 2,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -230,7 +223,6 @@
         },
         "fields": {
             "id_staff": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -238,7 +230,6 @@
                 "maxlength": 16
             },
             "id_event": {
-                "position": 2,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -246,7 +237,6 @@
                 "maxlength": 16
             },
             "note": {
-                "position": 3,
                 "type": "text",
                 "null": 1,
                 "key": null,
@@ -254,7 +244,6 @@
                 "default": "NULL"
             },
             "status": {
-                "position": 4,
                 "type": "enum",
                 "null": 1,
                 "key": null,
@@ -321,7 +310,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -329,7 +317,6 @@
                 "maxlength": 16
             },
             "id_parent": {
-                "position": 2,
                 "type": "binary",
                 "null": 1,
                 "key": "MUL",
@@ -338,7 +325,6 @@
                 "maxlength": 16
             },
             "id_type": {
-                "position": 3,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -346,7 +332,6 @@
                 "maxlength": 16
             },
             "start": {
-                "position": 4,
                 "type": "datetime",
                 "null": 1,
                 "key": null,
@@ -354,7 +339,6 @@
                 "default": "NULL"
             },
             "end": {
-                "position": 5,
                 "type": "datetime",
                 "null": 1,
                 "key": null,
@@ -362,7 +346,6 @@
                 "default": "NULL"
             },
             "name": {
-                "position": 6,
                 "type": "varchar",
                 "null": 1,
                 "key": null,
@@ -371,7 +354,6 @@
                 "maxlength": 255
             },
             "recurring": {
-                "position": 7,
                 "type": "tinyint",
                 "null": 0,
                 "key": null,
@@ -379,7 +361,6 @@
                 "maxlength": 1
             },
             "cfg": {
-                "position": 8,
                 "type": "mediumtext",
                 "null": 1,
                 "key": null,
@@ -440,7 +421,6 @@
         },
         "fields": {
             "id": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -448,7 +428,6 @@
                 "maxlength": 16
             },
             "id_event": {
-                "position": 2,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -456,7 +435,6 @@
                 "maxlength": 16
             },
             "id_user": {
-                "position": 3,
                 "type": "binary",
                 "null": 0,
                 "key": "MUL",
@@ -464,7 +442,6 @@
                 "maxlength": 16
             },
             "creation": {
-                "position": 4,
                 "type": "datetime",
                 "null": 0,
                 "key": null,
@@ -472,7 +449,6 @@
                 "generation": ""
             },
             "day": {
-                "position": 5,
                 "type": "date",
                 "null": 0,
                 "key": null,
@@ -480,7 +456,6 @@
                 "generation": ""
             },
             "start": {
-                "position": 6,
                 "type": "time",
                 "null": 0,
                 "key": null,
@@ -488,7 +463,6 @@
                 "generation": ""
             },
             "end": {
-                "position": 7,
                 "type": "time",
                 "null": 0,
                 "key": null,
@@ -496,7 +470,6 @@
                 "generation": ""
             },
             "rescheduled": {
-                "position": 8,
                 "type": "tinyint",
                 "null": 0,
                 "key": null,
@@ -504,7 +477,6 @@
                 "maxlength": 1
             },
             "deleted": {
-                "position": 9,
                 "type": "tinyint",
                 "null": 0,
                 "key": null,
@@ -548,7 +520,6 @@
         },
         "fields": {
             "id_event": {
-                "position": 1,
                 "type": "binary",
                 "null": 0,
                 "key": "PRI",
@@ -556,7 +527,6 @@
                 "maxlength": 16
             },
             "type": {
-                "position": 2,
                 "type": "enum",
                 "null": 0,
                 "key": null,
@@ -571,7 +541,6 @@
                 ]
             },
             "interval": {
-                "position": 3,
                 "type": "int",
                 "null": 1,
                 "key": null,
@@ -579,7 +548,6 @@
                 "maxlength": 5
             },
             "occurrences": {
-                "position": 4,
                 "type": "int",
                 "null": 1,
                 "key": null,
@@ -587,7 +555,6 @@
                 "maxlength": 5
             },
             "until": {
-                "position": 5,
                 "type": "date",
                 "null": 1,
                 "key": null,
@@ -595,7 +562,6 @@
                 "default": "NULL"
             },
             "wd": {
-                "position": 6,
                 "type": "json",
                 "null": 1,
                 "key": null,
@@ -603,7 +569,6 @@
                 "default": "NULL"
             },
             "mw": {
-                "position": 7,
                 "type": "json",
                 "null": 1,
                 "key": null,
@@ -611,7 +576,6 @@
                 "default": "NULL"
             },
             "md": {
-                "position": 8,
                 "type": "json",
                 "null": 1,
                 "key": null,
@@ -619,7 +583,6 @@
                 "default": "NULL"
             },
             "ym": {
-                "position": 9,
                 "type": "json",
                 "null": 1,
                 "key": null,
