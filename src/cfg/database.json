@@ -5,12 +5,6 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_staff_2": {
@@ -18,19 +12,12 @@
                     "id_staff",
                     "id_event"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": "bbn_hr_planning_ibfk_1",
-                "update": "CASCADE",
-                "delete": "CASCADE",
                 "unique": 1
             },
             "id_event": {
                 "columns": [
                     "id_event"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_events",
                 "ref_column": "id",
                 "constraint": "bbn_hr_planning_ibfk_3",
@@ -42,7 +29,6 @@
                 "columns": [
                     "id_alias"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_hr_planning",
                 "ref_column": "id",
                 "constraint": "bbn_hr_planning_ibfk_2",
@@ -54,7 +40,6 @@
                 "columns": [
                     "id_staff"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_hr_staff",
                 "ref_column": "id",
                 "constraint": "bbn_hr_planning_ibfk_1",
@@ -124,7 +109,6 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_people",
                 "ref_column": "id",
                 "constraint": "bbn_hr_staff_ibfk_2",
@@ -136,7 +120,6 @@
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_hr_staff_ibfk_1",
@@ -178,19 +161,12 @@
                     "id_staff",
                     "id_event"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": "bbn_hr_staff_events_ibfk_1",
-                "update": "CASCADE",
-                "delete": "CASCADE",
                 "unique": 1
             },
             "id_staff": {
                 "columns": [
                     "id_staff"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_hr_staff",
                 "ref_column": "id",
                 "constraint": "bbn_hr_staff_events_ibfk_1",
@@ -202,7 +178,6 @@
                 "columns": [
                     "id_event"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_events",
                 "ref_column": "id",
                 "constraint": "bbn_hr_staff_events_ibfk_2",
@@ -264,7 +239,6 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_history_uids",
                 "ref_column": "bbn_uid",
                 "constraint": "bbn_events_ibfk_1",
@@ -276,7 +250,6 @@
                 "columns": [
                     "id_type"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_options",
                 "ref_column": "id",
                 "constraint": "bbn_events_ibfk_2",
@@ -288,7 +261,6 @@
                 "columns": [
                     "id_parent"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_events",
                 "ref_column": "id",
                 "constraint": "bbn_events_ibfk_3",
@@ -375,19 +347,12 @@
                 "columns": [
                     "id"
                 ],
-                "ref_db": null,
-                "ref_table": null,
-                "ref_column": null,
-                "constraint": null,
-                "update": null,
-                "delete": null,
                 "unique": 1
             },
             "id_event": {
                 "columns": [
                     "id_event"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_events",
                 "ref_column": "id",
                 "constraint": "bbn_events_exceptions_ibfk_2",
@@ -399,7 +364,6 @@
                 "columns": [
                     "id_user"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_users",
                 "ref_column": "id",
                 "constraint": "bbn_events_exceptions_ibfk_3",
@@ -491,7 +455,6 @@
                 "columns": [
                     "id_event"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_events",
                 "ref_column": "id",
                 "constraint": "bbn_events_recurring_ibfk_1",
@@ -503,7 +466,6 @@
                 "columns": [
                     "id_event"
                 ],
-                "ref_db": null,
                 "ref_table": "bbn_events",
                 "ref_column": "id",
                 "constraint": "bbn_events_recurring_ibfk_1",
