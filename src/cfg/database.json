@@ -98,9 +98,9 @@
       "alias": {
         "type": "date",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       }
     }
   },
@@ -216,14 +216,13 @@
       "note": {
         "type": "text",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       },
       "status": {
         "type": "enum",
         "null": 1,
-        "key": null,
         "extra": "'accepted','cancelled','refused'",
         "signed": true,
         "default": "NULL",
@@ -309,21 +308,20 @@
       "start": {
         "type": "datetime",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       },
       "end": {
         "type": "datetime",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       },
       "name": {
         "type": "varchar",
         "null": 1,
-        "key": null,
         "signed": true,
         "default": "NULL",
         "defaultExpression": 1,
@@ -332,16 +330,15 @@
       "recurring": {
         "type": "tinyint",
         "null": 0,
-        "key": null,
         "default": 0,
         "maxlength": 1
       },
       "cfg": {
         "type": "mediumtext",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       }
     }
   },
@@ -412,42 +409,36 @@
       "creation": {
         "type": "datetime",
         "null": 0,
-        "key": null,
         "signed": true,
         "generation": ""
       },
       "day": {
         "type": "date",
         "null": 0,
-        "key": null,
         "signed": true,
         "generation": ""
       },
       "start": {
         "type": "time",
         "null": 0,
-        "key": null,
         "signed": true,
         "generation": ""
       },
       "end": {
         "type": "time",
         "null": 0,
-        "key": null,
         "signed": true,
         "generation": ""
       },
       "rescheduled": {
         "type": "tinyint",
         "null": 0,
-        "key": null,
         "default": 0,
         "maxlength": 1
       },
       "deleted": {
         "type": "tinyint",
         "null": 0,
-        "key": null,
         "default": 0,
         "maxlength": 1
       }
@@ -495,7 +486,6 @@
       "type": {
         "type": "enum",
         "null": 0,
-        "key": null,
         "extra": "'daily','weekly','monthly','yearly'",
         "signed": true,
         "default": "daily",
@@ -509,7 +499,6 @@
       "interval": {
         "type": "int",
         "null": 1,
-        "key": null,
         "default": "NULL",
         "defaultExpression": 1,
         "maxlength": 5
@@ -517,7 +506,6 @@
       "occurrences": {
         "type": "int",
         "null": 1,
-        "key": null,
         "default": "NULL",
         "defaultExpression": 1,
         "maxlength": 5
@@ -525,37 +513,37 @@
       "until": {
         "type": "date",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       },
       "wd": {
         "type": "json",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       },
       "mw": {
         "type": "json",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       },
       "md": {
         "type": "json",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       },
       "ym": {
         "type": "json",
         "null": 1,
-        "key": null,
         "signed": true,
-        "default": "NULL"
+        "default": "NULL",
+        "defaultExpression": 1
       }
     }
   }
