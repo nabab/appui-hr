@@ -69,28 +69,24 @@
         "type": "binary",
         "null": 0,
         "key": "PRI",
-        "signed": true,
         "maxlength": 16
       },
       "id_staff": {
         "type": "binary",
         "null": 0,
         "key": "MUL",
-        "signed": true,
         "maxlength": 16
       },
       "id_event": {
         "type": "binary",
         "null": 0,
         "key": "MUL",
-        "signed": true,
         "maxlength": 16
       },
       "id_alias": {
         "type": "binary",
         "null": 1,
         "key": "MUL",
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1,
         "maxlength": 16
@@ -98,7 +94,6 @@
       "alias": {
         "type": "date",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       }
@@ -142,14 +137,12 @@
         "type": "binary",
         "null": 0,
         "key": "PRI",
-        "signed": true,
         "maxlength": 16
       },
       "id_user": {
         "type": "binary",
         "null": 1,
         "key": "MUL",
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1,
         "maxlength": 16
@@ -203,20 +196,17 @@
         "type": "binary",
         "null": 0,
         "key": "PRI",
-        "signed": true,
         "maxlength": 16
       },
       "id_event": {
         "type": "binary",
         "null": 0,
         "key": "PRI",
-        "signed": true,
         "maxlength": 16
       },
       "note": {
         "type": "text",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       },
@@ -224,7 +214,6 @@
         "type": "enum",
         "null": 1,
         "extra": "'accepted','cancelled','refused'",
-        "signed": true,
         "default": "NULL",
         "values": [
           "accepted",
@@ -286,14 +275,12 @@
         "type": "binary",
         "null": 0,
         "key": "PRI",
-        "signed": true,
         "maxlength": 16
       },
       "id_parent": {
         "type": "binary",
         "null": 1,
         "key": "MUL",
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1,
         "maxlength": 16
@@ -302,27 +289,23 @@
         "type": "binary",
         "null": 0,
         "key": "MUL",
-        "signed": true,
         "maxlength": 16
       },
       "start": {
         "type": "datetime",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       },
       "end": {
         "type": "datetime",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       },
       "name": {
         "type": "varchar",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1,
         "maxlength": 255
@@ -334,9 +317,8 @@
         "maxlength": 1
       },
       "cfg": {
-        "type": "mediumtext",
+        "type": "json",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       }
@@ -389,45 +371,38 @@
         "type": "binary",
         "null": 0,
         "key": "PRI",
-        "signed": true,
         "maxlength": 16
       },
       "id_event": {
         "type": "binary",
         "null": 0,
         "key": "MUL",
-        "signed": true,
         "maxlength": 16
       },
       "id_user": {
         "type": "binary",
         "null": 0,
         "key": "MUL",
-        "signed": true,
         "maxlength": 16
       },
       "creation": {
         "type": "datetime",
         "null": 0,
-        "signed": true,
         "generation": ""
       },
       "day": {
         "type": "date",
         "null": 0,
-        "signed": true,
         "generation": ""
       },
       "start": {
         "type": "time",
         "null": 0,
-        "signed": true,
         "generation": ""
       },
       "end": {
         "type": "time",
         "null": 0,
-        "signed": true,
         "generation": ""
       },
       "rescheduled": {
@@ -480,14 +455,12 @@
         "type": "binary",
         "null": 0,
         "key": "PRI",
-        "signed": true,
         "maxlength": 16
       },
       "type": {
         "type": "enum",
         "null": 0,
         "extra": "'daily','weekly','monthly','yearly'",
-        "signed": true,
         "default": "daily",
         "values": [
           "daily",
@@ -513,35 +486,30 @@
       "until": {
         "type": "date",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       },
       "wd": {
         "type": "json",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       },
       "mw": {
         "type": "json",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       },
       "md": {
         "type": "json",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       },
       "ym": {
         "type": "json",
         "null": 1,
-        "signed": true,
         "default": "NULL",
         "defaultExpression": 1
       }
