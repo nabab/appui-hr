@@ -215,6 +215,7 @@
         "null": 1,
         "extra": "'accepted','cancelled','refused'",
         "default": "NULL",
+        "defaultExpression": 1,
         "values": [
           "accepted",
           "cancelled",
