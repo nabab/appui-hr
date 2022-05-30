@@ -1,0 +1,17 @@
+[
+  {
+    "text": "Plugins dashboard",
+    "code": "plugins",
+    "id_option": ["list", "dashboard", "appui"],
+    "items": [
+      {
+        "code": "staff_absent",
+        "id_option": ["staff_absent", "widgets", "appui-dashboard", "plugins", "hr", "appui"]
+      },
+      {
+        "code": "staff_absent_soon",
+        "id_option": ["staff_absent_soon", "widgets", "appui-dashboard", "plugins", "hr", "appui"]
+      }
+    ]
+  }
+]
