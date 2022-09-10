@@ -19,7 +19,10 @@
     }
   ],
   "require": {
-    "php": ">=7.3",
-    "bbn/bbn": "dev-master"
+    "php": ">=8.0",
+    "bbn/bbn": "dev-master",
+    "bbn/appui-usergroup": "dev-master",
+    "bbn/appui-note": "dev-master",
+    "bbn/appui-event": "dev-master"
   }
 }
