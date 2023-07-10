@@ -20,9 +20,9 @@
   ],
   "require": {
     "php": ">=8.0",
-    "bbn/bbn": "dev-master",
-    "bbn/appui-usergroup": "dev-master",
-    "bbn/appui-note": "dev-master",
-    "bbn/appui-event": "dev-master"
+    "bbn/bbn": "1.0.*",
+    "bbn/appui-usergroup": "1.0.*",
+    "bbn/appui-note": "1.0.*",
+    "bbn/appui-event": "1.0.*"
   }
 }
