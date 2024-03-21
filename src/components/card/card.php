@@ -10,7 +10,7 @@
                   :source="source"
                   :component="isObject(source.tabs.home) && source.tabs.home.component ? source.tabs.home.component : 'appui-hr-card-tab-home'"
                   :static="true"
-                  title="<?=_('Home')?>"
+                  title="<?= _('Home') ?>"
   ></bbns-container>
   <bbns-container v-if="source.tabs.jobs"
                   url="jobs"
@@ -20,7 +20,7 @@
                   :source="source"
                   :component="isObject(source.tabs.jobs) && source.tabs.jobs.component ? source.tabs.jobs.component : 'appui-hr-card-tab-jobs'"
                   :static="true"
-                  title="<?=_('List of working days')?>"
+                  title="<?= _('List of working days') ?>"
   ></bbns-container>
   <bbns-container v-if="source.tabs.holidays"
                   url="holidays"
@@ -30,7 +30,7 @@
                   :source="source"
                   :component="isObject(source.tabs.holidays) && source.tabs.holidays.component ? source.tabs.holidays.component : 'appui-hr-card-tab-holidays'"
                   :static="true"
-                  title="<?=_('Holidays')?>"
+                  title="<?= _('Holidays') ?>"
                   bcolor="skyblue"
                   fcolor="white"
   ></bbns-container>

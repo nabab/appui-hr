@@ -6,17 +6,17 @@
           <!-- <bbn-button icon="nf nf-fa-file_excel_o"
                       @click="exportExcel"
                       v-if="!isYearMode"
-          ><?=_('Excel')?></bbn-button> -->
+          ><?= _('Excel') ?></bbn-button> -->
         </div>
         <div>
-          <span><?=_('Staff')?>: </span>
+          <span><?= _('Staff') ?>: </span>
           <bbn-dropdown :source="staff"
                         v-model="currentStaff"
                         :nullable="true"
           ></bbn-dropdown>
         </div>
         <div class="bbn-left-space">
-          <span><?=_('Status')?>: </span>
+          <span><?= _('Status') ?>: </span>
           <bbn-dropdown :source="hr.holidaysStatus"
                         v-model="currentStatus"
                         :nullable="true"
@@ -36,16 +36,16 @@
               <div class="bbn-flex-width appui-hr-tab-holidays-planning-year-mode-header bbn-header bbn-xspadded">
                 <bbn-button icon="nf nf-fa-angle_left"
                             @click="prevYear"
-                            title="<?=_('Previous year')?>"
+                            title="<?= _('Previous year') ?>"
                             :notext="true"
                 ></bbn-button>
                 <div class="bbn-flex-fill bbn-middle">
                   <i class="nf nf-fa-calendar_o bbn-hsmargin bbn-large"></i>
-                  <strong v-text="'<?=_('Year')?> ' + currentYear"></strong>
+                  <strong v-text="'<?= _('Year') ?> ' + currentYear"></strong>
                 </div>
                 <bbn-button icon="nf nf-fa-angle_right"
                             @click="nextYear"
-                            title="<?=_('Next year')?>"
+                            title="<?= _('Next year') ?>"
                             :notext="true"
                 ></bbn-button>
               </div>
@@ -92,7 +92,7 @@
               <bbn-button icon="nf nf-fa-refresh"
                           @click="() => {fullRefresh()}"
                           :notext="true"
-                          text="<?=_('Refresh')?>"
+                          text="<?= _('Refresh') ?>"
               ></bbn-button>
             </div>
           </div>
@@ -102,7 +102,7 @@
               <div class="bbn-header bbn-flex-width bbn-xspadded bbn-no-border-top">
                 <bbn-button icon="nf nf-fa-calendar_plus_o"
                             @click="addEvent"
-                            title="<?=_('Add')?>"
+                            title="<?= _('Add') ?>"
                             :notext="true"
                             v-if="hr.source.perms.write"
                 ></bbn-button>
@@ -112,7 +112,7 @@
                 </div>
                 <bbn-button icon="nf nf-fa-window_close"
                             @click="changeSelected('', false)"
-                            title="<?=_('Back to calendar')?>"
+                            title="<?= _('Back to calendar') ?>"
                             :notext="true"
                 ></bbn-button>
               </div>

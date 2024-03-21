@@ -14,11 +14,11 @@
            :filterable="true"
            :filters="planning.currentFilters"
 >
-  <bbns-column title="<?=_('Staff')?>"
+  <bbns-column title="<?= _('Staff') ?>"
                field="id_staff"
                :source="staff"
   ></bbns-column>
-  <bbns-column title="<?=_('Hours')?>"
+  <bbns-column title="<?= _('Hours') ?>"
                field="hour"
                :width="100"
                cls="bbn-c"
@@ -54,12 +54,12 @@
                :hidden="true"
   ></bbns-column>
   <bbns-column :buttons="[{
-                  text: '<?=_('Edit')?>',
+                  text: '<?= _('Edit') ?>',
                   notext: true,
                   action: edit,
                   icon: 'nf nf-fa-edit'
                 }, {
-                  text: '<?=_('Delete')?>',
+                  text: '<?= _('Delete') ?>',
                   notext: true,
                   action: remove,
                   icon: 'nf nf-fa-trash'

@@ -7,7 +7,7 @@
                     :static="true"
                     :load="false"
                     icon="nf nf-oct-calendar"
-                    title="<?=_('Holidays Planning')?>"
+                    title="<?= _('Holidays Planning') ?>"
                     :notext="true"
                     component="appui-hr-card-tab-holidays-planning"
                     v-if="source.tabs.holidays.tabs.planning"
@@ -16,7 +16,7 @@
                    :static="true"
                    :load="false"
                    icon="nf nf-fa-list"
-                   title="<?=_('Holidays List')?>"
+                   title="<?= _('Holidays List') ?>"
                    :notext="true"
                    v-if="source.tabs.holidays.tabs.list"
     >
@@ -39,11 +39,11 @@
                 :filters="{conditions:[{field: 'id_staff', value: source.id}]}"
                 :trClass="colorRow"
       >
-        <bbns-column title="<?=_('Name')?>"
+        <bbns-column title="<?= _('Name') ?>"
                      field="id_staff"
                      :hidden="true"
         ></bbns-column>
-        <bbns-column title="<?=_('From')?>"
+        <bbns-column title="<?= _('From') ?>"
                      field="start"
                      type="date"
                      cls="bbn-c"
@@ -52,7 +52,7 @@
                        format: 'Y-m-d'
                      }"
         ></bbns-column>
-        <bbns-column title="<?=_('To')?>"
+        <bbns-column title="<?= _('To') ?>"
                      field="end"
                      type="date"
                      cls="bbn-c"
@@ -61,24 +61,24 @@
                        format: 'Y-m-d'
                      }"
         ></bbns-column>
-        <bbns-column title="<?=_('Type')?>"
+        <bbns-column title="<?= _('Type') ?>"
                      field="id_type"
                      :source="absences"
                      cls="bbn-c"
                      width="200"
         ></bbns-column>
-        <bbns-column title="<?=_('Status')?>"
+        <bbns-column title="<?= _('Status') ?>"
                      field="status"
                      :source="hr.holidaysStatus"
                      cls="bbn-c"
                      width="180"
                      :render="renderStatus"
         ></bbns-column>
-        <bbns-column title="<?=_('Substitute(s)')?>"
+        <bbns-column title="<?= _('Substitute(s)') ?>"
                      field="substitutes"
 									   :render="renderSub"
         ></bbns-column>
-        <bbns-column title="<?=_('Note')?>"
+        <bbns-column title="<?= _('Note') ?>"
                      field="note"
                      :filterable="false"
                      cls="bbn-c",

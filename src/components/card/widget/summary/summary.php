@@ -7,7 +7,7 @@
       <div class="days" :style="{color: getColor(id)}">
         <strong v-text="tot"></strong>
       </div>
-      <div v-text="tot === 1 ? '<?=_('day')?>' : '<?=_('days')?>'"></div>
+      <div v-text="tot === 1 ? '<?= _('day')?>' : '<?=_('days') ?>'"></div>
     </div>
   </div>
 </div>

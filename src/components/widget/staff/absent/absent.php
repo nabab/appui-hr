@@ -3,7 +3,7 @@
     <span class="label-icon">
       <i class="nf nf-fa-user label-icon"></i>
     </span>
-    <?=_('Staff')?>
+    <?= _('Staff') ?>
   </div>
   <a :href="linkCard" v-text="staff"></a>
 
@@ -11,7 +11,7 @@
     <span class="label-icon">
       <i class="nf nf-mdi-beach label-icon"></i>
     </span>
-    <?=_('For')?>
+    <?= _('For') ?>
   </div>
   <div v-text="type" :style="{color: color}"></div>
 
@@ -19,7 +19,7 @@
     <span class="label-icon">
       <i class="nf nf-fa-calendar label-icon"></i>
     </span>
-    <?=_('From/To')?>
+    <?= _('From/To') ?>
   </div>
 
   <div>

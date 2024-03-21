@@ -10,24 +10,24 @@
              dir: 'DESC'
            }]"
 >
-  <bbns-column title="<?=_('Date')?>"
+  <bbns-column title="<?= _('Date') ?>"
                field="start"
                type="date"
                :width="120"
                cls="bbn-c"
   ></bbns-column>
-  <bbns-column title="<?=_('Hours')?>"
+  <bbns-column title="<?= _('Hours') ?>"
                field="hour"
                :render="renderHour"
                :width="100"
                cls="bbn-c"
                type="number"
   ></bbns-column>
-  <bbns-column title="<?=_('Entity')?>"
+  <bbns-column title="<?= _('Entity') ?>"
                field="nom"
                :render="renderNom"
   ></bbns-column>
-  <bbns-column title="<?=_('Address')?>"
+  <bbns-column title="<?= _('Address') ?>"
                field="fulladdress"
                :render="renderAdresse"
   ></bbns-column>

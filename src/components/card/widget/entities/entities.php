@@ -4,7 +4,7 @@
       <span class="label-icon">
         <i class="nf nf-fa-building_o label-icon"></i>
       </span>  
-      <?=_('Name')?>
+      <?= _('Name') ?>
     </div>
     <div class="chantier" v-if="ent.nom">
       <a :href="'chantier/fiche/' + ent.id"
@@ -16,7 +16,7 @@
       <span class="label-icon">
         <i class="nf nf-fa-map_signs label-icon"></i>
       </span>  
-      <?=_('Address')?>
+      <?= _('Address') ?>
     </div>
     <div class="chantier">
       <a :href="'chantier/fiche/' + ent.id"
@@ -28,7 +28,7 @@
       <span class="label-icon">
         <i class="nf nf-fa-clock_o label-icon"></i>
       </span>  
-      <?=_('hrs/week')?>
+      <?= _('hrs/week') ?>
     </div>
     <div v-text="hsem(ent)"></div>    
   </div>
