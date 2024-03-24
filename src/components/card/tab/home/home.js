@@ -13,8 +13,8 @@
     methods: {
       infoBtns(){
         if ( 
-          appui.app.user.isAdmin ||
-          appui.app.user.isDev ||
+          appui.user.isAdmin ||
+          appui.user.isDev ||
           (appui.app.group.group.toLowerCase() === 'managers')
         ){
           return [{

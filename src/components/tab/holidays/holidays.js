@@ -3,7 +3,7 @@
   return {
     data(){
       return {
-        groups: bbn.fn.order(appui.app.groups.map(g => {
+        groups: bbn.fn.order(appui.groups.map(g => {
           return {
             text: g.group,
             value: g.id,

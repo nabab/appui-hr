@@ -33,7 +33,7 @@
     },
     mounted(){
       if ( this.card.idGroup ){
-        this.group = bbn.fn.getField(appui.app.groups, 'group', 'id', this.card.idGroup).toUpperCase()
+        this.group = bbn.fn.getField(appui.groups, 'group', 'id', this.card.idGroup).toUpperCase()
       }
     }
   }
