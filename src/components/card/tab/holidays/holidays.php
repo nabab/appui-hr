@@ -4,7 +4,7 @@
               :autoload="false"
   >
     <bbns-container url="planning"
-                    :static="true"
+                    :fixed="true"
                     :load="false"
                     icon="nf nf-oct-calendar"
                     title="<?= _('Holidays Planning') ?>"
@@ -13,7 +13,7 @@
                     v-if="source.tabs.holidays.tabs.planning"
     ></bbns-container>
     <bbn-container url="list"
-                   :static="true"
+                   :fixed="true"
                    :load="false"
                    icon="nf nf-fa-list"
                    title="<?= _('Holidays List') ?>"
