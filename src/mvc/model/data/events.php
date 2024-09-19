@@ -127,19 +127,19 @@ else if ( empty($model->data['week']) && !empty($model->data['start']) && !empty
   return [
     'data' => $model->db->getRows("
       SELECT bbn_events.id, bbn_events.id_type, bbn_events.`start`, bbn_events.`end`,
-        bbn_hr_staff_events.id_staff, bbn_hr_staff_events.note, bbn_hr_staff_events.status, bbn_people.fullname AS staff
+        bbn_hr_staff_events.id_staff, bbn_hr_staff_events.note, bbn_hr_staff_events.status, bbn_identities.fullname AS staff
       FROM bbn_events
         JOIN bbn_hr_staff_events
           ON bbn_hr_staff_events.id_event = bbn_events.id
         JOIN bbn_hr_staff
           ON bbn_hr_staff.id = bbn_hr_staff_events.id_staff
-        JOIN bbn_people
-          ON bbn_people.id = bbn_hr_staff.id
+        JOIN bbn_identities
+          ON bbn_identities.id = bbn_hr_staff.id
         JOIN bbn_history_uids AS h1
           ON h1.bbn_uid = bbn_events.id
           AND h1.bbn_active = 1
         JOIN bbn_history_uids AS h2
-          ON h2.bbn_uid = bbn_people.id
+          ON h2.bbn_uid = bbn_identities.id
           AND h2.bbn_active = 1
       WHERE ((bbn_events.`start` BETWEEN ? AND ?)
         OR (bbn_events.`end` BETWEEN ? AND ?))".
@@ -162,7 +162,7 @@ if ( !empty($where) ){
         'bbn_hr_staff_events.id_staff',
         'bbn_hr_staff_events.status',
         'bbn_hr_staff_events.note',
-        'staff' => 'bbn_people.fullname'
+        'staff' => 'bbn_identities.fullname'
       ],
       'join' => [[
         'table' => 'bbn_hr_staff_events',
@@ -181,10 +181,10 @@ if ( !empty($where) ){
           ]]
         ]
       ], [
-        'table' => 'bbn_people',
+        'table' => 'bbn_identities',
         'on' => [
           'conditions' => [[
-            'field' => 'bbn_people.id',
+            'field' => 'bbn_identities.id',
             'exp' => 'bbn_hr_staff.id'
           ]]
         ]

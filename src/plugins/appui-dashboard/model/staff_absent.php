@@ -1,8 +1,8 @@
 <?php
 $grid = new \bbn\Appui\Grid($model->db, $model->data, [
-  'table' => 'bbn_people',
+  'table' => 'bbn_identities',
   'fields' => [
-    'bbn_people.id',
+    'bbn_identities.id',
     'bbn_events.start',
     'bbn_events.end',
     'bbn_events.id_type'
@@ -11,7 +11,7 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
     'table' => 'bbn_hr_staff',
     'on' => [
       'conditions' => [[
-        'field' => 'bbn_people.id',
+        'field' => 'bbn_identities.id',
         'exp' => 'bbn_hr_staff.id'
       ]]
     ]

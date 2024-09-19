@@ -4,12 +4,12 @@ if (
   !empty($model->data['filters']['conditions']) &&
   (($idx = \bbn\X::find($model->data['filters']['conditions'], ['field' => 'id_staff'])) !== null)
 ){
-  $model->data['filters']['conditions'][$idx]['field'] = 'bbn_people.id';
+  $model->data['filters']['conditions'][$idx]['field'] = 'bbn_identities.id';
 }
 $grid = new \bbn\Appui\Grid($model->db, $model->data, [
-  'table' => 'bbn_people',
+  'table' => 'bbn_identities',
   'fields' => [
-    'id_staff' => 'bbn_people.id',
+    'id_staff' => 'bbn_identities.id',
     'bbn_hr_staff_events.id_event',
     'bbn_events.start',
     'bbn_events.end',
@@ -22,7 +22,7 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
     'table' => 'bbn_hr_staff',
     'on' => [
       'conditions' => [[
-        'field' => 'bbn_people.id',
+        'field' => 'bbn_identities.id',
         'exp' => 'bbn_hr_staff.id'
       ]]
     ]
@@ -52,7 +52,7 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
 		'on' => [
 			'conditions' => [[
 				'field' => 'bbn_hr_planning.id_staff',
-				'exp' => 'bbn_people.id'
+				'exp' => 'bbn_identities.id'
 			]]
 		]
 	], [
@@ -111,13 +111,13 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
     },
     'params' => [
       'staff' => $model->db->selectAllByKeys([
-        'table' => 'bbn_people',
+        'table' => 'bbn_identities',
         'fields' => ['id', 'fullname'],
         'join' => [[
           'table' => 'bbn_history_uids',
           'on' => [
             'conditions' => [[
-              'field' => 'bbn_people.id',
+              'field' => 'bbn_identities.id',
               'exp' => 'bbn_history_uids.bbn_uid'
             ]]
           ]

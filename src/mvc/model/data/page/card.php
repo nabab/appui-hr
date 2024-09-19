@@ -34,7 +34,7 @@ if ( !empty($model->data['id']) ){
     }
   }
 
-  $info = $model->db->rselect('bbn_people', [], ['id' => $model->data['id']]);
+  $info = $model->db->rselect('bbn_identities', [], ['id' => $model->data['id']]);
   if ( \bbn\Str::isJson($info['cfg']) ){
     $info = array_merge($info, Json_decode($info['cfg'], true));
   }
