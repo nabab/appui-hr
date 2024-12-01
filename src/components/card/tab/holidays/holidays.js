@@ -175,7 +175,7 @@
     component: {
       toolbar: {
         template: `
-<div class="bbn-header bbn-spadded">
+<div class="bbn-header bbn-spadding">
   <div class="bbn-flex-width">
     <div class="bbn-flex-fill">
       <bbn-button text="` + bbn._('Excel') + `"
@@ -208,7 +208,7 @@
       <div class="bbn-middle appui-hr-card-tab-holidays-legend bbn-h-100">
         <div v-for="p in period">
           <div class="bbn-vmiddle bbn-hsmargin">
-            <div class="bbn-hsmargin bbn-bordered appui-hr-card-tab-holidays-legend-item"
+            <div class="bbn-hsmargin bbn-border appui-hr-card-tab-holidays-legend-item"
                  :style="{backgroundColor: p.color}"
             ></div>
             <span v-text="p.text"></span>

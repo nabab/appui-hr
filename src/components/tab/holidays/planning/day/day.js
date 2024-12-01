@@ -21,7 +21,7 @@
           }
         },
         template: `
-<div class="bbn-hspadded bbn-vmiddle">
+<div class="bbn-hspadding bbn-vmiddle">
   <div class="bbn-flex-width" style="margin-bottom: .1rem">
     <bbn-initial :user-name="getStaff(source.id_staff)"
                  :width="20"

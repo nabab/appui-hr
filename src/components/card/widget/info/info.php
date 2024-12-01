@@ -28,7 +28,7 @@
     <div v-text="fdate(source.info.dof)"></div>
   </div>
   <div class="bbn-w-100 bbn-top-space">
-    <div class="bbn-header bbn-c bbn-xspadded"><?= _("Today") ?></div>
+    <div class="bbn-header bbn-c bbn-xspadding"><?= _("Today") ?></div>
     <div class="bbn-white bbn-c"
          :style="{backgroundColor: absenceColor}"
          v-html="absenceText"

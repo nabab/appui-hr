@@ -1,4 +1,4 @@
-<div class="bbn-spadded bbn-widget">
+<div class="bbn-spadding bbn-widget">
   <div class="bbn-flex-width">
     <div class="bbn-vmiddle">
       <bbn-initial :user-name="getStaff(source.id_staff)"

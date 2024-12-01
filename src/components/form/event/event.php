@@ -5,7 +5,7 @@
           :prefilled="true"
           class="bbn-overlay appui-hr-form-event"
 >
-  <div class="bbn-padded bbn-grid-fields"
+  <div class="bbn-padding bbn-grid-fields"
        style="grid-template-columns: max-content auto"
   >
     <label><?= _('From') ?></label>

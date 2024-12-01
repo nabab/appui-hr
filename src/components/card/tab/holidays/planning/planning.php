@@ -1,7 +1,7 @@
 <div class="appui-hr-card-tab-holidays-planning bbn-overlay">
   <div class="bbn-flex-height">
     <div>
-      <div class="bbn-header bbn-spadded bbn-flex-width bbn-no-border-bottom bbn-no-border-top">
+      <div class="bbn-header bbn-spadding bbn-flex-width bbn-no-border-bottom bbn-no-border-top">
         <div class="bbn-flex-fill"></div>
         <div>
           <span><?= _('Status') ?>: </span>
@@ -21,7 +21,7 @@
             <div v-if="isYearMode"
                 class="appui-hr-card-tab-holidays-planning-year-mode bbn-w-100"
             >
-              <div class="bbn-flex-width appui-hr-card-tab-holidays-planning-year-mode-header bbn-header bbn-xspadded">
+              <div class="bbn-flex-width appui-hr-card-tab-holidays-planning-year-mode-header bbn-header bbn-xspadding">
                 <bbn-button icon="nf nf-fa-angle_left"
                             @click="prevYear"
                             title="<?= _('Previous year') ?>"
@@ -76,7 +76,7 @@
                   ></bbn-calendar>
                 </div>
             </div>
-            <div class="bbn-xspadded bbn-r bbn-widget bbn-block">
+            <div class="bbn-xspadding bbn-r bbn-widget bbn-block">
               <bbn-button icon="nf nf-fa-refresh"
                           @click="() => {fullRefresh()}"
                           :notext="true"
@@ -87,7 +87,7 @@
           </bbn-pane>
           <bbn-pane :collapsed="!selected">
             <div class="bbn-100 bbn-block bbn-widget bbn-flex-height">
-              <div class="bbn-header bbn-flex-width bbn-xspadded bbn-no-border-top">
+              <div class="bbn-header bbn-flex-width bbn-xspadding bbn-no-border-top">
                 <bbn-button icon="nf nf-fa-calendar_plus_o"
                             @click="addEvent"
                             title="<?= _('Add') ?>"
@@ -104,8 +104,8 @@
                             :notext="true"
                 ></bbn-button>
               </div>
-              <div class="bbn-flex-fill bbn-spadded">
-                <div class="bbn-widget bbn-content bbn-spadded"
+              <div class="bbn-flex-fill bbn-spadding">
+                <div class="bbn-widget bbn-content bbn-spadding"
                     style="display: grid; grid-template-columns: repeat(3, auto)"
                 >
                   <div v-for="absence in absences">

@@ -73,7 +73,7 @@
         if ( row.recurring ){
           this.getPopup().open({
             title: bbn._('Attention'),
-            content: '<div class="bbn-padded bbn-c">' + bbn._('What events do you want to delete?') + '</div>',
+            content: '<div class="bbn-padding bbn-c">' + bbn._('What events do you want to delete?') + '</div>',
             buttons: [{
               text: bbn._('Cancel'),
               action: () => {
@@ -122,7 +122,7 @@
           ref="form"
           @submit="askEdit"
 >
-  <div class="bbn-grid-fields bbn-padded">
+  <div class="bbn-grid-fields bbn-padding">
     <label>` + bbn._('Staff') + `</label>
     <bbn-dropdown :source="staff"
                   v-model="source.row.id_staff"
@@ -148,7 +148,7 @@
     </div>
     <label></label>
     <div v-if="!!source.row.recurring">
-      <div class="bbn-bordered bbn-radius bbn-flex-fill bbn-padded">
+      <div class="bbn-border bbn-radius bbn-flex-fill bbn-padding">
         <div class="bbn-grid-fields">
           <label>` + bbn._('Type') + `</label>
           <bbn-dropdown :source="frequencies"
@@ -284,7 +284,7 @@
               ev.preventDefault();
               this.getPopup().open({
                 title: bbn._('Attention'),
-                content: '<div class="bbn-padded bbn-c">' + bbn._('What events do you want to edit?') + '</div>',
+                content: '<div class="bbn-padding bbn-c">' + bbn._('What events do you want to edit?') + '</div>',
                 buttons: [{
                   text: bbn._('Only this'),
                   action: () => {

@@ -4,7 +4,7 @@
           @success="afterSubmit"
 
 >
-  <div class="bbn-padded bbn-grid-fields">
+  <div class="bbn-padding bbn-grid-fields">
     <label><?= _("Surname") ?></label>
     <bbn-input v-model="source.row.surname"
                 required="required"

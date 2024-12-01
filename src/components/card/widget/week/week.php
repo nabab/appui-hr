@@ -1,7 +1,7 @@
 <div class="appui-hr-card-widget-week">
-  <div class="bbn-spadded appui-hr-card-widget-week-types bbn-bottom-sspace">
+  <div class="bbn-spadding appui-hr-card-widget-week-types bbn-bottom-sspace">
     <div v-for="absence in card.absences" class="bbn-vmiddle">
-      <div class="bbn-hsmargin appui-hr-card-widget-week-types-square bbn-bordered"
+      <div class="bbn-hsmargin appui-hr-card-widget-week-types-square bbn-border"
             :style="{backgroundColor: absence.color}"
       ></div>
       <span v-text="absence.text"></span>
@@ -17,7 +17,7 @@
             'appui-hr-card-widget-week-day',
             'bbn-unselectable',
             'bbn-middle',
-            'bbn-spadded',
+            'bbn-spadding',
             'bbn-top-sspace',
             {
               'bbn-background': !day.today,

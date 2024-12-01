@@ -1,4 +1,4 @@
-<div class="bbn-spadded bbn-widget">
+<div class="bbn-spadding bbn-widget">
   <div class="bbn-flex-width">
     <div class="bbn-vmiddle">
       <div class="bbn-box bbn-middle"
