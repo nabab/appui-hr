@@ -38,13 +38,13 @@
       },
       insert(){
         this.getRef('table').insert({}, {
-          title: bbn._("New employe"),
+          label: bbn._("New employe"),
           width: 600
         });
       },
       edit(row, col, idx){
         this.getRef('table').edit(row, {
-          title: bbn._("Edit employe"),
+          label: bbn._("Edit employe"),
           width: 600
         }, idx);
       },

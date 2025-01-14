@@ -13,27 +13,27 @@
   >
     <bbns-column field="id"
                   :hidden="true"
-                  title="ID"
+                  label="ID"
                   :export="{
                     excluded: false
                   }"
      ></bbns-column>
      <bbns-column field="id_user"
                   :hidden="true"
-                  title="<?= _('ID User') ?>"
+                  label="<?= _('ID User') ?>"
      ></bbns-column>
-     <bbns-column title="<?= _('Name') ?>"
+     <bbns-column label="<?= _('Name') ?>"
                   field="fullname"
                   :render="renderName"
      ></bbns-column>
-     <bbns-column title="<?= _('Group') ?>"
+     <bbns-column label="<?= _('Group') ?>"
                   field="id_group"
                   :source="groups"
      ></bbns-column>
-     <bbns-column title="<?= _('Email') ?>"
+     <bbns-column label="<?= _('Email') ?>"
                   field="email"
      ></bbns-column>
-     <bbns-column title="<?= _('Address') ?>"
+     <bbns-column label="<?= _('Address') ?>"
                   field="adresse"
                   :hidden="true"
                   :export="{
@@ -41,7 +41,7 @@
                     hidden: false
                   }"
      ></bbns-column>
-     <bbns-column title="<?= _('Postal Code') ?>"
+     <bbns-column label="<?= _('Postal Code') ?>"
                   field="cp"
                   :hidden="true"
                   width="100"
@@ -50,7 +50,7 @@
                     hidden: false
                   }"
      ></bbns-column>
-     <bbns-column title="<?= _('City') ?>"
+     <bbns-column label="<?= _('City') ?>"
                   field="ville"
                   :hidden="true"
                   :export="{
@@ -58,7 +58,7 @@
                     hidden: false
                   }"
      ></bbns-column>
-     <bbns-column title="<?= _('Mobile') ?>"
+     <bbns-column label="<?= _('Mobile') ?>"
                   field="tel"
                   :width="200"
                   :hidden="true"

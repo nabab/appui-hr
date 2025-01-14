@@ -5,7 +5,7 @@
                  :order="source.widgets_order"
   >
     <bbns-widget v-if="source.widgets.info"
-                 :title="source.widgets.info.text"
+                 :label="source.widgets.info.text"
                  :component="source.widgets.info.component"
                  :source="source"
                  :buttonsRight="infoBtns"
@@ -17,7 +17,7 @@
                  :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.week"
-                 :title="source.widgets.week.text"
+                 :label="source.widgets.week.text"
                  :component="source.widgets.week.component"
                  :source="source"
                  :closable="false"
@@ -28,7 +28,7 @@
                  :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.summary"
-                 :title="source.widgets.summary.text + ' ' + currentYear"
+                 :label="source.widgets.summary.text + ' ' + currentYear"
                  :component="source.widgets.summary.component"
                  :source="source"
                  :closable="source.widgets.summary.closable"
@@ -39,7 +39,7 @@
                  :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.summary_chart"
-                 :title="source.widgets.summary_chart.text + ' ' + currentYear"
+                 :label="source.widgets.summary_chart.text + ' ' + currentYear"
                  component="appui-hr-card-widget-summary-chart"
                  :source="source"
                  :closable="source.widgets.summary.closable"
@@ -50,7 +50,7 @@
                  :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.upcoming"
-                 :title="source.widgets.upcoming.text"
+                 :label="source.widgets.upcoming.text"
                  :component="source.widgets.upcoming.component"
                  :source="source"
                  :closable="source.widgets.upcoming.closable"
@@ -61,7 +61,7 @@
                  :padding="true"
     ></bbns-widget>
     <bbns-widget v-if="source.widgets.entities && source.entities && source.entities.length"
-                 :title="source.widgets.entities.text"
+                 :label="source.widgets.entities.text"
                  :component="source.widgets.entities.component"
                  :source="source"
                  :closable="source.widgets.entities.closable"

@@ -27,8 +27,8 @@
         return [];
       },
       editInfo(){
-        this.getPopup().open({
-          title: bbn._("Edit"),          
+        this.getPopup({
+          label: bbn._("Edit"),          
           width: 600,
           component: 'ami-hr-form-staff',
           source: {

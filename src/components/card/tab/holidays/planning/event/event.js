@@ -58,8 +58,8 @@
         return bbn.fn.getField(appui.app.staff, 'text', {value: id})
       },
       edit(){
-        this.getPopup().open({
-          title: bbn._('Edit'),
+        this.getPopup({
+          label: bbn._('Edit'),
           height: 400,
           width: 600,
           component: 'appui-hr-form-event',

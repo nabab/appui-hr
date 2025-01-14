@@ -92,7 +92,7 @@
               <bbn-button icon="nf nf-fa-refresh"
                           @click="() => {fullRefresh()}"
                           :notext="true"
-                          text="<?= _('Refresh') ?>"
+                          label="<?= _('Refresh') ?>"
               ></bbn-button>
             </div>
           </div>

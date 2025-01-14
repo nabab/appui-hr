@@ -85,7 +85,7 @@
                 <bbn-button icon="nf nf-fa-refresh"
                             @click="() => {getRef('calendar').refresh()}"
                             :notext="true"
-                            text="<?= _('Refresh') ?>"
+                            label="<?= _('Refresh') ?>"
                 ></bbn-button>
               </div>
             </div>

@@ -55,13 +55,13 @@
       },
       add(){
         this.getRef('table').insert({}, {
-          title: bbn._('Add') + ' - ' + this.planning.dayText,
+          label: bbn._('Add') + ' - ' + this.planning.dayText,
           width: 600
         });
       },
       edit(row, obj, idx){
         this.getRef('table').edit(row, {
-          title: bbn._('Edit') + ' - ' + this.planning.dayText,
+          label: bbn._('Edit') + ' - ' + this.planning.dayText,
           width: 600
         }, idx);
       },
@@ -71,8 +71,8 @@
           day: this.currentDay
         };
         if ( row.recurring ){
-          this.getPopup().open({
-            title: bbn._('Attention'),
+          this.getPopup({
+            label: bbn._('Attention'),
             content: '<div class="bbn-padding bbn-c">' + bbn._('What events do you want to delete?') + '</div>',
             buttons: [{
               text: bbn._('Cancel'),
@@ -282,8 +282,8 @@
           askEdit(ev){
             if ( this.source.row.id && this.source.row.recurring ){
               ev.preventDefault();
-              this.getPopup().open({
-                title: bbn._('Attention'),
+              this.getPopup({
+                label: bbn._('Attention'),
                 content: '<div class="bbn-padding bbn-c">' + bbn._('What events do you want to edit?') + '</div>',
                 buttons: [{
                   text: bbn._('Only this'),

@@ -178,7 +178,7 @@
 <div class="bbn-header bbn-spadding">
   <div class="bbn-flex-width">
     <div class="bbn-flex-fill">
-      <bbn-button text="` + bbn._('Excel') + `"
+      <bbn-button label="` + bbn._('Excel') + `"
                   icon="nf nf-fa-file_excel_o"
                   @click="excel"
                   class="bbn-right-space"

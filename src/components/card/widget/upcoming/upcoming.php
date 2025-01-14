@@ -5,17 +5,17 @@
              :show-limit="false"
              :show-total-items="false"
   >
-    <bbns-column title="<?= _('From') ?>"
+    <bbns-column label="<?= _('From') ?>"
                  field="start"
                  cls="bbn-c"
 								 type="date"
     ></bbns-column>
-    <bbns-column title="<?= _('To') ?>"
+    <bbns-column label="<?= _('To') ?>"
                  field="end"
                  cls="bbn-c"
 								 type="date"
     ></bbns-column>
-    <bbns-column title="<?= _('Type') ?>"
+    <bbns-column label="<?= _('Type') ?>"
                  field="id_type"
                  :source="absences"
                  cls="bbn-c"

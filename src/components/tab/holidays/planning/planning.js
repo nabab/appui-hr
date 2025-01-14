@@ -76,8 +76,8 @@
         }
       },
       addEvent(){
-        this.getPopup().open({
-          title: bbn._('Add'),
+        this.getPopup({
+          label: bbn._('Add'),
           height: 420,
           width: 600,
           component: 'appui-hr-form-event',

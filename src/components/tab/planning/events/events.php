@@ -14,11 +14,11 @@
            :filterable="true"
            :filters="planning.currentFilters"
 >
-  <bbns-column title="<?= _('Staff') ?>"
+  <bbns-column label="<?= _('Staff') ?>"
                field="id_staff"
                :source="staff"
   ></bbns-column>
-  <bbns-column title="<?= _('Hours') ?>"
+  <bbns-column label="<?= _('Hours') ?>"
                field="hour"
                :width="100"
                cls="bbn-c"
