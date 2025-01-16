@@ -1,3 +1,3 @@
 <div class="bbn-overlay bbn-middle">
-  <i class="nf nf-mdi-beach bbn-xxlarge"></i>
+  <i class="nf nf-md-beach bbn-xxlarge"></i>
 </div>

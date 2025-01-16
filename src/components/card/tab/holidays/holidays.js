@@ -34,7 +34,7 @@
 				return ret;
 			},
       renderNote(row){
-        return row.note ? `<i class="nf nf-mdi-comment_outline bbn-large" title="${row.note}"></i>` : '';
+        return row.note ? `<i class="nf nf-md-comment_outline bbn-large" title="${row.note}"></i>` : '';
       },
       openCard(row){
         bbn.fn.link(this.root + 'page/card/' + row.id_staff);

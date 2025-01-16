@@ -26,32 +26,32 @@
                :filterable="false"
   ></bbns-column>
   <bbns-column field="recurring"
-               :hidden="true"
+               :invisible="true"
                :default="0"
   ></bbns-column>
   <bbns-column field="type"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column field="interval"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column field="wd"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column field="md"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column field="mw"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column field="ym"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column field="until"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column field="occurrences"
-               :hidden="true"
+               :invisible="true"
   ></bbns-column>
   <bbns-column :buttons="[{
                   text: '<?= _('Edit') ?>',

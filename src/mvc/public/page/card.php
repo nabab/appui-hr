@@ -29,7 +29,7 @@ if ( !empty($id_staff) ){
     //unset($ctrl->data['info']['id']);
     $ctrl
       ->setUrl(APPUI_HR_ROOT . 'page/card/' . $ctrl->data['id'])
-      ->setIcon('nf nf-mdi-worker bbn-large')
+      ->setIcon('nf nf-md-worker bbn-large')
       ->combo($ctrl->data['info']['fullname'], true);
   }
 }

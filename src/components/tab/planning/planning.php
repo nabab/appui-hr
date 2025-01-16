@@ -51,7 +51,7 @@
                               :item-title="getTitle"
                               :title-action="changeMode"
                               :day-padding="true"
-                              event-icon="nf nf-mdi-worker"
+                              event-icon="nf nf-md-worker"
                               :selection="true"
                               @selected="changeSelected"
                               :filters="currentFilters"
@@ -100,7 +100,7 @@
                             v-if="!!hr.source.perms.write"
                 ></bbn-button>
                 <div class="bbn-flex-fill bbn-middle">
-                  <i class="nf nf-mdi-calendar_today bbn-hsmargin bbn-large"></i>
+                  <i class="nf nf-md-calendar_today bbn-hsmargin bbn-large"></i>
                   <strong v-text="dayText"></strong>
                 </div>
                 <bbn-button icon="nf nf-fa-window_close"

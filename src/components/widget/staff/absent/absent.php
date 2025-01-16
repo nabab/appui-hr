@@ -9,7 +9,7 @@
 
   <div>
     <span class="label-icon">
-      <i class="nf nf-mdi-beach label-icon"></i>
+      <i class="nf nf-md-beach label-icon"></i>
     </span>
     <?= _('For') ?>
   </div>

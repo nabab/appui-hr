@@ -18,7 +18,7 @@
         <span v-if="!sameDay" v-text="endDay"></span>
       </div>
       <div>
-        <i class="nf nf-mdi-beach"></i>
+        <i class="nf nf-md-beach"></i>
         <span class="bbn-hsmargin" v-text="typeText"></span>
       </div>
       <div v-if="status" :class="'bbn-' + status.color">

@@ -45,7 +45,7 @@
                               :source="root + 'data/events/' + idx"
                               :item-title="getTitle"
                               :day-padding="true"
-                              event-icon="nf nf-mdi-beach"
+                              event-icon="nf nf-md-beach"
                               :selection="true"
                               v-model="selected"
                               :title-action="changeMode"
@@ -95,7 +95,7 @@
                             v-if="hr.source.perms.write"
                 ></bbn-button>
                 <div class="bbn-flex-fill bbn-middle">
-                  <i class="nf nf-mdi-calendar_today bbn-hsmargin"></i>
+                  <i class="nf nf-md-calendar_today bbn-hsmargin"></i>
                   <span v-text="dayText"></span>
                 </div>
                 <bbn-button icon="nf nf-fa-window_close"

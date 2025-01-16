@@ -4,7 +4,7 @@
 >
   <bbns-container v-if="source.tabs.home"
                   url="home"
-                  icon="nf nf-mdi-account_card_details"
+                  icon="nf nf-md-account_card_details"
                   :notext="true"
                   :load="false"
                   :source="source"
@@ -14,7 +14,7 @@
   ></bbns-container>
   <bbns-container v-if="source.tabs.jobs"
                   url="jobs"
-                  icon="nf nf-mdi-worker"
+                  icon="nf nf-md-worker"
                   :notext="true"
                   :load="false"
                   :source="source"
@@ -24,7 +24,7 @@
   ></bbns-container>
   <bbns-container v-if="source.tabs.holidays"
                   url="holidays"
-                  icon="nf nf-mdi-beach"
+                  icon="nf nf-md-beach"
                   :notext="true"
                   :load="false"
                   :source="source"

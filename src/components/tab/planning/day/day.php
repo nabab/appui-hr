@@ -3,7 +3,7 @@
        class="bbn-c"
   >
     <div class="bbn-c">
-      <i class="nf nf-mdi-worker" style="font-size: 2.5em"></i>
+      <i class="nf nf-md-worker" style="font-size: 2.5em"></i>
     </div>
     <div class="bbn-badge bbn-s"
           v-text="source.events.length"

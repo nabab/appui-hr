@@ -12,14 +12,14 @@
              :showable="true"
   >
     <bbns-column field="id"
-                  :hidden="true"
+                  :invisible="true"
                   label="ID"
                   :export="{
                     excluded: false
                   }"
      ></bbns-column>
      <bbns-column field="id_user"
-                  :hidden="true"
+                  :invisible="true"
                   label="<?= _('ID User') ?>"
      ></bbns-column>
      <bbns-column label="<?= _('Name') ?>"
@@ -69,7 +69,7 @@
                   }"
      ></bbns-column>
      <bbns-column field="naissance"
-                  :hidden="true"
+                  :invisible="true"
                   :export="{
                     excluded: false,
                     hidden: false,
@@ -77,7 +77,7 @@
                   }"
      ></bbns-column>
      <bbns-column field="contact"
-                  :hidden="true"
+                  :invisible="true"
                   :export="{
                    excluded: false,
                     hidden: false,
