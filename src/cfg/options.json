@@ -1,86 +1,37 @@
-{
-  "cfg": {
-    "show_code": 1,
-    "show_icon": 1,
-    "allow_children": 1,
-    "i18n": "en"
-  },
-  "id_parent": ["appui"],
-  "text": "HR",
-  "code": "hr",
-  "id_alias": ["plugin", "list", "templates", "option", "appui"],
-  "icon": "nf nf-fa-users",
-  "plugin": true,
-  "items": [
+[
     {
-      "text": "Types of absences",
-      "code": "absences",
-      "items": [
-        {
-          "text": "Holidays",
-          "code": "holidays",
-          "color": "skyblue"
-        },
-        {
-          "text": "Permission",
-          "code": "permission",
-          "color": "sandybrown"
-        },
-        {
-          "text": "Sick holidays",
-          "code": "sick",
-          "color": "tomato"
-        }
-      ],
-      "cfg": {
-        "schema": [
-          {
-            "field": "color",
-            "title": "Color",
-            "options": [],
-            "hidden": false,
-            "editable": true,
-            "showable": true,
-            "type": "string"
-          }
-        ],
-        "show_code": 1
-      }
-    },
-    {
-      "text": "Plugins",
-      "code": "plugins",
-      "items": [
-        {
-          "text": "Dashboard",
-          "code": "appui-dashboard",
-          "id_alias": ["dashboard", "appui"],
-          "items": [
+        "text": "Types of absences",
+        "code": "absences",
+        "items": [
             {
-              "text": "Widgets",
-              "code": "widgets",
-              "id_alias": ["widgets", "dashboard", "appui"],
-              "icon": "nf nf-mdi-widgets",
-              "items": [
-                {
-                  "text": "Staff absents",
-                  "code": "staff_absent",
-                  "limit":5,
-                  "observe":false,
-                  "closable":true,
-                  "itemComponent":"appui-hr-widget-staff-absent"
-                }, {
-                  "text": "Staff absents (à venir)",
-                  "code": "staff_absent_soon",
-                  "limit":5,
-                  "closable":true,
-                  "itemComponent": "appui-hr-widget-staff-absent"
-                }
-              ]
+                "text": "Holidays",
+                "code": "holidays",
+                "color": "skyblue"
+            },
+            {
+                "text": "Permission",
+                "code": "permission",
+                "color": "sandybrown"
+            },
+            {
+                "text": "Sick holidays",
+                "code": "sick",
+                "color": "tomato"
             }
-          ]
+        ],
+        "cfg": {
+            "schema": [
+                {
+                    "field": "color",
+                    "title": "Color",
+                    "options": [],
+                    "hidden": false,
+                    "editable": true,
+                    "showable": true,
+                    "type": "string"
+                }
+            ],
+            "show_code": 1
         }
-      ]
     }
-  ]
-}
+]

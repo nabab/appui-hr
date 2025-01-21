@@ -1,0 +1,35 @@
+[
+    {
+        "text": "Dashboard",
+        "code": "dashboard",
+        "items": [
+            {
+                "text": "Widgets",
+                "code": "widgets",
+                "id_alias": [
+                    "widgets",
+                    "dashboard",
+                    "appui"
+                ],
+                "icon": "nf nf-mdi-widgets",
+                "items": [
+                    {
+                        "text": "Staff absents",
+                        "code": "staff_absent",
+                        "limit": 5,
+                        "observe": false,
+                        "closable": true,
+                        "itemComponent": "appui-hr-widget-staff-absent"
+                    },
+                    {
+                        "text": "Staff absents (\u00e0 venir)",
+                        "code": "staff_absent_soon",
+                        "limit": 5,
+                        "closable": true,
+                        "itemComponent": "appui-hr-widget-staff-absent"
+                    }
+                ]
+            }
+        ]
+    }
+]
