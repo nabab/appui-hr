@@ -159,7 +159,7 @@
           if ( !oldVal && this.isYearMode ){
             this.$nextTick(() => {
               this.getRef('calendarContainer').find('bbn-scroll').onResize();
-              this.getRef('calendarContainer').find('bbn-scroll').scrollTo(0, this.calendarSelected);
+              this.getRef('calendarContainer').find('bbn-scroll').scrollSet(0, this.calendarSelected);
             });
           }
         }
