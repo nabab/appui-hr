@@ -35,7 +35,7 @@
      ></bbns-column>
      <bbns-column label="<?= _('Address') ?>"
                   field="adresse"
-                  :hidden="true"
+                  :invisible="true"
                   :export="{
                     excluded: false,
                     hidden: false
@@ -43,7 +43,7 @@
      ></bbns-column>
      <bbns-column label="<?= _('Postal Code') ?>"
                   field="cp"
-                  :hidden="true"
+                  :invisible="true"
                   width="100"
                   :export="{
                     excluded: false,
@@ -52,7 +52,7 @@
      ></bbns-column>
      <bbns-column label="<?= _('City') ?>"
                   field="ville"
-                  :hidden="true"
+                  :invisible="true"
                   :export="{
                     excluded: false,
                     hidden: false
@@ -61,7 +61,7 @@
      <bbns-column label="<?= _('Mobile') ?>"
                   field="tel"
                   :width="200"
-                  :hidden="true"
+                  :invisible="true"
                   :export="{
                     excluded: false,
                     hidden: false,

@@ -12,7 +12,7 @@
                  :closable="source.widgets.info.closable"
                  :icon="source.widgets.info.icon"
                  :uid="source.widgets.info.key"
-                 :hidden="source.widgets.info.hidden"
+                 :invisible="source.widgets.info.hidden"
                  :index="source.widgets.info.num"
                  :padding="true"
     ></bbns-widget>
@@ -23,7 +23,7 @@
                  :closable="false"
                  :icon="source.widgets.week.icon"
                  :uid="source.widgets.week.key"
-                 :hidden="source.widgets.week.hidden"
+                 :invisible="source.widgets.week.hidden"
                  :index="source.widgets.week.num"
                  :padding="true"
     ></bbns-widget>
@@ -34,7 +34,7 @@
                  :closable="source.widgets.summary.closable"
                  :icon="source.widgets.summary.icon"
                  :uid="source.widgets.summary.key"
-                 :hidden="source.widgets.summary.hidden"
+                 :invisible="source.widgets.summary.hidden"
                  :index="source.widgets.summary.num"
                  :padding="true"
     ></bbns-widget>
@@ -45,7 +45,7 @@
                  :closable="source.widgets.summary.closable"
                  :icon="source.widgets.summary.icon"
                  uid="source.widgets.summary_chart.key"
-                 :hidden="source.widgets.summary.hidden"
+                 :invisible="source.widgets.summary.hidden"
                  :index="source.widgets.summary_chart.num"
                  :padding="true"
     ></bbns-widget>
@@ -56,7 +56,7 @@
                  :closable="source.widgets.upcoming.closable"
                  :icon="source.widgets.upcoming.icon"
                  :uid="source.widgets.upcoming.key"
-                 :hidden="source.widgets.upcoming.hidden"
+                 :invisible="source.widgets.upcoming.hidden"
                  :index="source.widgets.upcoming.num"
                  :padding="true"
     ></bbns-widget>
@@ -67,7 +67,7 @@
                  :closable="source.widgets.entities.closable"
                  :icon="source.widgets.entities.icon"
                  :uid="source.widgets.entities.key"
-                 :hidden="source.widgets.entities.hidden"
+                 :invisible="source.widgets.entities.hidden"
                  :index="source.widgets.entities.num"
                  :padding="true"
     ></bbns-widget>

@@ -41,7 +41,7 @@
       >
         <bbns-column label="<?= _('Name') ?>"
                      field="id_staff"
-                     :hidden="true"
+                     :invisible="true"
         ></bbns-column>
         <bbns-column label="<?= _('From') ?>"
                      field="start"
