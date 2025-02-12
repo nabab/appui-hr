@@ -55,7 +55,7 @@
          v-if="hr.source.perms.write"
       ></i>
       <i class="nf nf-fa-trash_o bbn-p bbn-left-sspace"
-         @click="remove"
+         @click="removeItem"
          title="<?= _('Delete') ?>"
          v-if="hr.source.perms.write"
       ></i>

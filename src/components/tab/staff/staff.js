@@ -48,7 +48,7 @@
           width: 600
         }, idx);
       },
-      remove(row, col, idx){
+      removeItem(row, col, idx){
         if ( row.id ){
           this.confirm(bbn._('Are you sure you want to delete this employe?'), () => {
             this.post(this.root + 'actions/employees/delete', {id: row.id }, d => {
@@ -96,7 +96,7 @@
             notext: true
           }, {
             text: bbn._('Deactivate'),
-            action: this.remove,
+            action: this.removeItem,
             icon: 'nf nf-fa-times',
             notext: true
           });

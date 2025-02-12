@@ -39,7 +39,7 @@
       openCard(row){
         bbn.fn.link(this.root + 'page/card/' + row.id_staff);
       },
-      remove(row){
+      removeItem(row){
         if ( row.id_event ){
           this.confirm(bbn._('Are you sure you want to delete it?'), () => {
             this.post(this.root + 'actions/holidays/delete', {id: row.id_event}, d => {
@@ -153,7 +153,7 @@
             text: bbn._("Delete"),
             icon: 'nf nf-fa-trash',
             notext: true,
-            action: this.remove
+            action: this.removeItem
           });
         }
         return bts

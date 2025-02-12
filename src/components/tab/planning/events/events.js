@@ -65,7 +65,7 @@
           width: 600
         }, idx);
       },
-      remove(row){
+      removeItem(row){
         let toPost = {
           id: row.id,
           day: this.currentDay

@@ -61,7 +61,7 @@
           scrollable: false
         });
       },
-      remove(){
+      removeItem(){
         this.confirm(bbn._('Are you sure you want to delete this item?'), () => {
           this.post(this.root + 'actions/holidays/delete', {id: this.source.id}, d => {
             if ( d.success ){

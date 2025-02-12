@@ -61,7 +61,7 @@
                 }, {
                   text: '<?= _('Delete') ?>',
                   notext: true,
-                  action: remove,
+                  action: removeItem,
                   icon: 'nf nf-fa-trash'
                 }]"
                 :width="90"
