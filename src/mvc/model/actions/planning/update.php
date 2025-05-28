@@ -43,7 +43,7 @@ if (
       is_file($path.$filename) && 
       ($d = file_get_contents($path.$filename)) &&
       ($d = json_decode($d, true)) &&
-      (($idx = \bbn\X::find($d, ['id' => $model->data['id']])) !== null)
+      (($idx = \bbn\X::search($d, ['id' => $model->data['id']])) !== null)
     ){
       $entity = $model->db->rselect([
         'table' => 'amiral_entities',

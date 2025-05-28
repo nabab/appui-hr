@@ -60,11 +60,11 @@ if ( $cfg = $model->getPluginModel('page') ){
 
 if (
   ($tabs_perm = $model->inc->perm->getAll(APPUI_HR_ROOT . '/page')) &&
-  (($t = \bbn\X::find($tabs_perm, ['code' => 'tabs'])) !== null) &&
+  (($t = \bbn\X::search($tabs_perm, ['code' => 'tabs'])) !== null) &&
   ($tabs_perm = $model->inc->perm->getAll($tabs_perm[$t]['id']))
 ){
   foreach ( $ret['tabs'] as $code => $tab ){
-    $idx = \bbn\X::find($tabs_perm, ['code' => $code]);
+    $idx = \bbn\X::search($tabs_perm, ['code' => $code]);
     if (
       ($idx === null) ||
       !$model->inc->perm->has($tabs_perm[$idx]['id'])
