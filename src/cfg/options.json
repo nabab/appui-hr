@@ -23,7 +23,7 @@
             "schema": [
                 {
                     "field": "color",
-                    "title": "Color",
+                    "label": "Color",
                     "options": [],
                     "hidden": false,
                     "editable": true,
