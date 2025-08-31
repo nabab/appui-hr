@@ -1,5 +1,5 @@
 <?php
-/* @var \bbn\Mvc\Model $model */
+/* @var bbn\Mvc\Model $model */
 if ( !empty($model->data['day']) ){
   $planning = new \bbn\Appui\Planning($model->db);
   $id_staff = null;

@@ -1,5 +1,5 @@
 <?php
-/* @var \bbn\Mvc\Model $model */
+/* @var bbn\Mvc\Model $model */
 if ( !empty($model->data['data']['start']) && !empty($model->data['data']['end']) ){
   $id_staff = null;
   if ( 
