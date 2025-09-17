@@ -73,7 +73,7 @@
       },
       "id_staff": {
         "type": "binary",
-        "null": 0,
+        "null": 1,
         "key": "MUL",
         "maxlength": 16
       },
