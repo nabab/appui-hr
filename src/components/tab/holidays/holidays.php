@@ -1,6 +1,6 @@
 <div class="appui-hr-tab-holidays">
   <bbn-router class="bbn-overlay"
-              :nav="true"
+              mode="tabs"
               :autoload="false"
   >
     <bbns-container url="planning"

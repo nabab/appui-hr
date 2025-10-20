@@ -1,6 +1,6 @@
 <bbn-router :scrollable="false"
             :autoload="false"
-            :nav="true"
+            mode="tabs"
 >
   <bbns-container v-if="source.tabs.home"
                   url="home"
