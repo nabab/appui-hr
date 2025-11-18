@@ -16,11 +16,11 @@
               tmp.push({
                 id: e.id_staff,
                 name: bbn.fn.getField(appui.app.staffActive, 'text', 'value', e.id_staff),
-                hour: dayjs(e.end).diff(dayjs(e.start), 'minutes')
+                hour: bbn.date(e.end).diff(bbn.date(e.start), 'minutes')
               });
             }
             else {
-              tmp[idx].hour += dayjs(e.end).diff(dayjs(e.start), 'minutes');
+              tmp[idx].hour += bbn.date(e.end).diff(bbn.date(e.start), 'minutes');
             }
           });
           tmp = bbn.fn.order(tmp, 'name', 'ASC');

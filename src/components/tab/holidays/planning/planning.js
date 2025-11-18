@@ -9,7 +9,7 @@
     data(){
       return {
         absences: appui.options.hr.absences,
-        currentYear: dayjs().format('YYYY'),
+        currentYear: bbn.date().format('YYYY'),
         selected: '',
         calendarSelected: false,
         events: [],
@@ -23,7 +23,7 @@
     },
     computed: {
       dayText(){
-        return this.selected ? dayjs(this.selected).format('dddd	DD MMMM YYYY') : '';
+        return this.selected ? bbn.date(this.selected).format('dddd	DD MMMM YYYY') : '';
       },
       calendars(){
         if ( this.isYearMode ){
@@ -82,8 +82,8 @@
           width: 600,
           component: 'appui-hr-form-event',
           source: {
-            start: dayjs(this.selected).format('YYYY-MM-DD HH:mm:ss'),
-            end: dayjs(this.selected).format('YYYY-MM-DD 23:59:59'),
+            start: bbn.date(this.selected).format('YYYY-MM-DD HH:mm:ss'),
+            end: bbn.date(this.selected).format('YYYY-MM-DD 23:59:59'),
             id_staff: '',
             id_type: '',
             note: '',
@@ -135,13 +135,13 @@
       },
       nextYear(){
         if ( this.isYearMode ){
-          this.currentYear = dayjs(this.currentYear).add(1, 'Y').format('YYYY');
+          this.currentYear = bbn.date(this.currentYear).add(1, 'Y').format('YYYY');
           bbn.fn.each(this.calendars, c => c.next(true));
         }
       },
       prevYear(){
         if ( this.isYearMode ){
-          this.currentYear = dayjs(this.currentYear).subtract(1, 'Y').format('YYYY');
+          this.currentYear = bbn.date(this.currentYear).subtract(1, 'Y').format('YYYY');
           bbn.fn.each(this.calendars, c => c.prev(true));
         }
       }

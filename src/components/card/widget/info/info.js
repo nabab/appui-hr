@@ -12,8 +12,8 @@
       absenceText(){
         if ( this.source.today.length ){
           let txt = bbn.fn.getField(this.card.absences, 'text', 'value', this.source.today[0].id_type).toUpperCase(),
-              start = dayjs(this.source.today[0].start).format('DD/MM/YYYY'),
-              end = dayjs(this.source.today[0].end).format('DD/MM/YYYY');
+              start = bbn.date(this.source.today[0].start).format('DD/MM/YYYY'),
+              end = bbn.date(this.source.today[0].end).format('DD/MM/YYYY');
           return `
             <div class="bbn-large">${txt}</div>
             <div>${start} <i class="nf nf-fa-long_arrow_right"></i> ${end}</div>

@@ -2,7 +2,7 @@
   return {
     data(){
       return {
-        currentYear: dayjs().format('YYYY')
+        currentYear: bbn.date().format('YYYY')
       }
     },
     computed: {

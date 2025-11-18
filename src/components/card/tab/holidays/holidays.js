@@ -159,10 +159,10 @@
         return bts
       },
       colorRow(row,){
-        let currentDate = dayjs(),
-            past = dayjs(row.end).isBefore(currentDate),
-            ongoing = dayjs(row.start).isBefore(currentDate) && dayjs(row.end).isAfter(currentDate),
-            future = dayjs(row.start).isAfter(currentDate);
+        let currentDate = bbn.date(),
+            past = bbn.date(row.end).isBefore(currentDate),
+            ongoing = bbn.date(row.start).isBefore(currentDate) && bbn.date(row.end).isAfter(currentDate),
+            future = bbn.date(row.start).isAfter(currentDate);
         count++;
         if ( future ){
           return 'appui-hr-card-tab-holidays-future' + (count % 2 === 0 ? ' bbn-alt-light' : '');
@@ -280,7 +280,7 @@
                 value: this.card.source.id
               };
               if ( newVal ){
-                let m = dayjs(newVal, 'YYYY-MM');
+                let m = bbn.date(newVal, 'YYYY-MM');
                 this.table.currentFilters.conditions.splice(0, this.table.currentFilters.conditions.length, mainFilter, {
                   logic: 'OR',
                   conditions: [{
@@ -319,7 +319,7 @@
                     value: this.card.source.id
                   },
                   cond = {},
-                  currentDate = dayjs().format('YYYY-MM-DD');
+                  currentDate = bbn.date().format('YYYY-MM-DD');
               if ( newVal ){
                 switch ( newVal ){
                   case 'past':
