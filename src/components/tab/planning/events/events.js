@@ -275,7 +275,7 @@
         },
         computed: {
           minUntil(){
-            return bbn.date(this.source.row.start).add(1, 'days').format('YYYY-MM-DD');
+            return bbn.dt(this.source.row.start).add(1, 'days').format('YYYY-MM-DD');
           }, 
         },
         methods: {
@@ -322,10 +322,10 @@
             }
           },
           getDayName(day){
-            return bbn.date().weekday(day).format('ddd');
+            return bbn.dt().weekday(day).format('ddd');
           },
           getMonthName(month){
-            return bbn.date().month(month).format('MMM');
+            return bbn.dt().month(month).format('MMM');
           },
           addRemove(t, v){
             let idx = this.source.row[t].indexOf(v);

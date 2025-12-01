@@ -2,7 +2,7 @@
   return {
     data(){
       return {
-        currentYear: bbn.date().format('YYYY')
+        currentYear: bbn.dt().format('YYYY')
       }
     },
     computed: {

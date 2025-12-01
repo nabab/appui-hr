@@ -14,12 +14,12 @@
       this.$nextTick(() => {
         this.days = Array.from({length: 7}, (v, i) => {
           let color = false,
-              day = bbn.date().weekday(i).get('date'),
-              fullDay = bbn.date().weekday(i).format('YYYY-MM-DD');
+              day = bbn.dt().weekday(i).get('date'),
+              fullDay = bbn.dt().weekday(i).format('YYYY-MM-DD');
           if ( this.source.week ){
             let tmp = this.source.week.filter(ev => {
-              let start = bbn.date(ev.start).format('YYYY-MM-DD'),
-                  end = bbn.date(ev.end).format('YYYY-MM-DD');
+              let start = bbn.dt(ev.start).format('YYYY-MM-DD'),
+                  end = bbn.dt(ev.end).format('YYYY-MM-DD');
               return (start <= fullDay) && (end >= fullDay);
             });
             if ( tmp.length ){
@@ -27,9 +27,9 @@
             }
           }
           return {
-            initials: bbn.date().weekday(i).format('dd'),
+            initials: bbn.dt().weekday(i).format('dd'),
             day: day,
-            today: bbn.date().weekday(i).get('date') === bbn.date().get('date'),
+            today: bbn.dt().weekday(i).get('date') === bbn.dt().get('date'),
             color: color
           }
         })

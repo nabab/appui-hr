@@ -12,10 +12,10 @@
         return this.startDay === this.endDay;
       },
       startDay(){
-        return bbn.date(this.source.start).format('DD/MM/YYYY');
+        return bbn.dt(this.source.start).format('DD/MM/YYYY');
       },
       endDay(){
-        return bbn.date(this.source.end).format('DD/MM/YYYY');
+        return bbn.dt(this.source.end).format('DD/MM/YYYY');
       },
       color(){
         return bbn.fn.getField(appui.options.hr.absences, 'color', 'value', this.source.id_type);
