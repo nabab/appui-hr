@@ -84,7 +84,7 @@ if (
         'entity_nom' => $entity['nom'],
         'entity_adresse' => $entity['fulladdress']
       ];
-      if ( file_put_contents($path.$filename, Json_encode($d)) && is_file($path.$filename) ){
+      if ( file_put_contents($path.$filename, json_encode($d)) && is_file($path.$filename) ){
         return [
           'json' => filemtime($path.$filename),
           'success' => true

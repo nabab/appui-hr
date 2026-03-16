@@ -24,7 +24,7 @@ if ( !empty($model->data['day']) && !empty($model->data['id']) ){
       (($idx = \bbn\X::search($d, ['id' => $model->data['id']])) !== null)
     ){
       unset($d[$idx]);
-      if ( file_put_contents($path.$filename, Json_encode(array_values($d))) && is_file($path.$filename) ){
+      if ( file_put_contents($path.$filename, json_encode(array_values($d))) && is_file($path.$filename) ){
         return [
           'json' => filemtime($path.$filename),
           'success' => true
