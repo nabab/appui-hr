@@ -1,7 +1,7 @@
 <?php
 
 try {
-  $dashboard = new \bbn\Appui\Dashboard('hr');
+  $dashboard = new \bbn\Appui\Dashboard($model->db, 'hr');
   $widgets = $dashboard->getUserWidgetsCode(APPUI_HR_ROOT . 'data/home/widget/');
 }
 catch ( Exception $e ){

@@ -1,7 +1,7 @@
 <?php
 if ( !empty($model->data['id']) ){
 
-  if ( $dashboard = new \bbn\Appui\Dashboard('hrcard') ){
+  if ( $dashboard = new \bbn\Appui\Dashboard($model->db, 'hrcard') ){
     $widgets = $dashboard->getUserWidgetsCode();
   }
 
