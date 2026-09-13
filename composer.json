@@ -1,28 +1,34 @@
 {
-  "name": "bbn/appui-hr",
-  "description": "An HR management system for appui",
-  "keywords": ["cms","intranet","spa","appui","hr"],
-  "homepage": "https://github.com/nabab/appui-hr",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Thomas Nabet",
-      "email": "thomas.nabet@gmail.com",
-      "homepage": "https://bbn.solutions",
-      "role": "Developer"
-    },
-		{
-      "name": "Mirko Argentino",
-      "email": "mirko@bbn.solutions",
-      "homepage": "https://bbn.solutions",
-      "role": "Developer"
+    "name": "bbn\/appui-hr",
+    "description": "An HR management system for appui",
+    "keywords": [
+        "cms",
+        "intranet",
+        "spa",
+        "appui",
+        "hr"
+    ],
+    "homepage": "https:\/\/github.com\/nabab\/appui-hr",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Nabet",
+            "email": "thomas.nabet@gmail.com",
+            "homepage": "https:\/\/bbn.solutions",
+            "role": "Developer"
+        },
+        {
+            "name": "Mirko Argentino",
+            "email": "mirko@bbn.solutions",
+            "homepage": "https:\/\/bbn.solutions",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.5",
+        "bbn\/bbn": "^1.1",
+        "bbn\/appui-usergroup": "^1.2",
+        "bbn\/appui-note": "^1.2",
+        "bbn\/appui-event": "^1.2"
     }
-  ],
-  "require": {
-    "php": ">=8.3",
-    "bbn/bbn": "dev-master",
-    "bbn/appui-usergroup": "dev-master",
-    "bbn/appui-note": "dev-master",
-    "bbn/appui-event": "dev-master"
-  }
 }
