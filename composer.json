@@ -26,9 +26,6 @@
     ],
     "require": {
         "php": "^8.5",
-        "bbn\/bbn": "^1.1",
-        "bbn\/appui-usergroup": "^1.3",
-        "bbn\/appui-note": "^1.3",
-        "bbn\/appui-event": "^1.3"
+        "bbn\/bbn": "^1.1"
     }
 }
